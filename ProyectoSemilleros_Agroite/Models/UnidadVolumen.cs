@@ -90,7 +90,7 @@ namespace ProyectoSemilleros_Agroite.Models
             {
                 using (var db = new agroite())
                 {
-                    if (this.IdUnidadVolumen> 0)
+                    if (this.IdUnidadVolumen > 0)
                     {
                         db.Entry(this).State = EntityState.Modified;
                     }
@@ -125,5 +125,3 @@ namespace ProyectoSemilleros_Agroite.Models
         }
     }
 }
-
-

@@ -25,7 +25,6 @@ namespace ProyectoSemilleros_Agroite.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuario { get; set; }
-
         public List<Actividad> Listar()
         {
             var actividad = new List<Actividad>();
@@ -124,5 +123,3 @@ namespace ProyectoSemilleros_Agroite.Models
 
     }
 }
-    
-

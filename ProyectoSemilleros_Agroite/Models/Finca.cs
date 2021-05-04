@@ -7,7 +7,6 @@ namespace ProyectoSemilleros_Agroite.Models
     using System.Data.Entity;
     using System.Data.Entity.Spatial;
     using System.Linq;
-    using System.Web;
 
     [Table("Finca")]
     public partial class Finca
@@ -51,7 +50,7 @@ namespace ProyectoSemilleros_Agroite.Models
                 using (var db = new agroite())
                 {
                     finca = db.Finca.Include("Usuario").Include("UnidadExtension").ToList();
-                    
+
                 }
             }
             catch (Exception)
@@ -68,7 +67,7 @@ namespace ProyectoSemilleros_Agroite.Models
                 using (var db = new agroite())
                 {
                     finca = db.Finca.Include("Usuario").Include("UnidadExtension").Where(x => x.IdUsuario == id).ToList();
-                   
+
                 }
             }
             catch (Exception ex)
@@ -117,7 +116,7 @@ namespace ProyectoSemilleros_Agroite.Models
         }
         public Finca Obtener(int id)
         {
-            var finca= new Finca();
+            var finca = new Finca();
             try
             {
                 using (var db = new agroite())
@@ -172,4 +171,3 @@ namespace ProyectoSemilleros_Agroite.Models
         }
     }
 }
-

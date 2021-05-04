@@ -63,7 +63,7 @@ namespace ProyectoSemilleros_Agroite.Models
                     producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").ToList();
                     //   producto = db.Producto.Include("Frecuencia").ToList();
                 }
-              
+
             }
             catch (Exception)
             {
@@ -118,7 +118,7 @@ namespace ProyectoSemilleros_Agroite.Models
                 {
                     producto = db.Producto.Include("Frecuencia").ToList();
                 }
-               
+
             }
             catch (Exception)
             {
@@ -202,4 +202,3 @@ namespace ProyectoSemilleros_Agroite.Models
         }
     }
 }
-

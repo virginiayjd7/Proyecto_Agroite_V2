@@ -201,8 +201,8 @@ C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.Razor.resources.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Helpers.resources.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Mvc.resources.dll
-C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csprojAssemblyReference.cache
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csproj.CoreCompileInputs.cache
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csproj.CopyComplete
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.pdb
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csprojAssemblyReference.cache

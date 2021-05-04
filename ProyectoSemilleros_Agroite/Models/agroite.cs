@@ -127,7 +127,7 @@ namespace ProyectoSemilleros_Agroite.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()
-                .Property(e => e.Usuario1)
+                .Property(e => e.Alias)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()

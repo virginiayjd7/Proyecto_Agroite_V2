@@ -98,18 +98,6 @@ namespace ProyectoSemilleros_Agroite.Controllers
             }
             return Redirect("~/Usuario/AgregarEditar");
         }
-        /*public ActionResult Guardar(Usuario model)
-        {
-            if (ModelState.IsValid)
-            {
-                model.Guardar();
-                return Redirect("~/Login/LogIn");
-            }
-            else
-            {
-                return View("~/Usuario/AgregarEditar", model);
-            }
-        }*/
 
         public ActionResult Eliminar(int id)
         {
