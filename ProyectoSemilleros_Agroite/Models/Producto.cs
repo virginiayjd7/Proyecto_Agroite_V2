@@ -133,7 +133,7 @@ namespace ProyectoSemilleros_Agroite.Models
             {
                 using (var db = new agroite())
                 {
-                    producto = db.Producto.Include("Usuario").Include("UnidadMedida").Include("Frecuencia").Where(x => x.IdProducto == id)
+                    producto = db.Producto.Include("Usuario").Include("UnidadVolumen").Include("Frecuencia").Where(x => x.IdProducto == id)
                                       .SingleOrDefault();
                 }
 

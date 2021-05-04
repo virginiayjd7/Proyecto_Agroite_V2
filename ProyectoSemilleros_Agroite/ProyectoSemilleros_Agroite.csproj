@@ -1967,6 +1967,8 @@
     <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Producto\DetalleProducto.cshtml" />
+    <Content Include="Views\Usuario\Perfil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
