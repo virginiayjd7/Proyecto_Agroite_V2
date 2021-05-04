@@ -1,0 +1,26 @@
+﻿
+@model ProyectoSemilleros_Agroite.Models.UnidadExtension
+@{
+    ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<h2>Visualizar</h2>
+<ol class="breadcrumb"> 
+    <li><a href="~/Frecuencia/Index">Unidad de Extension</a></li>
+    <li> / </li>
+    <li class="active">@Model.IdUnidadExtension</li>
+</ol>
+
+<div class="card card-body">
+    <div class="card-header">Informacion de la  Unidad de Extension</div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.IdUnidadExtension</dd>
+            <dt>Nombre de la  Unidad de Extension</dt>
+            <dd>@Model.Nombre</dd>
+        </dl>
+    </div>
+</div>
+
+

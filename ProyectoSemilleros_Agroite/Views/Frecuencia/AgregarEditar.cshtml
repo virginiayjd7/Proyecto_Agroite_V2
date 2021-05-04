@@ -1,0 +1,46 @@
+﻿@model ProyectoSemilleros_Agroite.Models.Frecuencia
+@{
+    ViewBag.Title = "AgregarEditar";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Agregar / Editar</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/Actividad/Index">Frecuencia</a></li>
+    <li> / </li>
+    <li class="active">@(Model.Idfrecuencia> 0 ? Model.Nombre : "Nuevo Frecuencia")</li>
+</ol>
+
+@using (Html.BeginForm("Guardar", "Frecuencia", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Idfrecuencia)
+
+    <div class="card">
+        <div class="card-header">Información de la  Frecuencia</div>
+
+        <div class="card-body">
+
+            <div class="form-group">
+                @Html.Label("Id")
+                @Html.TextBoxFor(x => x.Idfrecuencia, new { @class = "form-control", disabled = true }) 
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Nombre del Frecuencia")
+                @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Nombre, null, new { @class = "text-danger" })
+            </div>
+
+        </div>
+    </div>
+
+    <br />
+    <div class="text-right">
+        <button type="submit" class="btn btn-primary"> Registrar Frecuencia</button>
+        <a href="~/Frecuencia" class="btn btn-danger"> Cancelar </a>
+    </div>
+}
+
+
+
