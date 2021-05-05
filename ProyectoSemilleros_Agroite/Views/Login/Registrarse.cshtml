@@ -33,9 +33,9 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="username">Username *</label>
+                            <label for="username">Usuario *</label>
                             <div class="input-group">
-                                @Html.Label("Usuario: ")
+
                                 @Html.TextBoxFor(x => x.Alias, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "label label-danger" })
                             </div>
@@ -46,8 +46,8 @@
                             @Html.ValidationMessageFor(x => x.Correo, null, new { @class = "label label-danger" })
                         </div>
                         <div class="mb-3">
-                            <label for="address">Address *</label>
-                            @Html.Label("Direccion: ")
+                            <label for="address">Direccion *</label>
+
                             @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control" })
                             @Html.ValidationMessageFor(x => x.Direccion, null, new { @class = "label label-danger" })
                         </div>
@@ -80,11 +80,10 @@
 
                         </div>
                         <div class="mb-4">
-                            <label for="username">Username *</label>
+                            <label for="username">Foto de Perfil *</label>
                             <div class="input-group">
-                                @Html.Label("Foto de Perfil: ")
+
                                 <input type="file" id="imgfile1" name="imgfile1" class="btn btn-info" />
-                                @*@Html.TextBoxFor(x => x.ImagenesProducto, new { @class = "form-control" })*@
                                 @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })
                             </div>
                         </div>
@@ -104,7 +103,7 @@
                         <div class="mb-3">
                             <label for="username">Organizacion *</label>
                             <div class="input-group">
-                                @Html.Label("Organizacion: ")
+
                                 @Html.TextBoxFor(x => x.Organizacion, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.Organizacion, null, new { @class = "label label-danger" })
                             </div>
@@ -112,16 +111,23 @@
                         <div class="mb-3">
                             <label for="username">Descripcion *</label>
                             <div class="input-group">
-                                @Html.Label("Descripcion: ")
+
                                 @Html.TextBoxFor(x => x.Descripcion, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.Descripcion, null, new { @class = "label label-danger" })
                             </div>
                         </div>
-                        <input type="submit" value="Registrar"><br /><br />
-                        <a href="~/Home" class="btn btn-danger">Cancelar</a>
+                        <div style="padding-left:15px; margin-bottom:15px;" id="opciones_perfil">
+
+                           
+                            <input class="btn hvr-hover" type="submit" value="Registrar">
+                            <a href="~/Home" class="btn hvr-hover">Cancelar</a>
+                               
+                          
+                        </div>
+
                     }
                 </div>
             </div>
-            </div>
-</div>
+        </div>
+    </div>
 </div>

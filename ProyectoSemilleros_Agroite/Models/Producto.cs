@@ -60,7 +60,7 @@ namespace ProyectoSemilleros_Agroite.Models
             {
                 using (var db = new agroite())
                 {
-                    producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").ToList();
+                    producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").ToList();
                     //   producto = db.Producto.Include("Frecuencia").ToList();
                 }
 
@@ -78,7 +78,7 @@ namespace ProyectoSemilleros_Agroite.Models
             {
                 using (var db = new agroite())
                 {
-                    producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Where(x => x.IdUsuario == id).ToList();
+                    producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").Where(x => x.IdUsuario == id).ToList();
                     // usuarios = db.Producto.Include("Frecuencia").Where(x => x.IdUsuario==id).ToList();
                 }
             }
@@ -133,7 +133,7 @@ namespace ProyectoSemilleros_Agroite.Models
             {
                 using (var db = new agroite())
                 {
-                    producto = db.Producto.Include("Usuario").Include("UnidadVolumen").Include("Frecuencia").Where(x => x.IdProducto == id)
+                    producto = db.Producto.Include("Usuario").Include("UnidadVolumen").Include("Frecuencia").Include("Categoria").Where(x => x.IdProducto == id)
                                       .SingleOrDefault();
                 }
 

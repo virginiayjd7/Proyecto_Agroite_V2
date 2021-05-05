@@ -33,22 +33,22 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h2 class="noo-sh-title-top">We are <span>@Model.Nombres, @Model.Apellidos</span></h2>
+                <h2 class="noo-sh-title-top"><span>@Model.Nombres, @Model.Apellidos</span></h2>
                 <p>
                     <h5>
                         <b><i class="fa fa-map-marker"></i></b>
-                        @Model.Direccion
+                        &nbsp;@Model.Direccion
                     </h5>
                     <h5>
                         <b><i class="fa fa-phone"></i></b>
-                        @Model.Celular
+                        &nbsp;@Model.Celular
                     </h5>
                     <h5>
-                        <b><i class="fa fa-send"></i></b>
-                        @Model.Correo
+                        <b><i class="fa fa-send-o"></i></b>
+                        &nbsp; @Model.Correo
                     </h5>
                 </p>
-                <p>@Model.Descripcion</p>
+                <p>&nbsp;@Model.Descripcion</p>
                
                 <div style="padding-left:15px; margin-bottom:15px;" id="opciones_perfil">
                     <a href="/Usuario/AgregarEditar/?id=@Model.IdUsuario" class="btn hvr-hover">
