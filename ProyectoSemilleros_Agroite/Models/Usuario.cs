@@ -31,11 +31,11 @@ namespace ProyectoSemilleros_Agroite.Models
 
         [StringLength(500)]
         public string Apellidos { get; set; }
+        [StringLength(500)]
+        public string Tipo_Documento { get; set; }
 
-        public int? Tipo_Documento { get; set; }
-
-        [StringLength(10)]
-        public string Num_Identificacion { get; set; }
+  
+        public int? Num_Identificacion { get; set; }
 
         public byte[] Foto_Perfil { get; set; }
 
