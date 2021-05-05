@@ -11,8 +11,8 @@ namespace ProyectoSemilleros_Agroite.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        private Usuario usuario = new Usuario();
         private Usuario objusuario = new Usuario();
+        private Actividad actividad = new Actividad();
         // GET: Login
         [NoLogin]
         public ActionResult Index()
@@ -47,6 +47,26 @@ namespace ProyectoSemilleros_Agroite.Controllers
         public ActionResult LogIn()
         {
             return View();
+        }
+        public ActionResult Registrarse()
+        {
+            ViewBag.Tipo3 = actividad.Listar();
+            return View(new Usuario());
+        }
+        [HttpPost]
+        public ActionResult Guardar(Usuario model, HttpPostedFileBase imgfile1)
+        {
+            if (imgfile1.ContentLength > 0)
+            {
+                ModelState.Remove("Foto_Perfil");
+                if (ModelState.IsValid)
+                {
+                    model.Guardar(imgfile1);
+                    return Redirect("~/Login/Index");
+                }
+
+            }
+            return Redirect("~/Usuario/AgregarEditar");
         }
     }
 }

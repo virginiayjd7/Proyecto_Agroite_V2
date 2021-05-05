@@ -129,6 +129,30 @@ namespace ProyectoSemilleros_Agroite.Models
             {
                 using (var db = new agroite())
                 {
+                    
+                    Stream fileStream = imgfile1.InputStream;
+                    System.IO.BinaryReader br = new System.IO.BinaryReader(fileStream);
+                    Byte[] bytes = br.ReadBytes((Int32)fileStream.Length);
+                    string base64 = Convert.ToBase64String(bytes, 0, bytes.Length);
+                    string imgbase64 = "data:image/png:base64," + base64;
+
+                    this.Foto_Perfil = bytes;
+
+                    db.Entry(this).State = EntityState.Added;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public void Editar(HttpPostedFileBase imgfile1)
+        {
+            try
+            {
+                using (var db = new agroite())
+                {
                     if (this.IdUsuario > 0)
                     {
 
@@ -141,20 +165,9 @@ namespace ProyectoSemilleros_Agroite.Models
                         this.Foto_Perfil = bytes;
 
                         db.Entry(this).State = EntityState.Modified;
+                        db.SaveChanges();
                     }
-                    else
-                    {
-                        Stream fileStream = imgfile1.InputStream;
-                        System.IO.BinaryReader br = new System.IO.BinaryReader(fileStream);
-                        Byte[] bytes = br.ReadBytes((Int32)fileStream.Length);
-                        string base64 = Convert.ToBase64String(bytes, 0, bytes.Length);
-                        string imgbase64 = "data:image/png:base64," + base64;
-
-                        this.Foto_Perfil = bytes;
-
-                        db.Entry(this).State = EntityState.Added;
-                    }
-                    db.SaveChanges();
+                    
                 }
             }
             catch (Exception ex)
