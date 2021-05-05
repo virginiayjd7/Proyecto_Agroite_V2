@@ -14,10 +14,10 @@
     @using (Html.BeginForm("Guardar", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.HiddenFor(x => x.IdProducto)
-        <div class="form-group">
-            <label>Id Producto: </label>
-            @Html.TextBoxFor(x => x.IdProducto, new { @class = "form-control", disabled = true })
-        </div>
+        @*<div class="form-group">
+                <label>Id Producto: </label>
+                @Html.TextBoxFor(x => x.IdProducto, new { @class = "form-control", disabled = true })
+            </div>*@
         <div class="form-group">
             <label>Categoria: </label>
             <select name="IdCategoria" class="form-control">
@@ -33,18 +33,7 @@
             @Html.TextBoxFor(x => x.Nombre_Producto, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Nombre_Producto, null, new { @class = "label label-danger" })
         </div>
-        <div class="form-group">
-            <label>Usuario: </label>
-
-            <div class="form-group">
-
-                <label>Usuario ID: </label>
-
-                @*<input type="text" name="te" value="@usuario.IdUsuario" />*@
-
-            </div>
-
-        </div>
+        
         <div class="form-group">
             <label>Precio Referencial: </label>
             @Html.TextBoxFor(x => x.Precio_Referencial, new { @class = "form-control" })
@@ -97,24 +86,25 @@
             </select>
         </div>
 
+        @*<div>
+            @if (Session["idusuario"] != null)
+            {
+                <label>Usuario ID: </label>
+                <h5>@Session["idusuario"]</h5>
+
+            }
+            else
+            {
+
+                <div class="sidebar-brand-text mx-3"> null  </div>
+            }
+        </div>*@
 
         <div class="text-right">
             <button type="submit" class="btn btn-primary">Guardar</button>
             <a href="~/Producto" class="btn btn-danger">Cancelar</a>
         </div>
     }
-    <div>
-        @if (Session["idusuario"] != null)
-        {
-            <label>Usuario ID: </label>
-            <h5>@Session["idusuario"]</h5>
 
-        }
-        else
-        {
-
-            <div class="sidebar-brand-text mx-3"> null  </div>
-        }
-    </div>
 </div>
 
