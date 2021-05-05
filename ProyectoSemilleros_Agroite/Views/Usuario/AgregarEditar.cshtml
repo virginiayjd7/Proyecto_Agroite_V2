@@ -6,95 +6,100 @@
     var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
 }
 
-<div class="login-page">
-    <div class="container">
-        <h3 class="w3ls-title w3ls-title1">Registrarme</h3>
-        <div class="login-body">
+@*<div class="login-page">
+    <div class="container">*@
+        <div style="margin: 35px 400px">
+            <h3 class="w3ls-title w3ls-title1">Actualizar Mis Datos</h3>
+            <div class="login-body">
 
 
-            @using (Html.BeginForm("Guardar", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
+                @using (Html.BeginForm("Guardar", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
 
-                @Html.HiddenFor(x => x.IdUsuario)
-                <div class="form-group">
-                    @Html.Label("Nombres: ")
-                    @Html.TextBoxFor(x => x.Nombres, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Nombres, null, new { @class = "label label-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Apellidos: ")
-                    @Html.TextBoxFor(x => x.Apellidos, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Apellidos, null, new { @class = "label label-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Tipo Documento:  ")
-                    <select name="Tipo_Documento" class="form-control">
-                        <option @(Model.Tipo_Documento == 0 ? "selected" : "") value="0">-DNI-</option>
-                        <option @(Model.Tipo_Documento == 1 ? "selected" : "") value="1">-RUC-</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    @Html.Label("Nro. Documento: ")
-                    @Html.TextBoxFor(x => x.Num_Identificacion, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Num_Identificacion, null, new { @class = "label label-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Foto de Perfil: ")    
-                    <img src="@imgSrc" alt="" />
-                    <input type="file" id="imgfile1" name="imgfile1" class="btn btn-info" />
-                    @*@Html.TextBoxFor(x => x.ImagenesProducto, new { @class = "form-control" })*@
-                    @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Celular: ")
-                    @Html.TextBoxFor(x => x.Celular, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Direccion: ")
-                    @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Direccion, null, new { @class = "label label-danger" })
-                </div>
+                    @Html.HiddenFor(x => x.IdUsuario)
+                    <div class="form-group">
+                        @Html.Label("Nombres: ")
+                        @Html.TextBoxFor(x => x.Nombres, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Nombres, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Apellidos: ")
+                        @Html.TextBoxFor(x => x.Apellidos, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Apellidos, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Tipo Documento:  ")
+                        <select name="Tipo_Documento" class="form-control">
+                            <option @(Model.Tipo_Documento == 0 ? "selected" : "") value="0">-DNI-</option>
+                            <option @(Model.Tipo_Documento == 1 ? "selected" : "") value="1">-RUC-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Nro. Documento: ")
+                        @Html.TextBoxFor(x => x.Num_Identificacion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Num_Identificacion, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Foto de Perfil: ")
+                        <img src="@imgSrc" alt="" />
+                        <input type="file" id="imgfile1" name="imgfile1" class="btn btn-info" />
+                        @*@Html.TextBoxFor(x => x.ImagenesProducto, new { @class = "form-control" })*@
+                        @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Celular: ")
+                        @Html.TextBoxFor(x => x.Celular, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Direccion: ")
+                        @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Direccion, null, new { @class = "label label-danger" })
+                    </div>
 
-                <div class="form-group">
-                    @Html.Label("Correo: ")
-                    @Html.TextBoxFor(x => x.Correo, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Correo, null, new { @class = "label label-danger" })
-                </div>
+                    <div class="form-group">
+                        @Html.Label("Correo: ")
+                        @Html.TextBoxFor(x => x.Correo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Correo, null, new { @class = "label label-danger" })
+                    </div>
 
-                <div class="form-group">
-                    @Html.Label("Actividad: ")
-                    <select name="IdActividad" class="form-control">
-                        <option @(Model.IdActividad.Equals("") ? "selected" : "") value="">-Seleccione-</option>
-                        @foreach (var t in tipo)
-                        {
-                            <option @(Model.IdActividad.Equals(t.IdActividad) ? "selected" : "") value="@t.IdActividad">@t.Nombre</option>
-                        }
-                    </select>
-                </div>
-                <div class="form-group">
-                    @Html.Label("Usuario: ")
-                    @Html.TextBoxFor(x => x.Alias, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "label label-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Contraseña: ")
-                    @Html.TextBoxFor(x => x.Contraseña, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Contraseña, null, new { @class = "label label-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Organizacion: ")
-                    @Html.TextBoxFor(x => x.Organizacion, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Organizacion, null, new { @class = "label label-danger" })
-                </div>
-                <div class="form-group">
-                    @Html.Label("Descripcion: ")
-                    @Html.TextBoxFor(x => x.Descripcion, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Descripcion, null, new { @class = "label label-danger" })
-                </div>
-                <input type="submit" value="Registrar"><br /><br />
-                <a href="~/Home" class="btn btn-danger">Cancelar</a>
-            }
+                    <div class="form-group">
+                        @Html.Label("Actividad: ")
+                        <select name="IdActividad" class="form-control">
+                            <option @(Model.IdActividad.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                            @foreach (var t in tipo)
+                            {
+                                <option @(Model.IdActividad.Equals(t.IdActividad) ? "selected" : "") value="@t.IdActividad">@t.Nombre</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Usuario: ")
+                        @Html.TextBoxFor(x => x.Alias, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Contraseña: ")
+                        @Html.TextBoxFor(x => x.Contraseña, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Contraseña, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Organizacion: ")
+                        @Html.TextBoxFor(x => x.Organizacion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Organizacion, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Descripcion: ")
+                        @Html.TextBoxFor(x => x.Descripcion, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Descripcion, null, new { @class = "label label-danger" })
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-warning">Guardar</button>
+                        <a href="~/Usuario/Menu" class="btn btn-danger">Cancelar</a>
+                    </div>
+                }
+            </div>
         </div>
-    </div>
-</div>
+    @*</div>
+</div>*@
