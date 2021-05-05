@@ -1,40 +1,13 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<link href="~/css/bootstrap.css" rel="stylesheet" />
-<link href="~/css/style.css" rel="stylesheet" />
-<link href="~/css/animate.min.css" rel="stylesheet" />
-<link href="~/css/menu.css" rel="stylesheet" />
-<link href="~/css/font-awesome.css" rel="stylesheet" />
 
-<style>
-    .avatar {
-        position: relative;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        top: -20px;
-        width: 95px;
-        height: 95px;
-        border-radius: 50%;
-        z-index: 9;
-        background: #0280e1;
-        padding: 15px;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-    }
-
-        .avatar img {
-            width: 100%;
-        }
-</style>
 <!-- login-page -->
 <div class="login-page">
     <div class="container">
         <h3 class="w3ls-title w3ls-title1">Iniciar Sesión</h3>
         <div class="login-body">
-            <div class="avatar">
-                <img src="~/images/logor.png" alt="ite">
-            </div>
+            
 
             @using (Html.BeginForm("Acceder", "Login", FormMethod.Post))
             {
@@ -42,10 +15,7 @@
                 <input type="password" style="text-align:center;" name="Password" class="form-control" placeholder="Contraseña" required="">
 
                 <button type="submit" data-ajax="true" name="usuario" class="btn btn-primary"> Acceder </button>
-                @*<div class="forgot-grid">
-                        <label class="checkbox" style="margin-left: 35%;"><input type="checkbox" name="checkbox"><i></i> Recordarme</label>
-                        <div class="clearfix"> </div>
-                    </div>*@
+               
             }
         </div>
         <h6> ¿No eres miembro? <a href="~/Usuario/AgregarEditar">Registrate ahora »</a> </h6>

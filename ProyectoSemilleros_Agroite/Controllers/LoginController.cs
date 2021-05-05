@@ -20,7 +20,7 @@ namespace ProyectoSemilleros_Agroite.Controllers
             return View();
         }
 
-        public JsonResult Acceder(string usuario, string password)
+        public ActionResult Acceder(string usuario, string password)
         {
 
             var rm = objusuario.Acceder(usuario, password);
@@ -31,8 +31,7 @@ namespace ProyectoSemilleros_Agroite.Controllers
                 string ud = Session["idusuario"].ToString();
 
             }
-            return Json(rm);
-
+            return Redirect("~/Usuario/Menu");
         }
 
         public ActionResult LogOut()
