@@ -37,8 +37,8 @@ namespace ProyectoSemilleros_Agroite.Controllers
         public ActionResult LogOut()
         {
             SessionHelper.DestroyUserSession();
-            Session.Abandon();
-            return Redirect("~/Login/Index");
+            Session.Clear();
+            return Redirect("~/Login");
         }
         public ActionResult SignUp()
         {

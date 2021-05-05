@@ -5,7 +5,6 @@
     List<ProyectoSemilleros_Agroite.Models.UnidadVolumen> tipo1 = ViewBag.Tipo1;
     List<ProyectoSemilleros_Agroite.Models.Frecuencia> tipo2 = ViewBag.Tipo2;
     List<ProyectoSemilleros_Agroite.Models.Usuario> tipo3 = ViewBag.Tipo3;
-    //ProyectoSemilleros_Agroite.Models.Usuario usuarioid = ViewBag.usuario;
 
     //ProyectoFinal_AgroIte.Models.Usuario usuario = new ProyectoFinal_AgroIte.Models.Usuario().Obtener(ProyectoFinal_AgroIte.Models.SessionHelper.GetUser());
 }
@@ -101,9 +100,9 @@
             }
         </div>*@
 
-        <div class="text-center">
+        <div class="text-right">
             <button type="submit" class="btn btn-primary">Guardar</button>
-            <a href="~/Producto/Index/?idusuario=@(Model==null?Model.IdUsuario:Session["idusuario"])" class="btn btn-danger">Cancelar</a>
+            <a href="~/Producto" class="btn btn-danger">Cancelar</a>
         </div>
     }
 

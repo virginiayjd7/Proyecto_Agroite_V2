@@ -76,7 +76,6 @@ namespace ProyectoSemilleros_Agroite.Controllers
             ViewBag.Tipo1 = unidad.Listar();
             ViewBag.Tipo2 = frecuencia.Listar();
             ViewBag.Tipo3 = usuario.Listar();
-            ViewBag.usuario = usuario.Obtener(id);
             return View(id == 0 ? new Producto() : producto.Obtener(id));
         }
         
