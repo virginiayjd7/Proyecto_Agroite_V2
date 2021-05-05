@@ -95,7 +95,7 @@ namespace ProyectoSemilleros_Agroite.Controllers
             }
             if (imgfile.ContentLength > 0)
             {
-                ModelState.Remove("ImagenesProducto");
+                ModelState.Remove("Imagenes_Producto");
                 //    int id = (int)Session["idusuario"];
                 string id = Session["idusuario"].ToString();
                 model.IdUsuario = Convert.ToInt32(id);
