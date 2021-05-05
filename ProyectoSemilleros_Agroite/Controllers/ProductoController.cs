@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -68,19 +69,16 @@ namespace ProyectoSemilleros_Agroite.Controllers
             return View(id == 0 ? new Producto() : producto.Obtener(id));
 
         }
-        // [HttpPost]
-        /*public ActionResult Guardar(Producto model, HttpPostedFileBase imgfile)
-        {          
-            if (ModelState.IsValid)
-            {
-                model.Guardar();
-                return Redirect("~/Producto");
-            }
-            else
-            {
-                return View("~/Producto/NuevoProducto", model);
-            }
-        }*/
+
+        public ActionResult AgregarEditar(int id = 0)
+        {
+            ViewBag.Tipo = categoria.Listar();
+            ViewBag.Tipo1 = unidad.Listar();
+            ViewBag.Tipo2 = frecuencia.Listar();
+            ViewBag.Tipo3 = usuario.Listar();
+            return View(id == 0 ? new Producto() : producto.Obtener(id));
+        }
+        
 
         public ActionResult Eliminar(int id)
         {
@@ -91,6 +89,10 @@ namespace ProyectoSemilleros_Agroite.Controllers
         [HttpPost]
         public ActionResult Guardar(Producto model, HttpPostedFileBase imgfile)
         {
+            foreach (string key in Request.Form.Keys)
+            {
+                Debug.WriteLine(key + " " + Request.Form[key]);
+            }
             if (imgfile.ContentLength > 0)
             {
                 ModelState.Remove("ImagenesProducto");

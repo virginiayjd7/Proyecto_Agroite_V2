@@ -41,7 +41,7 @@
                     @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Telefono: ")
+                    @Html.Label("Celular: ")
                     @Html.TextBoxFor(x => x.Celular, new { @class = "form-control" })
                     @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger" })
                 </div>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.Label("Tipo Usuario: ")
+                    @Html.Label("Actividad: ")
                     <select name="IdActividad" class="form-control">
                         <option @(Model.IdActividad.Equals("") ? "selected" : "") value="">-Seleccione-</option>
                         @foreach (var t in tipo)
