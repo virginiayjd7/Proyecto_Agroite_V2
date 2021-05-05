@@ -1,0 +1,81 @@
+﻿@model ProyectoSemilleros_Agroite.Models.Usuario
+
+@{
+    ViewBag.Title = "Menu";
+    var img = "";
+    if (Model.Foto_Perfil == null)
+    {
+        img = null;
+    }
+    else
+    {
+        var base64 = Convert.ToBase64String(Model.Foto_Perfil);
+        img = String.Format("data:image/gif;base64,{0}", base64);
+    }
+
+}
+
+<div class="about-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="banner-frame">
+                    @if (img == null)
+                    {
+                        
+                        <img class="img-fluid" src="~/images/loguusu1.png" alt="" />
+                    }
+                    else
+                    {
+                        <img class="img-fluid" src="@img" />
+                    }
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="noo-sh-title-top">We are <span>@Model.Nombres, @Model.Apellidos</span></h2>
+                <p>
+                    <h5>
+                        <b><i class="fa fa-map-marker"></i></b>
+                        @Model.Direccion
+                    </h5>
+                    <h5>
+                        <b><i class="fa fa-phone"></i></b>
+                        @Model.Celular
+                    </h5>
+                    <h5>
+                        <b><i class="fa fa-send"></i></b>
+                        @Model.Correo
+                    </h5>
+                </p>
+                <p>@Model.Descripcion</p>
+               
+                <div style="padding-left:15px; margin-bottom:15px;" id="opciones_perfil">
+                    <a href="/Usuario/AgregarEditar/?id=@Model.IdUsuario" class="btn hvr-hover">
+
+                        <i class="fa fa-edit left">
+                            Editar Perfil
+                        </i>
+                    </a>
+                    <a href="/Producto/AgregarEditar" class="btn hvr-hover">
+
+                        <i class="fa fa-cubes left ">
+                            Publicar Producto
+                        </i>
+                    </a>
+                    <a href="/Producto/Index/?idusuario=@Model.IdUsuario"class="btn hvr-hover">
+                        <i class="fa fa-cubes left">
+                            Mis Productos
+                        </i>
+                    </a>
+                    @*<a href="/Producto/Index/?idusuario=@Model.IdUsuario" class="btn hvr-hover">
+                        <i class="fa fa-key left">
+                            Cambiar Contraseña
+                        </i>
+                    </a>*@
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+       

@@ -1,0 +1,37 @@
+﻿@model List<ProyectoSemilleros_Agroite.Models.Producto>
+@{
+    ViewBag.Title = "Index";
+   
+}
+<div class="latest-blog">
+    <div class="container-fluid">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                var base64 = Convert.ToBase64String(item.Imagenes_Producto);
+                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);<!-- Producto 1 -->
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="@imgSrc" style="cursor:pointer;height:255px;width:100%" alt="" />
+
+                        </div>
+                        <div class="blog-content">
+                            <div class="title-blog">
+                                <h3><b><i class="fa fa-fire"></i>&nbsp; @item.Nombre_Producto</b></h3>
+                                <h3 style="margin:0px;"><b><i class="fa fa-user"></i></b>&nbsp;@item.Usuario.Apellidos, @item.Usuario.Nombres</h3>
+                                <h3 style="margin-top:5px;margin-bottom:5px;"><b><i class="fa fa-map-marker"></i></b>&nbsp;@item.Usuario.Direccion</h3>
+                                <p><b>&nbsp;@item.Descripcion_Producto</b></p>
+                                <a style="float:right" class="btn btn-default" href="@Url.Action("NuevoProducto","Producto")">Nuevo Producto</a><br /><br /><br />
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

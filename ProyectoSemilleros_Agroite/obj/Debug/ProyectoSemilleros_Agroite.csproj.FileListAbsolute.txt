@@ -1,0 +1,312 @@
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.dll.config
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.pdb
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\csc.exe
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\csc.exe.config
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\csc.rsp
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\csi.exe
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\csi.exe.config
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\csi.rsp
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.AppContext.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Console.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.Compression.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Net.Http.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.ValueTuple.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\vbc.exe
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\vbc.exe.config
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\vbc.rsp
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\VBCSCompiler.exe
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\EntityFramework.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\EntityFramework.SqlServer.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Helpers.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Mvc.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Razor.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Razor.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\EntityFramework.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\EntityFramework.SqlServer.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Razor.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Razor.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Helpers.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Web.Mvc.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\es\System.Web.Razor.resources.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csproj.CoreCompileInputs.cache
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csproj.CopyComplete
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.pdb
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csprojAssemblyReference.cache
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\Catel.Core.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Buffers.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Collections.Immutable.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.ComponentModel.Annotations.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Configuration.ConfigurationManager.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Memory.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Numerics.Vectors.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Security.AccessControl.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Security.Permissions.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Security.Principal.Windows.dll
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\Catel.Core.pdb
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\Catel.Core.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Buffers.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Collections.Immutable.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Configuration.ConfigurationManager.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Memory.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Numerics.Vectors.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Security.AccessControl.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Security.Permissions.xml
+C:\Users\Virginia Aquino\source\repos\ProyectoSemilleros_Agroite\bin\System.Security.Principal.Windows.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.dll.config
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.pdb
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csc.exe
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csc.exe.config
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csc.rsp
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csi.exe
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csi.exe.config
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csi.rsp
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.AppContext.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Console.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.Compression.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Net.Http.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.ValueTuple.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\vbc.exe
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\vbc.exe.config
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\vbc.rsp
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\VBCSCompiler.exe
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Catel.Core.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\EntityFramework.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\EntityFramework.SqlServer.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Buffers.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Collections.Immutable.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.ComponentModel.Annotations.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Configuration.ConfigurationManager.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Memory.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Numerics.Vectors.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.AccessControl.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.Permissions.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.Principal.Windows.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Helpers.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Mvc.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Razor.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Razor.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Catel.Core.pdb
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Catel.Core.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\EntityFramework.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\EntityFramework.SqlServer.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Buffers.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Collections.Immutable.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Configuration.ConfigurationManager.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Memory.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Numerics.Vectors.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.AccessControl.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.Permissions.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.Principal.Windows.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Razor.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Razor.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Helpers.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Mvc.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Razor.resources.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csproj.CoreCompileInputs.cache
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csproj.CopyComplete
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.pdb
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csprojAssemblyReference.cache
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.dll.config
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\ProyectoSemilleros_Agroite.pdb
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csc.exe
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csc.exe.config
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csc.rsp
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csi.exe
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csi.exe.config
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\csi.rsp
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Managed.Core.targets
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.AppContext.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Collections.Immutable.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Console.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Globalization.Calendars.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.Compression.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.FileSystem.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Net.Http.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Net.Sockets.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Reflection.Metadata.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.ValueTuple.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XmlDocument.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XPath.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\vbc.exe
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\vbc.exe.config
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\vbc.rsp
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\VBCSCompiler.exe
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\roslyn\VBCSCompiler.exe.config
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Catel.Core.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\EntityFramework.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\EntityFramework.SqlServer.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Microsoft.Web.Infrastructure.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Buffers.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Collections.Immutable.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.ComponentModel.Annotations.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Configuration.ConfigurationManager.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Memory.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Numerics.Vectors.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.AccessControl.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.Permissions.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.Principal.Windows.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Helpers.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Mvc.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Razor.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Deployment.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Razor.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Catel.Core.pdb
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Catel.Core.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\EntityFramework.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\EntityFramework.SqlServer.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Buffers.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Collections.Immutable.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Configuration.ConfigurationManager.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Memory.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Numerics.Vectors.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.AccessControl.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.Permissions.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Security.Principal.Windows.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Razor.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Deployment.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Webpages.Razor.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Helpers.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\System.Web.Mvc.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Razor.resources.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.resources.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.Deployment.resources.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Webpages.Razor.resources.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Helpers.resources.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\bin\es\System.Web.Mvc.resources.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csprojAssemblyReference.cache
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csproj.CoreCompileInputs.cache
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.csproj.CopyComplete
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.dll
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\ProyectoSemilleros_Agroite\obj\Debug\ProyectoSemilleros_Agroite.pdb

@@ -1,0 +1,133 @@
+﻿@model List<ProyectoSemilleros_Agroite.Models.Producto>
+@{
+    ViewBag.Title = "Index";
+}
+<!-- End Main Top -->
+<!-- Start Top Search -->
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+<!-- Start Slider -->
+<div id="slides-shop" class="cover-slides">
+    <ul class="slides-container">
+        <li class="text-center">
+            <img src="~/assets/images/banner-01.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
+                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="text-center">
+            <img src="~/assets/images/banner-02.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
+                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="text-center">
+            <img src="~/assets/images/banner-03.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
+                        <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                        <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="slides-navigation">
+        <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+    </div>
+</div>
+<!-- End Slider -->
+<!-- Start Categories  -->
+<div class="categories-shop">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="~/assets/images/categories_img_01.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="~/assets/images/categories_img_02.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="~/assets/images/categories_img_03.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Categories -->
+
+
+<!-- Start Blog  -->
+<div class="latest-blog">
+    <div class="container-fluid">
+       
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Productos Agricolas</h1>
+                        <p>¡Ultimos productos registrados!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    var base64 = Convert.ToBase64String(item.Imagenes_Producto);
+                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);<!-- Producto 1 -->
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="blog-box">
+                            <div class="blog-img">
+                                <img src="@imgSrc" style="cursor:pointer;height:255px;width:100%" alt="" />
+
+                            </div>
+                            <div class="blog-content">
+                                <div class="title-blog">
+                                    <h3><b><i class="fa fa-fire"></i>&nbsp; @item.Nombre_Producto</b></h3>
+                                    <h3 style="margin:0px;"><b><i class="fa fa-user"></i></b>&nbsp;@item.Usuario.Apellidos, @item.Usuario.Nombres</h3>
+                                    <h3 style="margin-top:5px;margin-bottom:5px;"><b><i class="fa fa-map-marker"></i></b>&nbsp;@item.Usuario.Direccion</h3>
+                                    <p><b>&nbsp;@item.Descripcion_Producto</b></p>
+                                    <a href="~/Producto/DetalleProducto/?idProducto=@item.IdProducto">Ver Mas</a>
+                                </div>
+                               
+                            </div>
+                            
+                        </div>
+                    </div>
+                }
+
+                </div>
+        </div>
+        
+</div>

@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!-- login-page -->
+@*<div class="login-page">
+    <div class="container">
+        <h3 class="w3ls-title w3ls-title1">Iniciar Sesión</h3>
+        <div class="login-body">
+            
+
+            @using (Html.BeginForm("Acceder", "Login", FormMethod.Post))
+            {
+                <input type="text" style="text-align:center;" class="form-control" name="Usuario" placeholder="Correo" required="">
+                <input type="password" style="text-align:center;" name="Password" class="form-control" placeholder="Contraseña" required="">
+
+                <button type="submit" data-ajax="true" name="usuario" class="btn btn-primary"> Acceder </button>
+               
+            }
+        </div>
+        <h6> ¿No eres miembro? <a href="~/Usuario/AgregarEditar">Registrate ahora »</a> </h6>
+
+    </div>
+</div>*@
+
+<!-- //login-page -->
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row new-account-login">
+            <div class="col-sm-6 col-lg-6 mb-3">
+                <div class="title-left">
+                    <h3>Cuenta de Ingreso</h3>
+                </div>
+                
+               
+                    @using (Html.BeginForm("Acceder", "Login", FormMethod.Post))
+                    {
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="InputEmail" class="mb-0">Email Address</label>
+                                <input type="text" class="form-control" name="Usuario" placeholder="Ingrese usuario">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputPassword" class="mb-0">Password</label>
+                                <input type="password" name="Password"class="form-control"  placeholder="Ingresar Contraseña">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn hvr-hover" data-ajax="true"name="usuario">Login</button>
+                        
+                    }
+               
+            </div>
+     </div>
+</div>
+</div>

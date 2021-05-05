@@ -1,0 +1,60 @@
+﻿@model ProyectoSemilleros_Agroite.Models.Producto
+@{
+    ViewBag.Title = "Index";
+
+    var base64 = Convert.ToBase64String(Model.Imagenes_Producto);
+    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+}
+<div class="container z-depth-2 div_informacion" style=" margin-top:50px; margin-bottom:20px;">
+    <div class="row">
+        <div class="col s12 m12 l12" style="margin-bottom:10px;">
+            <h2 style=" margin:0px;">
+                @Model.Nombre_Producto
+            </h2>
+            <h4 style="margin:0px;">
+                Agricultor:
+                <a href="/Usuario/Perfil/?idusuario=@Model.IdUsuario"> @Model.Usuario.Nombres,@Model.Usuario.Apellidos </a>
+            </h4>
+            <div class="col-lg-4 col-xs-6 thumbnail"><img src="@imgSrc" class="z-depth-1" alt="" /></div>
+        </div>
+        <div class="col s12 m12 l12">
+            <h4><b>Precio Referencial:</b></h4>
+            <h5>S/.@Model.Precio_Referencial,@Model.UnidadVolumen.Nombre</h5>
+        </div>
+        <div class="col s12 m12 l12">
+            <h4><b>Informacion de produccion:</b></h4>
+            <h5>
+                @Model.Frecuencia.Nombre
+            </h5>
+
+        </div>
+        <div class="col s12 m12 l12">
+            <h4><b>Descripcion:</b></h4>
+            <h5>@Model.Descripcion_Producto</h5>
+        </div>
+
+        <div style="margin-bottom:15px;">
+            <a href="https://wa.me/573215492653" class="waves-effect waves-light green btn">
+
+                <i class="fa fa-whatsapp">
+                    Conctactar a travez WhatsApp
+                </i>
+            </a>
+            <a href="https://web.telegram.org/#/im?p=u1369811778_5898674351289654747" class="waves-effect waves-light blue btn ">
+
+                <i class="fa fa-telegram left ">
+                    Conctactar a travez Telegram
+                </i>
+            </a>
+            <a href="https://www.paypal.com/us/signin" class="waves-effect waves-light blue darken-4 btn btn modal-">
+                <i class="fa fa-paypal left">
+                    Pagar
+                </i>
+            </a>
+        </div>
+
+
+    </div>
+</div>
+
+
