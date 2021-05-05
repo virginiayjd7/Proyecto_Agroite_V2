@@ -2,13 +2,15 @@
 @{
     ViewBag.Title = "NuevoUsuario";
     List<ProyectoSemilleros_Agroite.Models.Actividad> tipo = ViewBag.Tipo3;
+    var base64 = Convert.ToBase64String(ViewBag.imagen);
+    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
 }
 
 <div class="login-page">
     <div class="container">
         <h3 class="w3ls-title w3ls-title1">Registrarme</h3>
         <div class="login-body">
-            
+
 
             @using (Html.BeginForm("Guardar", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
@@ -25,9 +27,11 @@
                     @Html.ValidationMessageFor(x => x.Apellidos, null, new { @class = "label label-danger" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Tipo Documento: ")
-                    @Html.TextBoxFor(x => x.Tipo_Documento, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(x => x.Tipo_Documento, null, new { @class = "label label-danger" })
+                    @Html.Label("Tipo Documento:  ")
+                    <select name="Tipo_Documento" class="form-control">
+                        <option @(Model.Tipo_Documento == 0 ? "selected" : "") value="0">-DNI-</option>
+                        <option @(Model.Tipo_Documento == 1 ? "selected" : "") value="1">-RUC-</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     @Html.Label("Nro. Documento: ")
@@ -35,7 +39,8 @@
                     @Html.ValidationMessageFor(x => x.Num_Identificacion, null, new { @class = "label label-danger" })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Foto de Perfil: ")
+                    @Html.Label("Foto de Perfil: ")    
+                    <img src="@imgSrc" alt="" />
                     <input type="file" id="imgfile1" name="imgfile1" class="btn btn-info" />
                     @*@Html.TextBoxFor(x => x.ImagenesProducto, new { @class = "form-control" })*@
                     @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })

@@ -79,6 +79,8 @@ namespace ProyectoSemilleros_Agroite.Controllers
         public ActionResult AgregarEditar(int id = 0)
         {
             ViewBag.Tipo3 = actividad.Listar();
+            var imagen = usuario.Obtener(id);
+            ViewBag.imagen = imagen.Foto_Perfil;
 
             return View(id == 0 ? new Usuario() : usuario.Obtener(id));
         }
@@ -87,11 +89,10 @@ namespace ProyectoSemilleros_Agroite.Controllers
         {
             if (imgfile1.ContentLength > 0)
             {
-                ModelState.Remove("FotoPerfil");
-                ModelState.Remove("Identificacion");
+                ModelState.Remove("Foto_Perfil");
                 if (ModelState.IsValid)
                 {
-                    model.Guardar(imgfile1);
+                    model.Editar(imgfile1);
                     return Redirect("~/Usuario/Menu");
                 }
 
@@ -105,7 +106,5 @@ namespace ProyectoSemilleros_Agroite.Controllers
             usuario.Eliminar();
             return Redirect("~/usuario");
         }
-
-
     }
 }
