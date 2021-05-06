@@ -18,21 +18,21 @@
 <div class="about-box-main">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-3">
                 <div class="banner-frame">
                     @if (img == null)
                     {
                         
-                        <img class="img-fluid" src="~/images/loguusu1.png" alt="" />
+                        <img class="img-thumbnail" src="~/images/loguusu1.png" alt="" />
                     }
                     else
                     {
-                        <img class="img-fluid" src="@img" />
+                        <img class="img-fluid" src="@img" alt="" />
                     }
 
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-9">
                 <h2 class="noo-sh-title-top"><span>@Model.Nombres, @Model.Apellidos</span></h2>
                 <p>
                     <h5>
@@ -50,7 +50,7 @@
                 </p>
                 <p>&nbsp;@Model.Descripcion</p>
                
-                <div style="padding-left:15px; margin-bottom:15px;" id="opciones_perfil">
+                <div style="margin-bottom:15px;">
                     <a href="/Usuario/AgregarEditar/?id=@Model.IdUsuario" class="btn hvr-hover">
 
                         <i class="fa fa-edit left">

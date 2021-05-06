@@ -10,11 +10,11 @@
 <div class="cart-box-main">
     <div class="container">
 
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-sm-6 col-lg-6 mb-3">
                 <div class="checkout-address">
                     <div class="title-left">
-                        <h3>Registrarme</h3>
+                        <h2>Registrarme</h2>
                     </div>
                     @using (Html.BeginForm("Guardar", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
                     {
@@ -30,14 +30,6 @@
                                 @Html.Label("Apellidos: ")
                                 @Html.TextBoxFor(x => x.Apellidos, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.Apellidos, null, new { @class = "label label-danger" })
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="username">Usuario *</label>
-                            <div class="input-group">
-
-                                @Html.TextBoxFor(x => x.Alias, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "label label-danger" })
                             </div>
                         </div>
                         <div class="mb-3">
@@ -87,7 +79,14 @@
                                 @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <label for="username">Usuario *</label>
+                            <div class="input-group">
 
+                                @Html.TextBoxFor(x => x.Alias, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 @Html.Label("Contraseña: ")
@@ -116,15 +115,10 @@
                                 @Html.ValidationMessageFor(x => x.Descripcion, null, new { @class = "label label-danger" })
                             </div>
                         </div>
-                        <div style="padding-left:15px; margin-bottom:15px;" id="opciones_perfil">
-
-                           
-                            <input class="btn hvr-hover" type="submit" value="Registrar">
-                            <a href="~/Home" class="btn hvr-hover">Cancelar</a>
-                               
-                          
+                        <div class="text-center">
+                            <button class="btn btn-info">Registrar</button>
+                            <a href="~/Home" class="btn btn-danger">Cancelar</a>
                         </div>
-
                     }
                 </div>
             </div>

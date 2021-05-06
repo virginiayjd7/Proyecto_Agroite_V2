@@ -26,29 +26,31 @@
 <!-- //login-page -->
 <div class="cart-box-main">
     <div class="container">
-        <div class="row new-account-login">
+        <div class="row new-account-login justify-content-center">
             <div class="col-sm-6 col-lg-6 mb-3">
                 <div class="title-left">
                     <h3>Cuenta de Ingreso</h3>
                 </div>
-                
-               
-                    @using (Html.BeginForm("Acceder", "Login", FormMethod.Post))
-                    {
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="InputEmail" class="mb-0">Email Address</label>
-                                <input type="text" class="form-control" name="Usuario" placeholder="Ingrese usuario">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="InputPassword" class="mb-0">Password</label>
-                                <input type="password" name="Password"class="form-control"  placeholder="Ingresar Contraseña">
-                            </div>
+
+
+                @using (Html.BeginForm("Acceder", "Login", FormMethod.Post))
+                {
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="InputEmail" class="mb-0">Email Address</label>
+                            <input type="text" class="form-control" name="Usuario" placeholder="Ingrese usuario">
                         </div>
-                        <button type="submit" class="btn hvr-hover" data-ajax="true"name="usuario">Login</button>
-                        
-                    }
-               
+                        <div class="form-group col-md-6">
+                            <label for="InputPassword" class="mb-0">Password</label>
+                            <input type="password" name="Password" class="form-control" placeholder="Ingresar Contraseña">
+                        </div>
+                    </div>
+                    <div class="text-left">
+                        <button type="submit" class="btn btn-primary" data-ajax="true"name="usuario">Acceder</button>
+                        <a href="~/Home" class="btn btn-danger">Cancelar</a>
+                    </div>
+                }
+
             </div>
      </div>
 </div>
