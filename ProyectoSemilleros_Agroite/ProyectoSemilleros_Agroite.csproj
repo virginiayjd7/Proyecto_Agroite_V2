@@ -1976,6 +1976,7 @@
     <Content Include="Views\Usuario\Menu.cshtml" />
     <Content Include="Views\Producto\AgregarEditar.cshtml" />
     <Content Include="Views\Login\Registrarse.cshtml" />
+    <Content Include="Views\Home\Acerca.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -21,5 +21,9 @@ namespace ProyectoSemilleros_Agroite.Controllers
                 return View();
             }
         }
+        public ActionResult Acerca()
+        {
+            return View();
+        }
     }
 }
