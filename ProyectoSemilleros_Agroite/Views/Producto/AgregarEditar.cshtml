@@ -52,12 +52,12 @@
         </div>
         <div class="form-group">
             <label>Fecha Inicio: </label>
-            @Html.TextBoxFor(x => x.Fecha_Inicio, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.Fecha_Inicio, new { @class = "form-control datepicker", @type = "datetime-local", @value = DateTime.Now.ToShortDateString() })
             @Html.ValidationMessageFor(x => x.Fecha_Inicio, null, new { @class = "label label-danger" })
         </div>
         <div class="form-group">
             <label>Fecha Fin: </label>
-            @Html.TextBoxFor(x => x.Fecha_Fin, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.Fecha_Fin, new { @class = "form-control datepicker", @type="datetime-local",@value=DateTime.Now.ToShortDateString() })
             @Html.ValidationMessageFor(x => x.Fecha_Fin, null, new { @class = "label label-danger" })
         </div>
         <div class="form-group">
