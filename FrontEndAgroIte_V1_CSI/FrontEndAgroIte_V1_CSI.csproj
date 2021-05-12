@@ -195,6 +195,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Filters\AdminFilters.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,9 +210,12 @@
     <Compile Include="Models\DetalleVenta.cs" />
     <Compile Include="Models\Entrega.cs" />
     <Compile Include="Models\Frecuencia.cs" />
+    <Compile Include="Models\HashHelper.cs" />
     <Compile Include="Models\Pago.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\SessionHelper.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Transportador.cs" />
     <Compile Include="Models\UnidadVolumen.cs" />
@@ -250,6 +255,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\fonts\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
