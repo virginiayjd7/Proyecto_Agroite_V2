@@ -31,6 +31,10 @@ namespace ProyectoSemilleros_Agroite.Controllers
                 string ud = Session["idusuario"].ToString();
 
             }
+            if (rm.actividad.Equals("Administrador"))
+            {
+                return Redirect("~/Admin/Index");
+            }
             return Redirect("~/Usuario/Menu");
         }
 
