@@ -9,11 +9,13 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        public Usuario usuario = new Usuario();
         public Producto producto = new Producto();
         public ActionResult Index(string criterio)
         {
             if (criterio == null || criterio == "")
             {
+                ViewBag.usuario = usuario.Listar();
                 return View(producto.Listar());
             }
             else

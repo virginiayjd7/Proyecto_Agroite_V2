@@ -47,6 +47,8 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public int? Idfrecuencia { get; set; }
 
+        public int? IdUsuario { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Almacen> Almacen { get; set; }
 
@@ -61,6 +63,8 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public virtual Frecuencia Frecuencia { get; set; }
 
         public virtual UnidadVolumen UnidadVolumen { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
         public List<Producto> Listar()
         {
             var producto = new List<Producto>();
@@ -69,8 +73,8 @@ namespace FrontEndAgroIte_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    producto = db.Producto.Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").ToList();
-                    
+                    producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").ToList();
+                 
                 }
 
             }
