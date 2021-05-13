@@ -235,7 +235,7 @@ namespace ProyectoSemilleros_Agroite.Models
                     //e10adc3949ba59abbe56e057f20f883e
                     // Password = HashHelper.MD5(Password);//1234546
 
-                    var query = db.Usuario.Where(x => x.Alias== Usuario).Where(x => x.Contraseña == Password)
+                    var query = db.Usuario.Include("Actividad").Where(x => x.Alias== Usuario).Where(x => x.Contraseña == Password)
                         .SingleOrDefault();
 
                     if (query != null)
@@ -245,7 +245,7 @@ namespace ProyectoSemilleros_Agroite.Models
                         //  SessionHelper.AddUserToSession(IdUsuario.ToString());
                         rm.SetResponse(true);
                         rm.idusuario = query.IdUsuario.ToString();
-
+                        rm.actividad = query.Actividad.Nombre.ToString();
                     }
                     else
                     {

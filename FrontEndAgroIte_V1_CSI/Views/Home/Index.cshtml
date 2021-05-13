@@ -229,7 +229,6 @@
 <!-- Start Blog  -->
 <div class="latest-blog">
     <div class="container-fluid">
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="title-all text-center">
@@ -238,7 +237,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             @foreach (var item in Model)
             {
@@ -256,17 +254,13 @@
                                 <h3 style="margin:0px;"><b><i class="fa fa-user"></i></b>&nbsp;@item.Usuario.Apellidos, @item.Usuario.Nombres</h3>
                                 @foreach (var obje in objusuarios)
                                 {
-                                    @if (item.Usuario.IdUsuario == obje.IdUsuario)
+                                    if (item.Usuario.IdUsuario == obje.IdUsuario)
                                     {
                                         <h3 style="margin:0px;">
-                                            <b><i class="fa fa-user"></i></b>&nbsp;@(obje.Asociacion.Razon_Social)
+                                            <b><i class="fa fa-users"></i>&nbsp; @obje.Asociacion.Razon_Social</b>
                                         </h3>
                                     }
-
                                 }
-
-
-
                                 <h3 style="margin-top:5px;margin-bottom:5px;"><b><i class="fa fa-map-marker"></i></b>&nbsp;@item.Usuario.Direccion</h3>
                                 <p><b>&nbsp;@item.Descripcion_Producto</b></p>
                                 <a href="~/Producto/DetalleProducto/?idProducto=@item.IdProducto">Ver Mas</a>
@@ -277,9 +271,7 @@
                     </div>
                 </div>
             }
-
         </div>
     </div>
-
 </div>
 <!-- End Blog  -->

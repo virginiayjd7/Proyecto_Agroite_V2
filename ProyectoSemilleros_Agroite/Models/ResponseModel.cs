@@ -13,6 +13,7 @@ namespace ProyectoSemilleros_Agroite.Models
         public string href { get; set; }
         public string function { get; set; }
         public string idusuario { get; set; }
+        public string actividad { get; set; }
 
         public ResponseModel()
         {
