@@ -14,6 +14,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public virtual DbSet<Actividad> Actividad { get; set; }
         public virtual DbSet<Almacen> Almacen { get; set; }
+        public virtual DbSet<Asociacion> Asociacion { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Compra> Compra { get; set; }
         public virtual DbSet<DetalleCompra> DetalleCompra { get; set; }
@@ -56,6 +57,30 @@ namespace FrontEndAgroIte_V1_CSI.Models
             modelBuilder.Entity<Almacen>()
                 .Property(e => e.Capacidad)
                 .HasPrecision(16, 2);
+
+            modelBuilder.Entity<Asociacion>()
+                .Property(e => e.Ruc)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Asociacion>()
+                .Property(e => e.Razon_Social)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Asociacion>()
+                .Property(e => e.Descripcion)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Asociacion>()
+                .Property(e => e.Dapartamento)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Asociacion>()
+                .Property(e => e.Provincia)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Asociacion>()
+                .Property(e => e.Direccion)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Categoria>()
                 .Property(e => e.Nombre)

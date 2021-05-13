@@ -19,19 +19,19 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
             return View();
         }
 
-        public ActionResult Acceder(string usuario, string password)
-        {
+        //public ActionResult Acceder(string usuario, string password)
+        //{
 
-            var rm = usuario.Acceder(usuario, password);
-            if (rm.response)
-            {
-                rm.href = Url.Content("~/Usuario/Menu");
-                Session["idusuario"] = rm.idusuario;
-                string ud = Session["idusuario"].ToString();
+        //    //var rm = usuario.Acceder(usuario, password);
+        //    //if (rm.response)
+        //    //{
+        //    //    rm.href = Url.Content("~/Usuario/Menu");
+        //    //    Session["idusuario"] = rm.idusuario;
+        //    //    string ud = Session["idusuario"].ToString();
 
-            }
-            return Redirect("~/Usuario/Menu");
-        }
+        //    //}
+        //    //return Redirect("~/Usuario/Menu");
+        //}
 
         public ActionResult LogOut()
         {
@@ -48,25 +48,25 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
             return View();
         }
        
-        public ActionResult Registrarse()
-        {
-            ViewBag.Tipo3 = actividad.Listar();
-            return View(new Usuario());
-        }
-        [HttpPost]
-        public ActionResult Guardar(Usuario model, HttpPostedFileBase imgfile1)
-        {
-            if (imgfile1.ContentLength > 0)
-            {
-                ModelState.Remove("Foto_Perfil");
-                if (ModelState.IsValid)
-                {
-                    model.Guardar(imgfile1);
-                    return Redirect("~/Login/Index");
-                }
+        //public ActionResult Registrarse()
+        //{
+        //    ViewBag.Tipo3 = actividad.Listar();
+        //    return View(new Usuario());
+        //}
+        //[HttpPost]
+        //public ActionResult Guardar(Usuario model, HttpPostedFileBase imgfile1)
+        //{
+        //    if (imgfile1.ContentLength > 0)
+        //    {
+        //        ModelState.Remove("Foto_Perfil");
+        //        if (ModelState.IsValid)
+        //        {
+        //            model.Guardar(imgfile1);
+        //            return Redirect("~/Login/Index");
+        //        }
 
-            }
-            return Redirect("~/Usuario/AgregarEditar");
-        }
+        //    }
+        //    return Redirect("~/Usuario/AgregarEditar");
+        //}
     }
 }

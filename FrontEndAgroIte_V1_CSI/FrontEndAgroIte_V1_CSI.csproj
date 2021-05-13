@@ -203,6 +203,7 @@
     <Compile Include="Models\Actividad.cs" />
     <Compile Include="Models\agroite.cs" />
     <Compile Include="Models\Almacen.cs" />
+    <Compile Include="Models\Asociacion.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Compra.cs" />
     <Compile Include="Models\DetalleCompra.cs" />
