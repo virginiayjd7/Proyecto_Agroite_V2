@@ -246,6 +246,7 @@
     <Content Include="Views\Home\Acerca.cshtml" />
     <Content Include="Views\Home\Galeria.cshtml" />
     <Content Include="Views\Home\Contacto.cshtml" />
+    <Content Include="Views\Home\CatalogoProductos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -35,5 +35,9 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
         {
             return View();
         }
+        public ActionResult CatalogoProductos()
+        {
+            return View();
+        }
     }
 }
