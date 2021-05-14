@@ -1734,10 +1734,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActividadController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AlmacenController.cs" />
+    <Compile Include="Controllers\AsociacionController.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\EntregaController.cs" />
+    <Compile Include="Controllers\FrecuenciaController.cs" />
+    <Compile Include="Controllers\PagoController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\TransportadorController.cs" />
+    <Compile Include="Controllers\UnidadVolumenController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VehiculosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Actividad.cs" />
+    <Compile Include="Models\agroite.cs" />
+    <Compile Include="Models\Almacen.cs" />
+    <Compile Include="Models\Asociacion.cs" />
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Compra.cs" />
+    <Compile Include="Models\DetalleCompra.cs" />
+    <Compile Include="Models\DetallePedido.cs" />
+    <Compile Include="Models\DetalleVenta.cs" />
+    <Compile Include="Models\Entrega.cs" />
+    <Compile Include="Models\Frecuencia.cs" />
+    <Compile Include="Models\Pago.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\sysdiagrams.cs" />
+    <Compile Include="Models\Transportador.cs" />
+    <Compile Include="Models\UnidadVolumen.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Vehiculos.cs" />
+    <Compile Include="Models\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1762,6 +1795,18 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Frecuencia\Index.cshtml" />
+    <Content Include="Views\Frecuencia\AgregarEditar.cshtml" />
+    <Content Include="Views\Frecuencia\Visualizar.cshtml" />
+    <Content Include="Views\UnidadVolumen\Index.cshtml" />
+    <Content Include="Views\UnidadVolumen\AgregarEditar.cshtml" />
+    <Content Include="Views\UnidadVolumen\Visualizar.cshtml" />
+    <Content Include="Views\Actividad\Index.cshtml" />
+    <Content Include="Views\Actividad\AgregarEditar.cshtml" />
+    <Content Include="Views\Actividad\Visualizar.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Categoria\AgregarEditar.cshtml" />
+    <Content Include="Views\Categoria\Visualizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1771,7 +1816,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Almacen\" />
+    <Folder Include="Views\Asociacion\" />
+    <Folder Include="Views\Entrega\" />
+    <Folder Include="Views\Pago\" />
+    <Folder Include="Views\Pedido\" />
+    <Folder Include="Views\Producto\" />
+    <Folder Include="Views\Transportador\" />
+    <Folder Include="Views\Usuario\" />
+    <Folder Include="Views\Vehiculos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
