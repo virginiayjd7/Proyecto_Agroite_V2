@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<FrontEndAgroIte_V1_CSI.Models.Carrito>
 @{
     ViewBag.Title = "detallecarrito";
 }
@@ -47,79 +47,36 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="~/assets/images/img-pro-02.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Lorem ipsum dolor sit amet
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>$ 80.0</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>$ 80.0</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="~/assets/images/img-pro-01.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Lorem ipsum dolor sit amet
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>$ 60.0</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>$ 80.0</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="~/assets/images/img-pro-03.jpg"alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Lorem ipsum dolor sit amet
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>$ 30.0</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>$ 80.0</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="thumbnail-img">
+                                        <a href="#">
+                                            <img class="img-fluid" src="~/assets/images/img-pro-02.jpg" alt="" />
+                                        </a>
+                                    </td>
+                                    <td class="name-pr">
+                                        <a href="#">
+                                            @item.nombre_producto
+                                        </a>
+                                    </td>
+                                    <td class="price-pr">
+                                        <p>@item.precio</p>
+                                    </td>
+                                    <td class="quantity-box"><input type="number" size="4" value="@item.cantidad" min="0" step="1" class="c-input-text qty text"></td>
+                                    <td class="total-pr">
+                                        <p>@item.subtotal</p>
+                                    </td>
+                                    <td class="remove-pr">
+                                        <a href="#" onclick="Eliminar('@item.id_producto')" >
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            }
+
+                            </tbody>
                     </table>
                 </div>
             </div>
@@ -183,3 +140,22 @@
     </div>
 </div>
 <!-- End Cart -->
+<script>
+    function Eliminar(IdProducto) {
+        var data = {  id_producto: IdProducto }    
+        $.ajax({
+            url: '/Home/Eliminar/',
+            type: 'post',
+            datatype: 'json',
+            data: data,
+            success: function (response) {
+                document.location.href = '/Home/detallecarrito';
+            },
+            error: function (xhr, status) {
+                alert('Disculpe, existió un problema');
+            },
+        });
+
+    }
+
+</script>

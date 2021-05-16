@@ -204,6 +204,7 @@
     <Compile Include="Models\agroite.cs" />
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\Asociacion.cs" />
+    <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Compra.cs" />
     <Compile Include="Models\DetalleCompra.cs" />
@@ -248,6 +249,8 @@
     <Content Include="Views\Home\Contacto.cshtml" />
     <Content Include="Views\Home\CatalogoProductos.cshtml" />
     <Content Include="Views\Home\detallecarrito.cshtml" />
+    <Content Include="Views\Shared\_carrito.cshtml" />
+    <Content Include="Views\Home\_Carrito.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

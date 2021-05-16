@@ -262,6 +262,7 @@
                                 <h3 style="margin-top:5px;margin-bottom:5px;"><b><i class="fa fa-map-marker"></i></b>&nbsp;@item.Usuario.Direccion</h3>
                                 <p><b>&nbsp;@item.Descripcion_Producto</b></p>
                                 <a href="~/Producto/DetalleProducto/?idProducto=@item.IdProducto">Ver Mas</a>
+                                <button class="btn btn-primary" onclick="agregar('@item.IdProducto', '@item.Nombre_Producto', '@item.Precio_Referencial')" type="button">AgregarCarrito</button>
                             </div>
 
                         </div>
@@ -273,3 +274,26 @@
     </div>
 </div>
 <!-- End Blog  -->
+
+<script>
+    function agregar(IdProducto, Descripcion_Producto, Precio_Referencial) {
+
+        var idcliente = $("#idcliente").val();
+
+        var data = { id_cliente: "1", id_empresa: "2", id_producto: IdProducto, nombre_producto: Descripcion_Producto, urlfoto: "foto", precio: Precio_Referencial, cantidad: 1, subtotal: Precio_Referencial }
+        console.log(data);
+        $.ajax({
+            url: '/Home/AgregarCArritoMomentaneo/',
+            type: 'post',
+            datatype: 'json',
+            data: data,
+            success: function (response) {           
+                document.location.href = '/Home/';
+            },
+            error: function (xhr, status) {
+                alert('Disculpe, existió un problema');
+            },
+        });
+
+    }
+</script>
