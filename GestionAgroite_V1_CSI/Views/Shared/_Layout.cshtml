@@ -27,7 +27,7 @@
         <div class="scrollbar-inner">
             <!-- Brand -->
             <div class="sidenav-header  align-items-center" style="padding-top:10px;">
-                <img src="~/Recursos/imagen/logo.png" width="150" height="150" alt="...">
+                <img src="~/Recursos/imagen/logo-removebg-preview.png" width="150" height="150" alt="...">
             </div>
             <div class="navbar-inner">
                 <!-- Collapse -->
@@ -42,7 +42,7 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link " href="~/Usuario/Index2">
+                            <a class="nav-link " href="~/Usuario/Index">
                                 <img src="~/Recursos/imagen/icons8_tractor_32px_2.png" width="20" height="20" style="margin-right:10px;">
                                 <span class="nav-link-text">Agricultores</span>
                             </a>
@@ -51,6 +51,12 @@
                             <a class="nav-link" href="~/Usuario/Index2">
                                 <img src="~/Recursos/imagen/icons8_pay_30px.png" width="20" height="20" style="margin-right:10px;">
                                 <span class="nav-link-text">Compradores</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Actividad/Index">
+                                <img src="~/Recursos/imagen/icons8_user_groups_50px_1.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Asociacion</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -64,13 +70,18 @@
                     <hr class="my-3">
                     <!-- Heading -->
                     <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Productos</span>
+                        <span class="docs-normal">Almacen</span>
                     </h6>
                     <!-- Navigation -->
                     <ul class="navbar-nav mb-md-3">
-
                         <li class="nav-item">
                             <a class="nav-link" href="~/Producto/Index2">
+                                <img src="~/Recursos/imagen/icons8_warehouse_80px.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Almacen</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Producto/Index">
                                 <img src="~/Recursos/imagen/icons8_exclusive_product_30px_2.png" width="20" height="20" style="margin-right:10px;">
                                 <span class="nav-link-text">Productos</span>
                             </a>
@@ -95,31 +106,77 @@
                             </a>
                         </li>
                     </ul>
+
                     <!-- Divider -->
                     <hr class="my-3">
                     <!-- Heading -->
                     <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Finca</span>
+                        <span class="docs-normal">Trasporte</span>
                     </h6>
                     <!-- Nav items -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link " href="~/Usuario/Index2">
-                                <img src="~/Recursos/imagen/icons8_farm_100px_1.png" width="20" height="20" style="margin-right:10px;">
-                                <span class="nav-link-text">Finca</span>
+                                <img src="~/Recursos/imagen/icons8_truck_length_32px_2.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Vehiculo</span>
                             </a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link " href="~/UnidadExtension/Index">
-                                <img src="~/Recursos/imagen/icons8_field_30px.png" width="20" height="20" style="margin-right:10px;">
-                                <span class="nav-link-text">Unidad de Extension</span>
+                                <img src="~/Recursos/imagen/icons8_driver_80px.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Trasportista</span>
                             </a>
                         </li>
                     </ul>
-
-
+                    <!-- Divider -->
+                    <hr class="my-3">
+                    <!-- Heading -->
+                    <h6 class="navbar-heading p-0 text-muted">
+                        <span class="docs-normal">Compra y Venta</span>
+                    </h6>
+                    <!-- Nav items -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="~/Usuario/Index2">
+                                <img src="~/Recursos/imagen/icons8_buy_30px_2.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Compra</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="~/UnidadExtension/Index">
+                                <img src="~/Recursos/imagen/icons8_sell_50px_1.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Venta</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="~/UnidadExtension/Index">
+                                <img src="~/Recursos/imagen/icons8_pay_24px.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Pagos</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="~/UnidadExtension/Index">
+                                <img src="~/Recursos/imagen/icons8_e-commerce_30px_4.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Pedidos</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="~/UnidadExtension/Index">
+                                <img src="~/Recursos/imagen/icons8_deliver_food_26px_1.png" width="20" height="20" style="margin-right:10px;">
+                                <span class="nav-link-text">Entrega</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

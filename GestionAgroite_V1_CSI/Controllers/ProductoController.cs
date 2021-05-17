@@ -16,19 +16,19 @@ namespace GestionAgroite_V1_CSI.Controllers
         public UnidadVolumen unidad = new UnidadVolumen();
         public Frecuencia frecuencia = new Frecuencia();
         public Usuario usuario = new Usuario();
-        public ActionResult Index(int idusuario)
-        {
-            //if (criterio == null || criterio == "")
-            //{
-            //    return View(producto.Listar());
-            //}
-            //else
-            //{
-            var lista = producto.Buscar(idusuario);
-            return View(lista);
-            //  }
-        }
-        public ActionResult Index2(String criterio)
+        //public ActionResult Index2(int idusuario)
+        //{
+        //    //if (criterio == null || criterio == "")
+        //    //{
+        //    //    return View(producto.Listar());
+        //    //}
+        //    //else
+        //    //{
+        //    var lista = producto.Buscar(idusuario);
+        //    return View(lista);
+        //    //  }
+        //}
+        public ActionResult Index(String criterio)
         {
             if (criterio == null || criterio == "")
             {
@@ -36,7 +36,7 @@ namespace GestionAgroite_V1_CSI.Controllers
             }
             else
             {
-                return View(producto.Buscar2(criterio));
+                return View(producto.Buscar(criterio));
             }
         }
         public ActionResult DetalleProducto(string idProducto)
@@ -61,15 +61,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         {
             return View(producto.Obtener(id));
         }
-        public ActionResult NuevoProducto(int id = 0)
-        {
-            ViewBag.Tipo = categoria.Listar();
-            ViewBag.Tipo1 = unidad.Listar();
-            ViewBag.Tipo2 = frecuencia.Listar();
-            ViewBag.Tipo3 = usuario.Listar();
-            return View(id == 0 ? new Producto() : producto.Obtener(id));
-
-        }
+       
 
         public ActionResult AgregarEditar(int id = 0)
         {

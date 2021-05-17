@@ -87,24 +87,24 @@ namespace GestionAgroite_V1_CSI.Models
             }
             return producto;
         }
-        public List<Producto> Buscar(int id)
-        {
-            var producto = new List<Producto>();
-            try
-            {
-                using (var db = new agroite())
-                {
-                    producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").Where(x => x.IdUsuario == id).ToList();
+        //public List<Producto> Buscar2(int id)
+        //{
+        //    var producto = new List<Producto>();
+        //    try
+        //    {
+        //        using (var db = new agroite())
+        //        {
+        //            producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").Where(x => x.IdUsuario == id).ToList();
                    
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            return producto;
-        }
-        public List<Producto> Buscar2(string criterio)
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //    return producto;
+        //}
+        public List<Producto> Buscar(string criterio)
         {
             var usuarios = new List<Producto>();
 
@@ -124,24 +124,7 @@ namespace GestionAgroite_V1_CSI.Models
             }
             return usuarios;
         }
-        public List<Producto> Listar1()
-        {
-            var producto = new List<Producto>();
 
-            try
-            {
-                using (var db = new agroite())
-                {
-                    producto = db.Producto.Include("Frecuencia").ToList();
-                }
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return producto;
-        }
         public Producto Obtener(int id)
         {
             var producto = new Producto();

@@ -17,22 +17,20 @@
 
 </head>
 <body>
-    <div class="split-screen">
-        <div class="left">
-            <section class="copy">
-                @*<h1>Hotel Santa Maria</h1>
-                <p>Vive una Experiencia Inolvidable</p>*@
-            </section>
+    <div class="split-screen table-responsive">
+        <div class="left table-responsive-sm" >
+            <img src="~/recursos/imagen/agricultor.png" alt=""  width="900" height="810">
+          
         </div>
         <div class="right">
             @using (Html.BeginForm("Acceder","Login",FormMethod.Post,new { @class = "needs-validation" }))
             {                
                 <div class="copy">
                     <br />
-                    <img src="~/recursos/imagen/logo.png" alt="" width="190" height="210">
+                    <img src="~/recursos/imagen/logo-removebg-preview.png" alt="" width="190" height="210">
                         
                     <label class="col-form-label">
-                        Bienvenido a Hotel Santa María
+                        Bienvenido a Agroite
                     </label>
                 </div>
                 <div class="input-container email">

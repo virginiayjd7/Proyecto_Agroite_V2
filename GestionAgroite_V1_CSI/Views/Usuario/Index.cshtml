@@ -1,0 +1,73 @@
+﻿
+@model List<GestionAgroite_V1_CSI.Models.Usuario>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="margin: 35px 50px">
+    <h2 class="page-header">
+        Producto
+        <a href="~/Usuario/AgregarEditar" class="btn btn-success float-lg-right">Nuevo  Usuario</a>
+    </h2>
+    <br />
+
+    <table id="DataTablesLanguage" class="table align-items-center table-flush">
+        <thead>
+            <tr>
+                <th style="width:40px;">Id Usuario</th>
+                <th style="width:50px;">Nombres</th>
+                <th style="width:50px;">Apellidos</th>
+                <th style="width:50px;">Correo</th>
+                <th style="width:50px;">Nro Documento</th>
+                <th style="width:50px;">Foto Perfil</th>
+                <th style="width:50px;">Rol</th>
+                <th style="width:50px;">Organizacion</th>
+                <th style="width:50px;">Ubicacion</th>
+                <th style="width:50px;">Celular</th>
+                <th style="width:50px;">Descripcion</th>
+                <th style="width:50px;">Usuario</th>
+                <th style="width:50px;">Contraseña</th>
+                <th style="width:100px;">Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var base64 = Convert.ToBase64String(item.Foto_Perfil);
+                var imgSrc1 = String.Format("data:image/gif;base64,{0}", base64);
+            <tr>
+                <td>@item.IdUsuario</td>
+                <td>@item.Nombres</td>
+                <td>@item.Apellidos</td>
+                <td>@item.Correo</td>
+                <td>@item.Num_Identificacion</td>
+                <td>
+                    <img src="@imgSrc1" width="100" />
+                </td>
+                <td>@item.Actividad.Nombre</td>
+                <td>@item.Organizacion</td>
+                <td>@item.Direccion</td>
+                <td>@item.Celular</td>
+                <td>@item.Descripcion</td>
+                <td>@item.Alias</td>
+                <td>@item.Contraseña</td>
+                <td style="align-content:center">
+
+               
+                <th style="align-content:center">
+
+                    <a href="~/Usuario/Visualizar/@item.IdUsuario" class="btn btn-xs btn-warning">Detalles</a>
+                    <a href="~/Usuario/AgregarEditar/@item.IdUsuario" class="btn btn-xs btn-primary">Modificar</a>
+                    <a onclick="return confirm('¿Esta seguro que desea eliminar el registro...?');"
+                       href="~/Usuario/Eliminar/@item.IdUsuario" class="btn btn-xs btn-danger">Eliminar</a>
+                </th>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    </div>

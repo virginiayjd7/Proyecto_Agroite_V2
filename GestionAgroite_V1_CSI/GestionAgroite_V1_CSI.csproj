@@ -98,6 +98,7 @@
   <ItemGroup>
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="recursos\imagen\agricultor.png" />
     <Content Include="recursos\css\argon.css" />
     <Content Include="recursos\css\argon.min.css" />
     <Content Include="recursos\css\bootstrap\bootstrap-grid.css" />
@@ -123,20 +124,31 @@
     <Content Include="recursos\imagen\descarga.jpg" />
     <Content Include="recursos\imagen\granadilla.jpg" />
     <Content Include="recursos\imagen\icons8_barn_30px_1.png" />
+    <Content Include="recursos\imagen\icons8_buy_30px_2.png" />
+    <Content Include="recursos\imagen\icons8_deliver_food_26px_1.png" />
+    <Content Include="recursos\imagen\icons8_driver_80px.png" />
+    <Content Include="recursos\imagen\icons8_e-commerce_30px_4.png" />
     <Content Include="recursos\imagen\icons8_exclusive_product_30px_2.png" />
     <Content Include="recursos\imagen\icons8_farm_100px_1.png" />
     <Content Include="recursos\imagen\icons8_field_30px.png" />
     <Content Include="recursos\imagen\icons8_move_stock_30px.png" />
+    <Content Include="recursos\imagen\icons8_pay_24px.png" />
     <Content Include="recursos\imagen\icons8_pay_30px.png" />
     <Content Include="recursos\imagen\icons8_pressure_32px_2.png" />
     <Content Include="recursos\imagen\icons8_report_file_32px_2.png" />
+    <Content Include="recursos\imagen\icons8_sell_50px_1.png" />
     <Content Include="recursos\imagen\icons8_sorting_32px_2.png" />
     <Content Include="recursos\imagen\icons8_timetable_50px.png" />
     <Content Include="recursos\imagen\icons8_tractor_32px_2.png" />
+    <Content Include="recursos\imagen\icons8_truck_length_32px_2.png" />
+    <Content Include="recursos\imagen\icons8_truck_length_50px_1.png" />
+    <Content Include="recursos\imagen\icons8_truck_length_50px_2.png" />
+    <Content Include="recursos\imagen\icons8_user_groups_50px_1.png" />
+    <Content Include="recursos\imagen\icons8_warehouse_80px.png" />
     <Content Include="recursos\imagen\icons8_woman_farmer_48px.png" />
     <Content Include="recursos\imagen\images.jpg" />
     <Content Include="recursos\imagen\la-exportacion-de-ajies-peruanos-llegaria-a-valores-de-us-6--17338.jpg" />
-    <Content Include="recursos\imagen\logo.png" />
+    <Content Include="recursos\imagen\logo-removebg-preview.png" />
     <Content Include="recursos\imagen\loguusu1.png" />
     <Content Include="recursos\js\argon.js" />
     <Content Include="recursos\js\argon.min.js" />
@@ -1741,6 +1753,7 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\EntregaController.cs" />
     <Compile Include="Controllers\FrecuenciaController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PagoController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
@@ -1762,9 +1775,12 @@
     <Compile Include="Models\DetalleVenta.cs" />
     <Compile Include="Models\Entrega.cs" />
     <Compile Include="Models\Frecuencia.cs" />
+    <Compile Include="Models\HashHelper.cs" />
     <Compile Include="Models\Pago.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\SessionHelper.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Transportador.cs" />
     <Compile Include="Models\UnidadVolumen.cs" />
@@ -1807,6 +1823,12 @@
     <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Views\Categoria\AgregarEditar.cshtml" />
     <Content Include="Views\Categoria\Visualizar.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\AgregarEditar.cshtml" />
+    <Content Include="Views\Producto\Visualizar.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\AgregarEditar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1821,9 +1843,7 @@
     <Folder Include="Views\Entrega\" />
     <Folder Include="Views\Pago\" />
     <Folder Include="Views\Pedido\" />
-    <Folder Include="Views\Producto\" />
     <Folder Include="Views\Transportador\" />
-    <Folder Include="Views\Usuario\" />
     <Folder Include="Views\Vehiculos\" />
   </ItemGroup>
   <PropertyGroup>
