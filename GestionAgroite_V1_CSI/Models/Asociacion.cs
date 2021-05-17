@@ -4,7 +4,9 @@ namespace GestionAgroite_V1_CSI.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("Asociacion")]
     public partial class Asociacion
@@ -38,5 +40,102 @@ namespace GestionAgroite_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuario { get; set; }
+        public List<Asociacion> Listar()
+        {
+            var asociacion= new List<Asociacion>();
+
+            try
+            {
+                using (var db = new agroite())
+                {
+
+                    asociacion = db.Asociacion.ToList();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return asociacion;
+        }
+
+        public Asociacion Obtener(int id)
+        {
+            var asociacion = new Asociacion();
+            try
+            {
+                using (var db = new agroite())
+                {
+
+                    asociacion = db.Asociacion
+                                    .Where(x => x.IdAsociacion == id)
+                                    .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return asociacion;
+        }
+        public List<Asociacion> Buscar(string criterio)
+        {
+            var asociacion = new List<Asociacion>();
+
+            try
+            {
+                using (var db = new agroite())
+                {
+                    asociacion = db.Asociacion
+                        .Where(x => x.Razon_Social.Contains(criterio)).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return asociacion;
+        }
+        public void Guardar()
+        {
+            try
+            {
+                using (var db = new agroite())
+                {
+                    if (this.IdAsociacion> 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public void Eliminar()
+        {
+            try
+            {
+                using (var db = new agroite())
+                {
+                    db.Entry(this).State = EntityState.Deleted;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
 }
