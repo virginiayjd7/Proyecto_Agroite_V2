@@ -161,3 +161,4 @@ D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\Gestion
 D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\GestionAgroite_V1_CSI\obj\Debug\GestionAgroite_V1_CSI.csproj.CopyComplete
 D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\GestionAgroite_V1_CSI\obj\Debug\GestionAgroite_V1_CSI.dll
 D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\GestionAgroite_V1_CSI\obj\Debug\GestionAgroite_V1_CSI.pdb
+D:\_2021_I\CONSTRUCCION_I\PROYECTO\REPOSITORIO02\Proyecto_Agroite_v1_CSI\GestionAgroite_V1_CSI\obj\Debug\GestionAgroite_V1_CSI.csprojAssemblyReference.cache
