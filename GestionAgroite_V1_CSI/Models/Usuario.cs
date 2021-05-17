@@ -137,16 +137,31 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
+                    if (this.IdUsuario > 0)
+                    {
 
-                    Stream fileStream = imgfile1.InputStream;
-                    System.IO.BinaryReader br = new System.IO.BinaryReader(fileStream);
-                    Byte[] bytes = br.ReadBytes((Int32)fileStream.Length);
-                    string base64 = Convert.ToBase64String(bytes, 0, bytes.Length);
-                    string imgbase64 = "data:image/png:base64," + base64;
+                        Stream fileStream = imgfile1.InputStream;
+                        System.IO.BinaryReader br = new System.IO.BinaryReader(fileStream);
+                        Byte[] bytes = br.ReadBytes((Int32)fileStream.Length);
+                        string base64 = Convert.ToBase64String(bytes, 0, bytes.Length);
+                        string imgbase64 = "data:image/png:base64," + base64;
 
-                    this.Foto_Perfil = bytes;
+                        this.Foto_Perfil = bytes;
 
-                    db.Entry(this).State = EntityState.Added;
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        Stream fileStream = imgfile1.InputStream;
+                        System.IO.BinaryReader br = new System.IO.BinaryReader(fileStream);
+                        Byte[] bytes = br.ReadBytes((Int32)fileStream.Length);
+                        string base64 = Convert.ToBase64String(bytes, 0, bytes.Length);
+                        string imgbase64 = "data:image/png:base64," + base64;
+
+                        this.Foto_Perfil = bytes;
+
+                        db.Entry(this).State = EntityState.Added;
+                    }                    
                     db.SaveChanges();
                 }
             }
