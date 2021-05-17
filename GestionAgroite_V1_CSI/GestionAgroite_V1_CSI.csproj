@@ -1829,6 +1829,12 @@
     <Content Include="Views\Producto\Visualizar.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\AgregarEditar.cshtml" />
+    <Content Include="Views\Asociacion\Index.cshtml" />
+    <Content Include="Views\Almacen\Index.cshtml" />
+    <Content Include="Views\Asociacion\AgregarEditar.cshtml" />
+    <Content Include="Views\Asociacion\Visualizar.cshtml" />
+    <Content Include="Views\Almacen\AgregarEditar.cshtml" />
+    <Content Include="Views\Almacen\Visualizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1838,8 +1844,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Almacen\" />
-    <Folder Include="Views\Asociacion\" />
     <Folder Include="Views\Entrega\" />
     <Folder Include="Views\Pago\" />
     <Folder Include="Views\Pedido\" />
