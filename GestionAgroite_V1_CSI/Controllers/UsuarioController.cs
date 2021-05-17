@@ -13,7 +13,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         private Usuario usuario = new Usuario();
         private Actividad actividad = new Actividad();
         public Producto producto = new Producto();
-        private Usuario objModelo = new Usuario();
+        private Asociacion asociacion = new Asociacion();
         //[Autenticado]
         // GET: Usuario
         //public ActionResult Index(string criterio)
@@ -80,10 +80,15 @@ namespace GestionAgroite_V1_CSI.Controllers
         public ActionResult AgregarEditar(int id = 0)
         {
             ViewBag.Tipo3 = actividad.Listar();
-            var imagen = usuario.Obtener(id);
-            ViewBag.imagen = imagen.Foto_Perfil;
+            //ViewBag.Tipo4 = asociacion.Listar();
+            if (id!=0)
+            {
+                var imagen = usuario.Obtener(id);
+                ViewBag.imagen = imagen.Foto_Perfil;
+                return View(usuario.Obtener(id));
+            }
 
-            return View(id == 0 ? new Usuario() : usuario.Obtener(id));
+            return View(new Usuario());
         }
         [HttpPost]
         public ActionResult Guardar(Usuario model, HttpPostedFileBase imgfile1)
@@ -93,8 +98,11 @@ namespace GestionAgroite_V1_CSI.Controllers
                 ModelState.Remove("Foto_Perfil");
                 if (ModelState.IsValid)
                 {
-                    model.Editar(imgfile1);
-                    return Redirect("~/Usuario/Menu");
+                    if (model.IdActividad==1)
+                    {
+                        model.Guardar(imgfile1);
+                        return Redirect("~/Usuario/Index");
+                    }                    
                 }
 
             }
