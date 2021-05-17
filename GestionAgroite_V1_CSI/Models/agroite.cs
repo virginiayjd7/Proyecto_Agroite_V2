@@ -275,6 +275,18 @@ namespace GestionAgroite_V1_CSI.Models
                 .Property(e => e.Placa)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Vehiculos>()
+                .Property(e => e.Capacidad)
+                .HasPrecision(16, 2);
+
+            modelBuilder.Entity<Vehiculos>()
+                .Property(e => e.Precio)
+                .HasPrecision(16, 2);
+
+            modelBuilder.Entity<Vehiculos>()
+                .Property(e => e.Unidad_Medida)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Venta>()
                 .Property(e => e.Fecha)
                 .IsUnicode(false);

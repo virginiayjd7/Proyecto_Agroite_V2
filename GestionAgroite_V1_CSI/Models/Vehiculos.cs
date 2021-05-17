@@ -35,9 +35,11 @@ namespace GestionAgroite_V1_CSI.Models
         public decimal? Capacidad { get; set; }
 
         public int? Estado { get; set; }
+
         public decimal? Precio { get; set; }
+
         [StringLength(100)]
-        public decimal? Unidad_Medida { get; set; }
+        public string Unidad_Medida { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transportador> Transportador { get; set; }

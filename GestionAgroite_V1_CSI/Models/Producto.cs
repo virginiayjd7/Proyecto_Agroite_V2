@@ -77,7 +77,7 @@ namespace GestionAgroite_V1_CSI.Models
                 using (var db = new agroite())
                 {
                     producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").ToList();
-                    
+
                 }
 
             }
@@ -95,7 +95,7 @@ namespace GestionAgroite_V1_CSI.Models
         //        using (var db = new agroite())
         //        {
         //            producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").Where(x => x.IdUsuario == id).ToList();
-                   
+
         //        }
         //    }
         //    catch (Exception ex)
