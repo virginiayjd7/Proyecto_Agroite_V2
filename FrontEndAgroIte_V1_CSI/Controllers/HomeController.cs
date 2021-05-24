@@ -29,14 +29,15 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
         {
             return View();
         }
-        public ActionResult Galeria()
-        {
-            return View();
-        }
         public ActionResult Contacto()
         {
             return View();
         }
+        public ActionResult Galeria()
+        {
+            return View();
+        }
+      
         public ActionResult CatalogoProductos()
         {
             return View();

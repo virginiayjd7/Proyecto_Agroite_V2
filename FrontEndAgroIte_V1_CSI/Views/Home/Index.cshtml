@@ -111,8 +111,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title-all text-center">
-                    <h1>Fruits & Vegetables</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    <h1>Nuestro Productos</h1>
+                    <p>!Ultimos prodcutos Registrados¡</p>
                 </div>
             </div>
         </div>
@@ -120,118 +120,103 @@
             <div class="col-lg-12">
                 <div class="special-menu text-center">
                     <div class="button-group filter-button-group">
-                        <button class="active" data-filter="*">All</button>
-                        <button data-filter=".top-featured">Top featured</button>
-                        <button data-filter=".best-seller">Best seller</button>
+                        <button class="active" data-filter="*">Todo</button>
+                        <button data-filter=".top-featured">Producto Destacado</button>
+                        <button data-filter=".best-seller">Los mas Vendidos</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row special-list">
-            <div class="col-lg-3 col-md-6 special-grid best-seller">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
-                        </div>
-                        <img src="~/assets/images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $7.79</h5>
-                    </div>
-                </div>
-            </div>
+            @foreach (var item in Model)
+            {
+                var base64 = Convert.ToBase64String(item.Imagenes_Producto);
+                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
 
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="new">New</p>
+                <div class="col-lg-4 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Venta</p>
+                            </div>
+                            <img src="@imgSrc" style="height:350px;" class="img-fluid" onclick="" alt="Image" />
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Vista"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comparar"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Añadir a la lista de deseos"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Añadir al carrito</a>
+                            </div>
                         </div>
-                        <img src="~/assets/images/img-pro-02.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
+                        <div class="why-text">
+                            <h4>@item.Nombre_Producto</h4>
+                            <h5> @item.Precio_Referencial</h5>
                         </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $9.79</h5>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
+                @*<div class="col-lg-3 col-md-6 special-grid top-featured">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="new">New</p>
+                            </div>
+                            <img src="~/assets/images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
                         </div>
-                        <img src="~/assets/images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
+                        <div class="why-text">
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> $9.79</h5>
                         </div>
                     </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $10.79</h5>
-                    </div>
-                </div>
-            </div>
+                </div>*@
 
-            <div class="col-lg-3 col-md-6 special-grid best-seller">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
+
+
+                @*<div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="~/assets/images/img-pro-04.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
                         </div>
-                        <img src="~/assets/images/img-pro-04.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
+                        <div class="why-text">
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> $15.79</h5>
                         </div>
                     </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $15.79</h5>
-                    </div>
-                </div>
+                </div>*@
+            }
             </div>
-        </div>
     </div>
 </div>
 <!-- End Products  -->
 <!-- Start Blog  -->
 <div class="latest-blog">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="title-all text-center">
-                    <h1>Productos Agricolas</h1>
-                    <p>¡Ultimos productos registrados!</p>
+                    <h1>latest blog</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
                 </div>
             </div>
         </div>
@@ -239,15 +224,16 @@
             @foreach (var item in Model)
             {
                 var base64 = Convert.ToBase64String(item.Imagenes_Producto);
-                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);<!-- Producto 1 -->
+                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img src="@imgSrc" style="cursor:pointer;height:255px;width:100%" alt="" />
 
+                            
+                            <img src="@imgSrc" style="height:350px;" class="img-fluid" alt="Image" />
                         </div>
-                        <div class="blog-content ">
-                            <div class="title-blog ">
+                        <div class="blog-content">
+                            <div class="title-blog">
                                 <h3><b><i class="fa fa-fire"></i>&nbsp; @item.Nombre_Producto</b></h3>
                                 <h3 style="margin:0px;"><b><i class="fa fa-user"></i></b>&nbsp;@item.Usuario.Nombres, @item.Usuario.Apellidos</h3>
                                 @foreach (var obje in objusuarios)
@@ -262,38 +248,37 @@
                                 <h3 style="margin-top:5px;margin-bottom:5px;"><b><i class="fa fa-map-marker"></i></b>&nbsp;@item.Usuario.Direccion</h3>
                                 <p><b>&nbsp;@item.Descripcion_Producto</b></p>
                                 <a href="~/Producto/DetalleProducto/?idProducto=@item.IdProducto">Ver Mas</a>
-                                
                             </div>
-
-                        </div>
-
                     </div>
                 </div>
+            
+            </div>
             }
         </div>
     </div>
-</div>
-<!-- End Blog  -->
+  </div>
 
-@*<script>
-    function agregar(IdProducto, Descripcion_Producto, Precio_Referencial) {
 
-        var idcliente = $("#idcliente").val();
+            <!-- End Blog  -->
+            @*<script>
+                    function agregar(IdProducto, Descripcion_Producto, Precio_Referencial) {
 
-        var data = { id_cliente: "1", id_empresa: "2", id_producto: IdProducto, nombre_producto: Descripcion_Producto, urlfoto: "foto", precio: Precio_Referencial, cantidad: 1, subtotal: Precio_Referencial }
-        console.log(data);
-        $.ajax({
-            url: '/Home/AgregarCArritoMomentaneo/',
-            type: 'post',
-            datatype: 'json',
-            data: data,
-            success: function (response) {           
-                document.location.href = '/Home/';
-            },
-            error: function (xhr, status) {
-                alert('Disculpe, existió un problema');
-            },
-        });
+                        var idcliente = $("#idcliente").val();
 
-    }
-</script>*@
+                        var data = { id_cliente: "1", id_empresa: "2", id_producto: IdProducto, nombre_producto: Descripcion_Producto, urlfoto: "foto", precio: Precio_Referencial, cantidad: 1, subtotal: Precio_Referencial }
+                        console.log(data);
+                        $.ajax({
+                            url: '/Home/AgregarCArritoMomentaneo/',
+                            type: 'post',
+                            datatype: 'json',
+                            data: data,
+                            success: function (response) {
+                                document.location.href = '/Home/';
+                            },
+                            error: function (xhr, status) {
+                                alert('Disculpe, existió un problema');
+                            },
+                        });
+
+                    }
+                </script>*@
