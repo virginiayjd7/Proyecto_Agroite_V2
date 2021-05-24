@@ -84,5 +84,23 @@ namespace FrontEndAgroIte_V1_CSI.Models
             }
             return producto;
         }
+        public Producto Obtener(int id)
+        {
+            var producto = new Producto();
+            try
+            {
+                using (var db = new agroite())
+                {
+                    producto = db.Producto.Include("Usuario").Include("UnidadVolumen").Include("Frecuencia").Include("Categoria").Where(x => x.IdProducto == id)
+                                      .SingleOrDefault();
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return producto;
+        }
     }
 }

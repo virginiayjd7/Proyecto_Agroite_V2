@@ -5,6 +5,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("Asociacion")]
     public partial class Asociacion
@@ -38,5 +39,27 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuario { get; set; }
+
+        public List<Asociacion> Listar()
+        {
+            var asociacion = new List<Asociacion>();
+
+            try
+            {
+                using (var db = new agroite())
+                {
+
+                    asociacion = db.Asociacion.ToList();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return asociacion;
+        }
     }
 }
+    
+

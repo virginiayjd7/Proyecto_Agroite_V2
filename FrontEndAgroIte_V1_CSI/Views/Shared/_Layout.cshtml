@@ -22,7 +22,7 @@
 
     <!-- Site Icons -->
     <link rel="shortcut icon" href="~/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="~/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="~/assets/images/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -73,27 +73,17 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="~/assets/images/logo.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="index.html"><img src="~/assets/images/logo-removebg-preview-removebg-preview.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="~/Home/Index">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link" href="~/Home/Acerca">SOBRE NOSOTROS</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">TIENDA</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="shop.html">Sidebar Shop</a></li>
-                                <li><a href="shop-detail.html">Shop Detail</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="~/Home/CatalogoProductos">PRODUCTOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="~/Home/Contacto"> CONTÁCTENOS</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="~/Home/Index">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Home/Acerca">Nosotros</a></li>
+                        <li class="dropdown"><a class="nav-link" href="~/Home/CatalogoProductos">Tienda Agricola</a> </li>
+                        <li class="nav-item"><a class="nav-link" href="~/Usuario/Index">Productores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html"> Contáctenos</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -105,7 +95,7 @@
                             <a href="#">
                                 <i class="fa fa-shopping-bag"></i>
                                 <span class="badge">3</span>
-                                <p>Mi carrito</p>
+                                <p>My Cart</p>
                             </a>
                         </li>
                     </ul>
@@ -113,24 +103,37 @@
                 <!-- End Atribute Navigation -->
             </div>
             <!-- Start Side Menu -->
-            @*@Html.Partial("_Carrito")*@
-
-            @{
-            Html.RenderAction("_Carrito", "Home");
-          }
-
-            <div id="carrito">
-
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+                <li class="cart-box">
+                    <ul class="cart-list">
+                        <li>
+                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Delica omtantur </a></h6>
+                            <p>1x - <span class="price">$80.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Omnes ocurreret</a></h6>
+                            <p>1x - <span class="price">$60.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Agam facilisis</a></h6>
+                            <p>1x - <span class="price">$40.00</span></p>
+                        </li>
+                        <li class="total">
+                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                            <span class="float-right"><strong>Total</strong>: $180.00</span>
+                        </li>
+                    </ul>
+                </li>
             </div>
-
-
             <!-- End Side Menu -->
         </nav>
         <!-- End Navigation -->
     </header>
     @RenderBody()
-
-
     <!-- End Blog  -->
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -227,9 +230,9 @@
                         <div class="footer-top-box">
                             <h3>Horario de Atención:</h3>
                             <ul class="list-time">
-                                <li>Lunes - Friday: 08.00am a 05.00pm</li>
-                                <li>Viernes: 08.00am a 05.00pm</li>
-                                <li>Sabado: <span>Cerrado</span></li>
+                                <li>Lunes - Viernes: 08.00am a 05.00pm</li>
+                                <li>Sabado: 08.00am a 05.00pm</li>
+                                <li>Domingo: <span>Cerrado</span></li>
                             </ul>
                         </div>
                     </div>
@@ -328,16 +331,3 @@
 
 </html>
 
-<script>
-
-    $(document).ready(function () {
-        
-         var url = "@Url.Action("Carrito", "Home")";
-        $.get(url).done(function (data) {
-            $("#carrito").html(data);
-            
-        });
-        
-    });
-
-</script>

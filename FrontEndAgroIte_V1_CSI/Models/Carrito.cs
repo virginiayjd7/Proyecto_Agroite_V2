@@ -20,7 +20,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public void AgrrgarCrrito(Carrito o)
         {
-            HomeController.lstCarrito.Add(o);
+            //HomeController.lstCarrito.Add(o);
         }
     }
 }

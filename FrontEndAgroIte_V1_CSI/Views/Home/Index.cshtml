@@ -106,7 +106,7 @@
 </div>*@
 
 <!-- Start Products  -->
-<!--<div class="products-box">
+<div class="products-box">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -222,7 +222,7 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>
 <!-- End Products  -->
 <!-- Start Blog  -->
 <div class="latest-blog">
@@ -246,10 +246,10 @@
                             <img src="@imgSrc" style="cursor:pointer;height:255px;width:100%" alt="" />
 
                         </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
+                        <div class="blog-content ">
+                            <div class="title-blog ">
                                 <h3><b><i class="fa fa-fire"></i>&nbsp; @item.Nombre_Producto</b></h3>
-                                <h3 style="margin:0px;"><b><i class="fa fa-user"></i></b>&nbsp;@item.Usuario.Apellidos, @item.Usuario.Nombres</h3>
+                                <h3 style="margin:0px;"><b><i class="fa fa-user"></i></b>&nbsp;@item.Usuario.Nombres, @item.Usuario.Apellidos</h3>
                                 @foreach (var obje in objusuarios)
                                 {
                                     if (item.Usuario.IdUsuario == obje.IdUsuario)
@@ -262,7 +262,7 @@
                                 <h3 style="margin-top:5px;margin-bottom:5px;"><b><i class="fa fa-map-marker"></i></b>&nbsp;@item.Usuario.Direccion</h3>
                                 <p><b>&nbsp;@item.Descripcion_Producto</b></p>
                                 <a href="~/Producto/DetalleProducto/?idProducto=@item.IdProducto">Ver Mas</a>
-                                <button class="btn btn-primary" onclick="agregar('@item.IdProducto', '@item.Nombre_Producto', '@item.Precio_Referencial')" type="button">AgregarCarrito</button>
+                                
                             </div>
 
                         </div>
@@ -275,7 +275,7 @@
 </div>
 <!-- End Blog  -->
 
-<script>
+@*<script>
     function agregar(IdProducto, Descripcion_Producto, Precio_Referencial) {
 
         var idcliente = $("#idcliente").val();
@@ -296,4 +296,4 @@
         });
 
     }
-</script>
+</script>*@

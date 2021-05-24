@@ -113,6 +113,7 @@
     <Content Include="assets\images\about-img.jpg" />
     <Content Include="assets\images\add-img-01.jpg" />
     <Content Include="assets\images\add-img-02.jpg" />
+    <Content Include="assets\images\agricultor.png" />
     <Content Include="assets\images\all-bg-title.jpg" />
     <Content Include="assets\images\apple-touch-icon.png" />
     <Content Include="assets\images\banner-01.jpg" />
@@ -128,7 +129,6 @@
     <Content Include="assets\images\categories_img_02.jpg" />
     <Content Include="assets\images\categories_img_03.jpg" />
     <Content Include="assets\images\contact-bg.jpg" />
-    <Content Include="assets\images\favicon.ico" />
     <Content Include="assets\images\gallery-img-01.jpg" />
     <Content Include="assets\images\gallery-img-02.jpg" />
     <Content Include="assets\images\gallery-img-03.jpg" />
@@ -141,6 +141,7 @@
     <Content Include="assets\images\gallery-img-10.jpg" />
     <Content Include="assets\images\gallery-img-11.jpg" />
     <Content Include="assets\images\gallery-img-12.jpg" />
+    <Content Include="assets\images\favicon.ico" />
     <Content Include="assets\images\img-1.jpg" />
     <Content Include="assets\images\img-2.jpg" />
     <Content Include="assets\images\img-3.jpg" />
@@ -158,6 +159,8 @@
     <Content Include="assets\images\instagram-img-07.jpg" />
     <Content Include="assets\images\instagram-img-08.jpg" />
     <Content Include="assets\images\instagram-img-09.jpg" />
+    <Content Include="assets\images\logo-removebg-preview-removebg-preview.png" />
+    <Content Include="assets\images\logo-removebg-preview.png" />
     <Content Include="assets\images\logo.png" />
     <Content Include="assets\images\payment-icon\1.png" />
     <Content Include="assets\images\payment-icon\2.png" />
@@ -194,8 +197,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AsociadosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\AdminFilters.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -251,6 +257,12 @@
     <Content Include="Views\Home\detallecarrito.cshtml" />
     <Content Include="Views\Shared\_carrito.cshtml" />
     <Content Include="Views\Home\_Carrito.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Registrarse.cshtml" />
+    <Content Include="Views\Producto\DetalleProducto.cshtml" />
+    <Content Include="Views\Asociados\Index.cshtml" />
+    <Content Include="Views\Usuario\Perfil.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -261,7 +273,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\fonts\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
