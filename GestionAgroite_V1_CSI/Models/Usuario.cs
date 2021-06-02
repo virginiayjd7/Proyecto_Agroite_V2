@@ -20,6 +20,7 @@ namespace GestionAgroite_V1_CSI.Models
             Compra = new HashSet<Compra>();
             Pago = new HashSet<Pago>();
             Pedido = new HashSet<Pedido>();
+            Producto = new HashSet<Producto>();
         }
 
         [Key]
@@ -38,9 +39,6 @@ namespace GestionAgroite_V1_CSI.Models
         [StringLength(12)]
         public string Num_Identificacion { get; set; }
 
-        [StringLength(200)]
-        public string Razon_Social { get; set; }
-
         public byte[] Foto_Perfil { get; set; }
 
         [StringLength(9)]
@@ -53,10 +51,24 @@ namespace GestionAgroite_V1_CSI.Models
         public string Correo { get; set; }
 
         [Required]
+        [StringLength(50)]
+        public string Alias { get; set; }
+
+        [Required]
         [StringLength(20)]
         public string Contraseña { get; set; }
 
+        [StringLength(200)]
+        public string Organizacion { get; set; }
+
+        [StringLength(250)]
+        public string Descripcion { get; set; }
+
+        public int? IdAsociacion { get; set; }
+
         public virtual Actividad Actividad { get; set; }
+
+        public virtual Asociacion Asociacion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compra> Compra { get; set; }
@@ -66,6 +78,9 @@ namespace GestionAgroite_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Producto> Producto { get; set; }
         public List<Usuario> Listar()
         {
             var usuarios = new List<Usuario>();
@@ -146,7 +161,7 @@ namespace GestionAgroite_V1_CSI.Models
                         this.Foto_Perfil = bytes;
 
                         db.Entry(this).State = EntityState.Added;
-                    }
+                    }                    
                     db.SaveChanges();
                 }
             }
@@ -209,7 +224,7 @@ namespace GestionAgroite_V1_CSI.Models
                 using (var db = new agroite())
                 {
                     Password = HashHelper.MD5(Password);
-                    var usuario = db.Usuario.Where(x => x.Correo == Usuario)
+                    var usuario = db.Usuario.Where(x => x.Alias == Usuario)
                                             .Where(x => x.Contraseña == Password)
                                             .SingleOrDefault();
 
@@ -243,7 +258,7 @@ namespace GestionAgroite_V1_CSI.Models
                     //e10adc3949ba59abbe56e057f20f883e
                     // Password = HashHelper.MD5(Password);//1234546
 
-                    var query = db.Usuario.Include("Actividad").Where(x => x.Correo == Usuario).Where(x => x.Contraseña == Password)
+                    var query = db.Usuario.Include("Actividad").Where(x => x.Alias == Usuario).Where(x => x.Contraseña == Password)
                         .SingleOrDefault();
 
                     if (query != null)
@@ -283,6 +298,5 @@ namespace GestionAgroite_V1_CSI.Models
             }
             return ObjModelo;
         }
-
     }
 }

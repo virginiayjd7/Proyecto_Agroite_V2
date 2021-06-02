@@ -1,0 +1,8 @@
+﻿<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_IndexOfDash>$(TargetFramework.IndexOf('-'))</_IndexOfDash>
+    <_SpecFlowPlusRunner_TestAdapterFramework Condition=" '$(TargetFrameworkIdentifier)' == '.NETFramework' ">net461</_SpecFlowPlusRunner_TestAdapterFramework>
+    <_SpecFlowPlusRunner_TestAdapterFramework Condition=" '$(TargetFrameworkIdentifier)' == '.NETCoreApp' ">$(TargetFramework)</_SpecFlowPlusRunner_TestAdapterFramework>
+    <_SpecFlowPlusRunner_TestAdapterFramework Condition=" '$(TargetFrameworkIdentifier)' == '.NETCoreApp' And '$(_IndexOfDash)' &gt; '0' ">$(TargetFramework.Substring(0, $(_IndexOfDash)))</_SpecFlowPlusRunner_TestAdapterFramework>
+  </PropertyGroup>
+</Project>

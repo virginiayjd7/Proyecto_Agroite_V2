@@ -1,0 +1,63 @@
+﻿
+@model List<GestionAgroite_V1_CSI.Models.Producto>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin: 35px 50px">
+    <h2 class="page-header">
+        Producto
+        <a href="~/Producto/AgregarEditar" class="btn btn-success float-lg-right">Nuevo  Producto</a>
+    </h2>
+    <br />
+
+    <table id="DataTablesLanguage" class="table align-items-center table-flush">
+        <thead>
+            <tr>
+                <th style="width:40px;">Id Producto</th>
+                <th style="width:40px;">Categoria</th>
+                <th style="width:80px;">Nombre Producto</th>
+                <th style="width:50px;">Usuario</th>
+                <th style="width:50px;">Precio Referencial</th>
+                <th style="width:50px;">Imagen Producto</th>
+                <th style="width:100px;">Descripcion</th>
+                <th style="width:40px;">Cantidad Producida</th>
+                <th style="width:40px;">Unidad de Medida</th>
+                <th style="width:60px;">Frecuencia</th>
+                <th style="width:150px;">Acciones</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var base64 = Convert.ToBase64String(item.Imagenes_Producto);
+                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                <tr>
+                    <td>@(item.IdProducto)</td>
+                    <td>@(item.IdCategoria)</td>
+                    <td>@(item.Nombre_Producto)</td>
+                    <td>@(item.Usuario.Apellidos), @(item.Usuario.Nombres)</td>
+                    <td>@(item.Precio_Referencial)</td>
+
+                    <td>
+                        <img src="@imgSrc" width="100" />
+                    </td>
+                    <td>@(item.Descripcion_Producto)</td>
+                    <td>@(item.Cantidad_Producida)</td>
+                    <td>@(item.IdUnidad_Volumen)</td>
+                    <td>@(item.Idfrecuencia)</td>
+
+                    <th style="align-content:center">
+
+                        <a href="~/Producto/Visualizar/@item.IdProducto" class="btn btn-xs btn-warning">Detalles</a>
+                        <a href="~/Producto/AgregarEditar/@item.IdProducto" class="btn btn-xs btn-primary">Modificar</a>
+                        <a onclick="return confirm('¿Esta seguro que desea eliminar el registro...?');"
+                           href="~/Producto/Eliminar/@item.IdProducto" class="btn btn-xs btn-danger">Eliminar</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

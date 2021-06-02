@@ -6,7 +6,9 @@ namespace GestionAgroite_V1_CSI.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
     using System.Data.Entity.Spatial;
+    using System.IO;
     using System.Linq;
+    using System.Web;
 
     [Table("Producto")]
     public partial class Producto
@@ -16,7 +18,6 @@ namespace GestionAgroite_V1_CSI.Models
         {
             Almacen = new HashSet<Almacen>();
             DetalleCompra = new HashSet<DetalleCompra>();
-            DetallePedido = new HashSet<DetallePedido>();
             DetalleVenta = new HashSet<DetalleVenta>();
         }
 
@@ -45,16 +46,14 @@ namespace GestionAgroite_V1_CSI.Models
 
         public decimal? Cantidad_Producida { get; set; }
 
-        public int? IdUnidadVolumen { get; set; }
+        public int? IdUnidad_Volumen { get; set; }
 
-        public int? IdFrecuencia { get; set; }
+        public int? Idfrecuencia { get; set; }
 
-        public int? IdAsociacion { get; set; }
+        public int? IdUsuario { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Almacen> Almacen { get; set; }
-
-        public virtual Asociacion Asociacion { get; set; }
 
         public virtual Categoria Categoria { get; set; }
 
@@ -62,14 +61,13 @@ namespace GestionAgroite_V1_CSI.Models
         public virtual ICollection<DetalleCompra> DetalleCompra { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetallePedido> DetallePedido { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }
 
         public virtual Frecuencia Frecuencia { get; set; }
 
         public virtual UnidadVolumen UnidadVolumen { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
         public List<Producto> Listar()
         {
             var producto = new List<Producto>();
@@ -78,7 +76,7 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    producto = db.Producto.Include("Asociacion").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").ToList();
+                    producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").ToList();
 
                 }
 
@@ -89,6 +87,23 @@ namespace GestionAgroite_V1_CSI.Models
             }
             return producto;
         }
+        //public List<Producto> Buscar2(int id)
+        //{
+        //    var producto = new List<Producto>();
+        //    try
+        //    {
+        //        using (var db = new agroite())
+        //        {
+        //            producto = db.Producto.Include("Usuario").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").Where(x => x.IdUsuario == id).ToList();
+
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //    return producto;
+        //}
         public List<Producto> Buscar(string criterio)
         {
             var usuarios = new List<Producto>();
@@ -117,7 +132,8 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    producto = db.Producto.Include("Asociacion").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").Where(x => x.IdProducto == id).SingleOrDefault();
+                    producto = db.Producto.Include("Usuario").Include("UnidadVolumen").Include("Frecuencia").Include("Categoria").Where(x => x.IdProducto == id)
+                                      .SingleOrDefault();
                 }
 
             }
@@ -128,51 +144,6 @@ namespace GestionAgroite_V1_CSI.Models
             return producto;
         }
 
-        public ViewModel vmObtener(int id)
-        {
-            var viewModel = new ViewModel();
-            var oUnidadVolumen = new UnidadVolumen();
-            var oFrecuencia = new Frecuencia();
-            var oAsociacion = new Asociacion();
-            var oCategoria = new Categoria();
-            try
-            {
-                using (var db = new agroite())
-                {
-                    viewModel.producto = db.Producto.Include("Categoria").Include("UnidadVolumen").Include("Frecuencia").Include("Asociacion").Where(x => x.IdProducto == id).FirstOrDefault();
-                    viewModel.unidadVolumen = oUnidadVolumen.Listar();
-                    viewModel.frecuencia = oFrecuencia.Listar();
-                    viewModel.asociacion = oAsociacion.Listar();
-                    viewModel.categoria = oCategoria.Listar();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return viewModel;
-        }
-        public ViewModel vmInstancia()
-        {
-            var viewModel = new ViewModel();
-            var oUnidadVolumen = new UnidadVolumen();
-            var oFrecuencia = new Frecuencia();
-            var oAsociacion = new Asociacion();
-            var oCategoria = new Categoria();
-            try
-            {
-                viewModel.producto = new Producto();
-                viewModel.unidadVolumen = oUnidadVolumen.Listar();
-                viewModel.frecuencia = oFrecuencia.Listar();
-                viewModel.asociacion = oAsociacion.Listar();
-                viewModel.categoria = oCategoria.Listar();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return viewModel;
-        }
 
         public void Eliminar()
         {
@@ -190,7 +161,7 @@ namespace GestionAgroite_V1_CSI.Models
             }
         }
 
-        public void Guardar()
+        public void Guardar(HttpPostedFileBase imgfile)
         {
             try
             {
@@ -198,10 +169,26 @@ namespace GestionAgroite_V1_CSI.Models
                 {
                     if (this.IdProducto > 0)
                     {
+                        Stream fileStream = imgfile.InputStream;
+                        System.IO.BinaryReader br = new System.IO.BinaryReader(fileStream);
+                        Byte[] bytes = br.ReadBytes((Int32)fileStream.Length);
+                        //  string base64 = Convert.ToBase64String(bytes, 0, bytes.Length);
+                        // string imgbase64 = "data:image/png:base64," + base64;
+
+                        this.Imagenes_Producto = bytes;
+
                         db.Entry(this).State = EntityState.Modified;
                     }
                     else
                     {
+                        Stream fileStream = imgfile.InputStream;
+                        System.IO.BinaryReader br = new System.IO.BinaryReader(fileStream);
+                        Byte[] bytes = br.ReadBytes((Int32)fileStream.Length);
+                        //   string base64 = Convert.ToBase64String(bytes, 0, bytes.Length);
+                        //   string imgbase64 = "data:image/png:base64," + base64;
+
+                        this.Imagenes_Producto = bytes;
+
                         db.Entry(this).State = EntityState.Added;
                     }
                     db.SaveChanges();

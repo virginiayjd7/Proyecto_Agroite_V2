@@ -45,7 +45,7 @@ namespace GestionAgroite_V1_CSI.Controllers
 
         public ActionResult Eliminar(int id)
         {
-            frecuencia.IdFrecuencia = id;
+            frecuencia.Idfrecuencia = id;
             frecuencia.Eliminar();
             return Redirect("~/Frecuencia");
         }

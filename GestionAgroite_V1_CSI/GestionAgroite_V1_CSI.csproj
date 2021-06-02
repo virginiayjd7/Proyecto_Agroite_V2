@@ -1748,7 +1748,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ActividadController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AgricultorController.cs" />
     <Compile Include="Controllers\AlmacenController.cs" />
     <Compile Include="Controllers\AsociacionController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
@@ -1762,12 +1761,10 @@
     <Compile Include="Controllers\UnidadVolumenController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VehiculosController.cs" />
-    <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Actividad.cs" />
-    <Compile Include="Models\Agricultor.cs" />
     <Compile Include="Models\agroite.cs" />
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\Asociacion.cs" />
@@ -1790,7 +1787,6 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Vehiculos.cs" />
     <Compile Include="Models\Venta.cs" />
-    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1836,9 +1832,6 @@
     <Content Include="Views\Vehiculos\AgregarEditar.cshtml" />
     <Content Include="Views\Vehiculos\Index.cshtml" />
     <Content Include="Views\Vehiculos\Visualizar.cshtml" />
-    <Content Include="Views\Agricultor\Index.cshtml" />
-    <Content Include="Views\Agricultor\AgregarEditar.cshtml" />
-    <Content Include="Views\Agricultor\Visualizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1848,15 +1841,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\AgricultoresFiles\" />
-    <Folder Include="Content\ProductosFiles\" />
     <Folder Include="Views\Almacen\" />
     <Folder Include="Views\Asociacion\" />
     <Folder Include="Views\Entrega\" />
     <Folder Include="Views\Pago\" />
     <Folder Include="Views\Pedido\" />
     <Folder Include="Views\Transportador\" />
-    <Folder Include="Views\Venta\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

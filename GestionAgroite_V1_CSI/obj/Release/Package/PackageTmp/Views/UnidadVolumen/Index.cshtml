@@ -1,0 +1,36 @@
+﻿
+@model List<GestionAgroite_V1_CSI.Models.UnidadVolumen>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="page-header">
+    Unidad de Volumen
+    <a href="~/UnidadVolumen/AgregarEditar" class="btn btn-success float-lg-right">Nuevo Unidad Volumen</a>
+</h2>
+<br />
+<table id="DataTablesLanguage" class="table align-items-center table-flush">
+    <thead>
+        <tr>
+            <th style="width : 50px;"> ID</th>
+            <th style="width : 150px;">Nombre</th>
+            <th style="width : 300px">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <th>@(m.IdUnidadVolumen)</th>
+                <th>@(m.Nombre)</th>
+                <th>
+                    <a href="~/UnidadVolumen/Visualizar/@m.IdUnidadVolumen" class="btn btn-xs btn-warning">Detalles</a>
+                    <a href="~/UnidadVolumen/AgregarEditar/@m.IdUnidadVolumen" class="btn btn-xs btn-primary">Modificar</a>
+                    <a onclick="return confirm('Esta seguro que desea eliminabr el registro?...');"
+                       href="~/UnidadVolumen/Eliminar/@m.IdUnidadVolumen" class="btn btn-xs btn-danger">Eliminar</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+
