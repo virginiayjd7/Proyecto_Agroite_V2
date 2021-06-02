@@ -13,6 +13,7 @@ namespace GestionAgroite_V1_CSI.Models
         }
 
         public virtual DbSet<Actividad> Actividad { get; set; }
+        public virtual DbSet<Agricultor> Agricultor { get; set; }
         public virtual DbSet<Almacen> Almacen { get; set; }
         public virtual DbSet<Asociacion> Asociacion { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
@@ -25,7 +26,6 @@ namespace GestionAgroite_V1_CSI.Models
         public virtual DbSet<Pago> Pago { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Transportador> Transportador { get; set; }
         public virtual DbSet<UnidadVolumen> UnidadVolumen { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
@@ -36,6 +36,34 @@ namespace GestionAgroite_V1_CSI.Models
         {
             modelBuilder.Entity<Actividad>()
                 .Property(e => e.Nombre)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Agricultor>()
+                .Property(e => e.Nombre)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Agricultor>()
+                .Property(e => e.Apellidos)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Agricultor>()
+                .Property(e => e.Num_Identificacion)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Agricultor>()
+                .Property(e => e.Foto_Perfil)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Agricultor>()
+                .Property(e => e.Celular)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Agricultor>()
+                .Property(e => e.Direccion)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Agricultor>()
+                .Property(e => e.Correo)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Almacen>()
@@ -57,6 +85,18 @@ namespace GestionAgroite_V1_CSI.Models
             modelBuilder.Entity<Almacen>()
                 .Property(e => e.Capacidad)
                 .HasPrecision(16, 2);
+
+            modelBuilder.Entity<Almacen>()
+                .Property(e => e.Precio)
+                .HasPrecision(16, 2);
+
+            modelBuilder.Entity<Almacen>()
+                .Property(e => e.Cantida_Dejada)
+                .HasPrecision(16, 2);
+
+            modelBuilder.Entity<Almacen>()
+                .Property(e => e.Unidad_Medida)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Asociacion>()
                 .Property(e => e.Ruc)
@@ -80,6 +120,14 @@ namespace GestionAgroite_V1_CSI.Models
 
             modelBuilder.Entity<Asociacion>()
                 .Property(e => e.Direccion)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Asociacion>()
+                .Property(e => e.Telefono)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Asociacion>()
+                .Property(e => e.Representante)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Categoria>()
@@ -210,11 +258,6 @@ namespace GestionAgroite_V1_CSI.Models
                 .Property(e => e.Nombre)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<UnidadVolumen>()
-                .HasMany(e => e.Producto)
-                .WithOptional(e => e.UnidadVolumen)
-                .HasForeignKey(e => e.IdUnidad_Volumen);
-
             modelBuilder.Entity<Usuario>()
                 .Property(e => e.Nombres)
                 .IsUnicode(false);
@@ -225,6 +268,10 @@ namespace GestionAgroite_V1_CSI.Models
 
             modelBuilder.Entity<Usuario>()
                 .Property(e => e.Num_Identificacion)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Usuario>()
+                .Property(e => e.Razon_Social)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()
@@ -240,19 +287,7 @@ namespace GestionAgroite_V1_CSI.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()
-                .Property(e => e.Alias)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuario>()
                 .Property(e => e.Contraseña)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuario>()
-                .Property(e => e.Organizacion)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuario>()
-                .Property(e => e.Descripcion)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Vehiculos>()
@@ -286,6 +321,14 @@ namespace GestionAgroite_V1_CSI.Models
             modelBuilder.Entity<Vehiculos>()
                 .Property(e => e.Unidad_Medida)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Vehiculos>()
+                .Property(e => e.Tipo_Carga)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Vehiculos>()
+                .Property(e => e.Carga_Total)
+                .IsFixedLength();
 
             modelBuilder.Entity<Venta>()
                 .Property(e => e.Fecha)

@@ -14,7 +14,7 @@ namespace GestionAgroite_V1_CSI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Asociacion()
         {
-            Usuario = new HashSet<Usuario>();
+            Producto = new HashSet<Producto>();
         }
 
         [Key]
@@ -38,18 +38,30 @@ namespace GestionAgroite_V1_CSI.Models
         [StringLength(100)]
         public string Direccion { get; set; }
 
+        public int? IdAgricultor { get; set; }
+
+        [StringLength(9)]
+        public string Telefono { get; set; }
+
+        [StringLength(150)]
+        public string Representante { get; set; }
+
+        public int? Integrantes { get; set; }
+
+        public virtual Agricultor Agricultor { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
+        public virtual ICollection<Producto> Producto { get; set; }
         public List<Asociacion> Listar()
         {
-            var asociacion= new List<Asociacion>();
+            var asociacion = new List<Asociacion>();
 
             try
             {
                 using (var db = new agroite())
                 {
 
-                    asociacion = db.Asociacion.ToList();
+                    asociacion = db.Asociacion.Include("Agricultor").ToList();
 
                 }
             }
@@ -104,7 +116,7 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    if (this.IdAsociacion> 0)
+                    if (this.IdAsociacion > 0)
                     {
                         db.Entry(this).State = EntityState.Modified;
                     }
@@ -136,6 +148,5 @@ namespace GestionAgroite_V1_CSI.Models
                 throw;
             }
         }
-
     }
 }

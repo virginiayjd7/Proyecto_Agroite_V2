@@ -30,6 +30,17 @@ namespace GestionAgroite_V1_CSI.Models
 
         public int? IdProducto { get; set; }
 
+        public decimal? Precio { get; set; }
+
+        public DateTime? Tiempo_Inicio { get; set; }
+
+        public DateTime? Tiempo_Final { get; set; }
+
+        public decimal? Cantida_Dejada { get; set; }
+
+        [StringLength(50)]
+        public string Unidad_Medida { get; set; }
+
         public virtual Producto Producto { get; set; }
         public List<Almacen> Listar()
         {
@@ -50,7 +61,7 @@ namespace GestionAgroite_V1_CSI.Models
             }
             return almacen;
         }
-        
+
         public Almacen Obtener(int id)
         {
             var almacen = new Almacen();
@@ -126,6 +137,5 @@ namespace GestionAgroite_V1_CSI.Models
                 throw;
             }
         }
-
     }
 }

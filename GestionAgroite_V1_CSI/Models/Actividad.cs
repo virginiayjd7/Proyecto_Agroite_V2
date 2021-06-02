@@ -120,6 +120,5 @@ namespace GestionAgroite_V1_CSI.Models
                 throw;
             }
         }
-
     }
 }

@@ -8,81 +8,85 @@ namespace GestionAgroite_V1_CSI.Models
     using System.Data.Entity.Spatial;
     using System.Linq;
 
-    [Table("Categoria")]
-    public partial class Categoria
+    [Table("Agricultor")]
+    public partial class Agricultor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Categoria()
+        public Agricultor()
         {
-            Producto = new HashSet<Producto>();
+            Asociacion = new HashSet<Asociacion>();
         }
 
         [Key]
-        public int IdCategoria { get; set; }
+        public int IdAgricultor { get; set; }
 
         [StringLength(50)]
         public string Nombre { get; set; }
 
+        [StringLength(50)]
+        public string Apellidos { get; set; }
+
+        public int? Tipo_Documento { get; set; }
+
+        [StringLength(12)]
+        public string Num_Identificacion { get; set; }
+
+        [StringLength(100)]
+        public string Foto_Perfil { get; set; }
+
+        [StringLength(9)]
+        public string Celular { get; set; }
+
+        [StringLength(200)]
+        public string Direccion { get; set; }
+
+        [StringLength(150)]
+        public string Correo { get; set; }
+
+        public int? Estado { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producto> Producto { get; set; }
-        public List<Categoria> Listar()
+        public virtual ICollection<Asociacion> Asociacion { get; set; }
+        public List<Agricultor> Listar()
         {
-            var categoria = new List<Categoria>();
-
+            var oAgricutores = new List<Agricultor>();
             try
             {
                 using (var db = new agroite())
                 {
-
-                    categoria = db.Categoria.ToList();
-
+                    oAgricutores = db.Agricultor.ToList();
                 }
             }
             catch (Exception)
             {
                 throw;
             }
-            return categoria;
+            return oAgricutores;
         }
-        public List<Categoria> Buscar(string criterio)
+        public Agricultor Obtener(int id)
         {
-            var categoria = new List<Categoria>();
-
-            try
+            var oAgricultor = new Agricultor();
+            using (var db = new agroite())
             {
-                using (var db = new agroite())
-                {
-
-                    categoria = db.Categoria
-                        .Where(x => x.Nombre.Contains(criterio)).ToList();
-
-                }
+                oAgricultor = db.Agricultor.Where(x => x.IdAgricultor == id).SingleOrDefault();
             }
-            catch (Exception)
-            {
-                throw;
-            }
-            return categoria;
+            return oAgricultor;
         }
-        public Categoria Obtener(int id)
+        public List<Agricultor> Buscar(string criterio)
         {
-            var categoria = new Categoria();
+            var oAgricultores = new List<Agricultor>();
             try
             {
                 using (var db = new agroite())
                 {
-
-                    categoria = db.Categoria
-                                      .Where(x => x.IdCategoria == id)
-                                      .SingleOrDefault();
+                    oAgricultores = db.Agricultor.Where(x => x.Nombre.Contains(criterio) || x.Apellidos.Contains(Apellidos) || x.Num_Identificacion.Contains(criterio) || x.Direccion.Contains(criterio)).ToList();
                 }
             }
             catch (Exception)
             {
                 throw;
             }
-            return categoria;
-
+            return oAgricultores;
         }
         public void Guardar()
         {
@@ -90,12 +94,11 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-
-                    if (this.IdCategoria > 0)
+                    if (this.IdAgricultor > 0)
                     {
                         db.Entry(this).State = EntityState.Modified;
                     }
-                    else//no existe
+                    else
                     {
                         db.Entry(this).State = EntityState.Added;
                     }
@@ -121,22 +124,6 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 throw;
             }
-        }
-        public List<Categoria> ObtenerUsuarioPorProducto()//retorna una lista o coleccion de objetos
-        {
-            var categoria = new List<Categoria>();
-            try
-            {
-                using (var db = new agroite())
-                {
-                    categoria = db.Categoria.Include("Producto").ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            return categoria;
         }
     }
 }

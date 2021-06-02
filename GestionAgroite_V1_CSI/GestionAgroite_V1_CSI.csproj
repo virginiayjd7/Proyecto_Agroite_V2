@@ -1765,6 +1765,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Actividad.cs" />
+    <Compile Include="Models\Agricultor.cs" />
     <Compile Include="Models\agroite.cs" />
     <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\Asociacion.cs" />
@@ -1787,6 +1788,7 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Vehiculos.cs" />
     <Compile Include="Models\Venta.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

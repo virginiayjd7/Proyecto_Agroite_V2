@@ -4,6 +4,7 @@ namespace GestionAgroite_V1_CSI.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
 
     [Table("Entrega")]
@@ -30,5 +31,33 @@ namespace GestionAgroite_V1_CSI.Models
         public string Fecha_Pedido { get; set; }
 
         public virtual Venta Venta { get; set; }
+        public void Guardar()
+        {
+            int idl = 0;
+            try
+            {
+                using (var db = new agroite())
+                {
+                    if (this.IdVenta > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                //return 0;
+                throw;
+            }
+            //return idl;
+        }
+
+
     }
 }

@@ -18,7 +18,7 @@ namespace GestionAgroite_V1_CSI.Models
         }
 
         [Key]
-        public int Idfrecuencia { get; set; }
+        public int IdFrecuencia { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -51,7 +51,7 @@ namespace GestionAgroite_V1_CSI.Models
                 {
 
                     frecuencia = db.Frecuencia
-                                    .Where(x => x.Idfrecuencia == id)
+                                    .Where(x => x.IdFrecuencia == id)
                                     .SingleOrDefault();
                 }
             }
@@ -87,7 +87,7 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    if (this.Idfrecuencia > 0)
+                    if (this.IdFrecuencia > 0)
                     {
                         db.Entry(this).State = EntityState.Modified;
                     }
