@@ -1,0 +1,104 @@
+﻿@model GestionAgroite_V1_CSI.Models.Vehiculos
+@{
+    ViewBag.Title = "AgregarEditar";
+}
+
+<div class="header bg-white pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark text-success">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="~/Admin/Index">Dashboards</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="~/Vehiculos/Index">Vehiculos</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="body-content">
+            <div class="row justify-content-center">
+                <div class="col-sm-6 col-lg-6 mb-3">
+                    <div class="checkout-address">
+                        <div class="title-left">
+                            <h2>Agregar Nuevo Vehiculo</h2>
+                        </div>
+                        <br />
+                        @using (Html.BeginForm("Guardar", "Vehiculos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+
+                            @Html.HiddenFor(x => x.IdVehiculo)
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    @Html.Label("Marca: ")
+                                    @Html.TextBoxFor(x => x.Marca, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Marca, null, new { @class = "label label-danger" })
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    @Html.Label("Modelo: ")
+                                    @Html.TextBoxFor(x => x.Modelo, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Modelo, null, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                @Html.Label("Año: ")
+                                @Html.TextBoxFor(x => x.Año, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Año, null, new { @class = "label label-danger" })
+                            </div>
+                            <div class="mb-3">
+                                @Html.Label("Tipo: ")
+                                @Html.TextBoxFor(x => x.Tipo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Tipo, null, new { @class = "label label-danger" })
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5 mb-3">
+
+                                    @Html.Label("Placa: ")
+                                    @Html.TextBoxFor(x => x.Placa, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Placa, null, new { @class = "label label-danger" })
+
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    @Html.Label("Estado:  ")
+                                    <select name="Estado" class="form-control">
+                                        <option @(Model.Estado == 0 ? "selected" : "") value="0">Disponible</option>
+                                        <option @(Model.Estado == 1 ? "selected" : "") value="1">Ocupado</option>
+                                        <option @(Model.Estado == 2 ? "selected" : "") value="2">Eliminado</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    @Html.Label("Capacidad: ")
+                                    @Html.TextBoxFor(x => x.Capacidad, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Capacidad, null, new { @class = "label label-danger" })
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    @Html.Label("Unidad de Medida: ")
+                                    @Html.TextBoxFor(x => x.Unidad_Medida, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Unidad_Medida, null, new { @class = "label label-danger" })
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    @Html.Label("Precio de Carga: ")
+                                    @Html.TextBoxFor(x => x.Precio, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Precio, null, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button class="btn btn-info">Registrar</button>
+                                <a href="~/Vehiculos/Index" class="btn btn-danger">Cancelar</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,62 @@
+﻿
+@model FrontEndAgroIte_V1_CSI.Models.Producto
+@{
+    ViewBag.Title = "DetalleProducto";
+
+    var base64 = Convert.ToBase64String(Model.Imagenes_Producto);
+    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+}
+
+
+<div class="about-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="banner-frame">
+                    <img class="img-thumbnail" src="@imgSrc" style="width:200px;height:200px;" alt="" />
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <h2 class="noo-sh-title-top"><span>@Model.Nombre_Producto</span></h2>
+                <p>
+                    <h5 style="margin:0px;">
+                        Agricultor:
+                        <a class="text-green" href="/Usuario/Perfil/?idusuario=@Model.IdUsuario"> @Model.Usuario.Nombres,@Model.Usuario.Apellidos </a>
+                    </h5>
+                    <h4><b>Precio Referencial:</b></h4>
+                    <h5>S/.@Model.Precio_Referencial,@Model.UnidadVolumen.Nombre</h5>
+                    <h4><b>Informacion de produccion:</b></h4>
+                    <h5>
+                        @Model.Frecuencia.Nombre
+                    </h5>
+
+                </p>
+                <p>&nbsp;@Model.Descripcion_Producto</p>
+
+                <div style="margin-bottom:15px;">
+                    <a href="#" class="btn hvr-hover">
+
+                        <i class="fa fa-whatsapp">
+                            Conctactar a travez WhatsApp
+                        </i>
+                    </a>
+                    <a href="#" class="btn hvr-hover">
+
+                        <i class="fa fa-telegram left ">
+                            Conctactar a travez Telegram
+                        </i>
+                    </a>
+                    <a href="#" class="btn hvr-hover">
+                        <i class="fa fa-paypal left">
+                            Comprar
+                        </i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

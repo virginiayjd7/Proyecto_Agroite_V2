@@ -1,0 +1,33 @@
+﻿@model GestionAgroite_V1_CSI.Models.Almacen
+@{
+    ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin: 35px 50px">
+    <h2>Visualizar</h2>
+    <ol class="breadcrumb">
+        <li><a href="~/Almacen/Index">Almacen</a></li>
+        <li> / </li>
+        <li class="active">@Model.IdAlmacen</li>
+    </ol>
+
+    <div class="card card-body">
+        <div class="card-header">Informacion de Almacen</div>
+        <div class="card-body">
+            <dl class="dl-horizontal">
+                <dt>Nombre</dt>
+                <dd>@Model.Nombre</dd>
+                <dt>Direccion</dt>
+                <dd>@Model.Direccion</dd>
+                <dt>Localidad</dt>
+                <dd>@Model.Localidad</dd>
+                <dt>Provincia</dt>
+                <dd>@Model.Provincia</dd>
+                <dt>Capacidad</dt>
+                <dd>@Model.Capacidad</dd>
+                <dt>Producto</dt>
+                <dd>@Model.Producto.Nombre_Producto</dd>
+            </dl>
+        </div>
+    </div>
+</div>
