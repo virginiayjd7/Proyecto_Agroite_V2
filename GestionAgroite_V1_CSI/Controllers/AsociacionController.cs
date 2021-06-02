@@ -9,7 +9,7 @@ namespace GestionAgroite_V1_CSI.Controllers
     public class AsociacionController : Controller
     {
         // GET: Asociacion
-        public Asociacion asociacion= new Asociacion();
+        public Asociacion asociacion = new Asociacion();
         public ActionResult Index(String criterio)
         {
             if (criterio == null || criterio == "")
