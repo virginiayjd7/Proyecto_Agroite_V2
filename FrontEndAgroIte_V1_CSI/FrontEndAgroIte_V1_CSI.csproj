@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -7,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BC40B8A2-401A-46A9-8E26-34FD77DF24FA}</ProjectGuid>
+    <ProjectGuid>{8735576C-39A6-4380-8641-82B22E6608D5}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -23,6 +24,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,15 +46,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,6 +124,8 @@
     <Content Include="assets\images\categories_img_02.jpg" />
     <Content Include="assets\images\categories_img_03.jpg" />
     <Content Include="assets\images\contact-bg.jpg" />
+    <Content Include="assets\images\create-account.svg" />
+    <Content Include="assets\images\favicon.ico" />
     <Content Include="assets\images\gallery-img-01.jpg" />
     <Content Include="assets\images\gallery-img-02.jpg" />
     <Content Include="assets\images\gallery-img-03.jpg" />
@@ -141,7 +138,6 @@
     <Content Include="assets\images\gallery-img-10.jpg" />
     <Content Include="assets\images\gallery-img-11.jpg" />
     <Content Include="assets\images\gallery-img-12.jpg" />
-    <Content Include="assets\images\favicon.ico" />
     <Content Include="assets\images\img-1.jpg" />
     <Content Include="assets\images\img-2.jpg" />
     <Content Include="assets\images\img-3.jpg" />
@@ -149,6 +145,7 @@
     <Content Include="assets\images\img-pro-02.jpg" />
     <Content Include="assets\images\img-pro-03.jpg" />
     <Content Include="assets\images\img-pro-04.jpg" />
+    <Content Include="assets\images\img1.jpg" />
     <Content Include="assets\images\ins-bg.jpg" />
     <Content Include="assets\images\instagram-img-01.jpg" />
     <Content Include="assets\images\instagram-img-02.jpg" />
@@ -159,6 +156,7 @@
     <Content Include="assets\images\instagram-img-07.jpg" />
     <Content Include="assets\images\instagram-img-08.jpg" />
     <Content Include="assets\images\instagram-img-09.jpg" />
+    <Content Include="assets\images\login-img.png" />
     <Content Include="assets\images\logo-removebg-preview-removebg-preview.png" />
     <Content Include="assets\images\logo-removebg-preview.png" />
     <Content Include="assets\images\logo.png" />
@@ -197,39 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AsociadosController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ProductoController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Filters\AdminFilters.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Actividad.cs" />
-    <Compile Include="Models\agroite.cs" />
-    <Compile Include="Models\Almacen.cs" />
-    <Compile Include="Models\Asociacion.cs" />
-    <Compile Include="Models\Carrito.cs" />
-    <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\Compra.cs" />
-    <Compile Include="Models\DetalleCompra.cs" />
-    <Compile Include="Models\DetallePedido.cs" />
-    <Compile Include="Models\DetalleVenta.cs" />
-    <Compile Include="Models\Entrega.cs" />
-    <Compile Include="Models\Frecuencia.cs" />
-    <Compile Include="Models\HashHelper.cs" />
-    <Compile Include="Models\Pago.cs" />
-    <Compile Include="Models\Pedido.cs" />
-    <Compile Include="Models\Producto.cs" />
-    <Compile Include="Models\ResponseModel.cs" />
-    <Compile Include="Models\SessionHelper.cs" />
-    <Compile Include="Models\sysdiagrams.cs" />
-    <Compile Include="Models\Transportador.cs" />
-    <Compile Include="Models\UnidadVolumen.cs" />
-    <Compile Include="Models\Usuario.cs" />
-    <Compile Include="Models\Vehiculos.cs" />
-    <Compile Include="Models\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -246,23 +214,11 @@
     <Content Include="assets\webfonts\fa-solid-900.ttf" />
     <Content Include="assets\webfonts\fa-solid-900.woff" />
     <Content Include="assets\webfonts\fa-solid-900.woff2" />
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
     <None Include="packages.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Acerca.cshtml" />
-    <Content Include="Views\Home\Galeria.cshtml" />
-    <Content Include="Views\Home\Contacto.cshtml" />
-    <Content Include="Views\Home\CatalogoProductos.cshtml" />
-    <Content Include="Views\Home\detallecarrito.cshtml" />
-    <Content Include="Views\Shared\_carrito.cshtml" />
-    <Content Include="Views\Home\_Carrito.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Login\Registrarse.cshtml" />
-    <Content Include="Views\Producto\DetalleProducto.cshtml" />
-    <Content Include="Views\Asociados\Index.cshtml" />
-    <Content Include="Views\Usuario\Perfil.cshtml" />
-    <Content Include="Views\Usuario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -272,7 +228,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\fonts\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -287,9 +244,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50738</DevelopmentServerPort>
+          <DevelopmentServerPort>54574</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50738/</IISUrl>
+          <IISUrl>http://localhost:54574/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -304,7 +261,10 @@
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
   </Target>
+  <Import Project="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

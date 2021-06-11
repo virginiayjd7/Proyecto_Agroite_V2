@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace FrontEndAgroIte_V1_CSI.Models
+namespace GestionAgroite_V1_CSI.Models
 {
     public class HashHelper
     {

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="agroite-Web.config Connection String" description="agroite Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="data source=.;initial catalog=db_agroite;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Virginia\ Aquino\\source\\repos\\Proyecto_Agroite_v1_CSI\\GestionAgroite_V1_CSI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='agroite']/@connectionString" />
-  </parameter>
-  <parameter name="db_agroite-Web.config Connection String" description="db_agroite Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="[PlaceHolder for connection: ]" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Virginia\ Aquino\\source\\repos\\Proyecto_Agroite_v1_CSI\\GestionAgroite_V1_CSI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='db_agroite']/@connectionString" />
-  </parameter>
-</parameters>

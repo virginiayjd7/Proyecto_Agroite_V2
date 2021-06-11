@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FrontEndAgroIte_V1_CSI.Models
+namespace GestionAgroite_V1_CSI.Models
 {
     public class ResponseModel
     {
@@ -30,3 +30,4 @@ namespace FrontEndAgroIte_V1_CSI.Models
         }
     }
 }
+    
