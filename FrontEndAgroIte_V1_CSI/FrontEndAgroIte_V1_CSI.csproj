@@ -46,7 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -190,14 +198,58 @@
     <Content Include="assets\webfonts\fa-brands-400.svg" />
     <Content Include="assets\webfonts\fa-regular-400.svg" />
     <Content Include="assets\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\ProductosFiles\ajiamarillo.jpg" />
+    <Content Include="Content\ProductosFiles\ajinegro.jpg" />
+    <Content Include="Content\ProductosFiles\ajipaprika.jpg" />
+    <Content Include="Content\ProductosFiles\cebolla.jpg" />
+    <Content Include="Content\ProductosFiles\GRANADA_51..jpg" />
+    <Content Include="Content\ProductosFiles\olivo.jpg" />
+    <Content Include="Content\ProductosFiles\oregano.jpg" />
+    <Content Include="Content\ProductosFiles\palta.jpg" />
+    <Content Include="Content\ProductosFiles\papa.jpg" />
+    <Content Include="Content\ProductosFiles\papanegra.jpg" />
+    <Content Include="Content\ProductosFiles\quinua.jpg" />
+    <Content Include="Content\ProductosFiles\zandia.jpg" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AsociacionController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Filters\AdminFilters.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Actividad.cs" />
+    <Compile Include="Models\Agricultor.cs" />
+    <Compile Include="Models\agroite.cs" />
+    <Compile Include="Models\Almacen.cs" />
+    <Compile Include="Models\Asociacion.cs" />
+    <Compile Include="Models\Carrito.cs" />
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Compra.cs" />
+    <Compile Include="Models\DetalleCompra.cs" />
+    <Compile Include="Models\DetallePedido.cs" />
+    <Compile Include="Models\DetalleVenta.cs" />
+    <Compile Include="Models\Entrega.cs" />
+    <Compile Include="Models\Frecuencia.cs" />
+    <Compile Include="Models\HashHelper.cs" />
+    <Compile Include="Models\Pago.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\SessionHelper.cs" />
+    <Compile Include="Models\Transportador.cs" />
+    <Compile Include="Models\UnidadVolumen.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Vehiculos.cs" />
+    <Compile Include="Models\Venta.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +271,16 @@
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Carrito.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Usuario\Registrarse.cshtml" />
+    <Content Include="Views\Home\Nosotros.cshtml" />
+    <Content Include="Views\Home\Contactenos.cshtml" />
+    <Content Include="Views\Asociacion\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,8 +290,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
