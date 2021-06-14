@@ -70,5 +70,25 @@ namespace FrontEndAgroIte_V1_CSI.Models
             }
             return asociacion;
         }
+        public List<Asociacion> Buscar(string criterio)
+        {
+            var asociacion = new List<Asociacion>();
+
+            try
+            {
+                using (var db = new agroite())
+                {
+                    asociacion = db.Asociacion
+                        .Where(x => x.Razon_Social.Contains(criterio)).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return asociacion;
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrontEndAgroIte_V1_CSI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,13 +10,43 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
     public class ProductosController : Controller
     {
         // GET: Productos
-        public ActionResult Index()
+        public Asociacion asociacion = new Asociacion();
+        public Producto producto = new Producto();
+
+      
+       
+        public ActionResult CatalogoProductos(string criterio)
         {
-            return View();
+            if (criterio == null || criterio == "")
+            {
+                ViewBag.asociacion = asociacion.Listar();
+                return View(producto.Listar());
+            }
+            else
+            {
+                return View();
+            }
         }
-        public ActionResult CatalogoProductos()
+        public ActionResult ProductosDetalles(string idProducto)
         {
-            return View();
+            
+                string id = idProducto;
+
+                // if (idProducto == null || idProducto == "")
+                // {
+                //     return View(producto.Listar());
+                // }
+                //     else
+                //   {
+                //  string id = Session["idusuario"].ToString();
+                int idpro = Convert.ToInt32(id);
+                return View(producto.Obtener(idpro));
+
+                // return View();
+                //   }
+
+            
         }
+      
     }
 }
