@@ -13,6 +13,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public Transportador()
         {
             Compra = new HashSet<Compra>();
+            Pedido = new HashSet<Pedido>();
             Venta = new HashSet<Venta>();
         }
 
@@ -35,14 +36,12 @@ namespace FrontEndAgroIte_V1_CSI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compra> Compra { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pedido> Pedido { get; set; }
+
         public virtual Vehiculos Vehiculos { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venta> Venta { get; set; }
-
-
-
-
-
     }
 }

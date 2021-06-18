@@ -45,5 +45,3 @@ namespace FrontEndAgroIte_V1_CSI.Models
         }
     }
 }
-    
-

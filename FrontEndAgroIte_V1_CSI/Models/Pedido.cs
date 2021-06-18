@@ -30,8 +30,12 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public decimal? IGV { get; set; }
 
+        public int? IdTrasportador { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallePedido> DetallePedido { get; set; }
+
+        public virtual Transportador Transportador { get; set; }
 
         public virtual Usuario Usuario { get; set; }
 
