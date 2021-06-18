@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrontEndAgroIte_V1_CSI.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,11 +16,17 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public int cantidad { get; set; }
         public decimal precio { get; set; }
         public decimal subtotal { get; set; }
-
+      //  public decimal preciocamion { get; set; }
 
         public void AgrrgarCrrito(Carrito o)
         {
-            //HomeController.lstCarrito.Add(o);
+            HomeController.carrito.Add(o);
+        }
+
+        public List<Carrito> lista()
+        {
+            var lista = HomeController.carrito.ToList();
+            return lista;
         }
     }
 }

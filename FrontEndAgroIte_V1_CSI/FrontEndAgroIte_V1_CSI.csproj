@@ -53,6 +53,9 @@
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -178,6 +181,7 @@
     <Content Include="assets\images\smp-img-01.jpg" />
     <Content Include="assets\images\smp-img-02.jpg" />
     <Content Include="assets\images\smp-img-03.jpg" />
+    <Content Include="assets\images\vehiculo.png" />
     <Content Include="assets\js\baguetteBox.min.js" />
     <Content Include="assets\js\bootsnav.js" />
     <Content Include="assets\js\bootstrap-select.js" />
@@ -233,21 +237,26 @@
     <Compile Include="Models\Asociacion.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\Compra.cs" />
+    <Compile Include="Models\Config.cs" />
     <Compile Include="Models\DetalleCompra.cs" />
     <Compile Include="Models\DetallePedido.cs" />
     <Compile Include="Models\DetalleVenta.cs" />
     <Compile Include="Models\Entrega.cs" />
     <Compile Include="Models\Frecuencia.cs" />
     <Compile Include="Models\HashHelper.cs" />
+    <Compile Include="Models\Pagar.cs" />
     <Compile Include="Models\Pago.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SessionHelper.cs" />
     <Compile Include="Models\Transportador.cs" />
     <Compile Include="Models\UnidadVolumen.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Util.cs" />
     <Compile Include="Models\Vehiculos.cs" />
     <Compile Include="Models\Venta.cs" />
     <Compile Include="Models\ViewModel.cs" />
@@ -284,6 +293,7 @@
     <Content Include="Views\Productos\CatalogoProductos.cshtml" />
     <Content Include="Views\Productos\ProductosDetalles.cshtml" />
     <Content Include="Views\Pedido\DetallePedido.cshtml" />
+    <Content Include="Views\Home\_carrito.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
