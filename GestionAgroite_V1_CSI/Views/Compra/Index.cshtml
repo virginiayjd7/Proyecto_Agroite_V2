@@ -1,0 +1,46 @@
+﻿@model GestionAgroite_V1_CSI.Models.ModelCompra
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int contador = 1;
+}
+<a href="~/Compra/Agregar" class="btn btn-info">Realizar Compra</a>
+<br />
+<br />
+<table id="DataTablesLanguage" class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fecha Compra</th>
+            <th scope="col">Asociacion</th>
+            <th scope="col">Total</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.oCompras)
+        {
+            <tr>
+                <th scope="row">@(contador++)</th>
+                <td>@item.Fecha</td>
+                @foreach (var D in Model.oDetallecompra)
+                {
+                    foreach (var P in Model.oProducto)
+                    {
+                        if (item.IdCompra == D.IdCompra)
+                        {
+                            if (D.IdProducto == P.IdProducto)
+                            {
+                                <td>@(P.Asociacion.Razon_Social.Substring(0,20))...</td>
+                            }
+                        }
+                    }
+                }
+                <td>@item.Total</td>
+                <td>
+                    <button type="button" onclick="Detalle('@item.IdCompra')" class="btn btn-primary">Detalle</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
