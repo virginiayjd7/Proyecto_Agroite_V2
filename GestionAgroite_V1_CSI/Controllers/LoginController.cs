@@ -9,7 +9,6 @@ namespace GestionAgroite_V1_CSI.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
         Usuario objusuario = new Usuario();
         // GET: Login
         public ActionResult Index()

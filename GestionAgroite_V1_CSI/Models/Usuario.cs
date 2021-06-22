@@ -72,7 +72,7 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    usuarios = db.Usuario.Include("Actividad").Include("Asociacion").ToList();
+                    usuarios = db.Usuario.Include("Actividad").ToList();
                 }
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace GestionAgroite_V1_CSI.Models
             }
             return usuarios;
         }
-        public Usuario Obtener(int id)
+        public Usuario Obtener(int? id)
         {
             var usuario = new Usuario();
             try
@@ -282,6 +282,6 @@ namespace GestionAgroite_V1_CSI.Models
             }
             return ObjModelo;
         }
-
     }
 }
+

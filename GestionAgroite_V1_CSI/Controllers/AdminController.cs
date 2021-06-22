@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionAgroite_V1_CSI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace GestionAgroite_V1_CSI.Controllers
 {
     public class AdminController : Controller
     {
+        Venta venta = new Venta();
         // GET: Admin
         public ActionResult Index()
         {

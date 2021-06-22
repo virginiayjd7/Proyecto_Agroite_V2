@@ -26,6 +26,7 @@ namespace GestionAgroite_V1_CSI.Models
         public virtual DbSet<Pago> Pago { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Transportador> Transportador { get; set; }
         public virtual DbSet<UnidadVolumen> UnidadVolumen { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
@@ -227,6 +228,10 @@ namespace GestionAgroite_V1_CSI.Models
                 .HasPrecision(16, 2);
 
             modelBuilder.Entity<Producto>()
+                .Property(e => e.Imagenes_Producto)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Producto>()
                 .Property(e => e.Descripcion_Producto)
                 .IsUnicode(false);
 
@@ -253,6 +258,11 @@ namespace GestionAgroite_V1_CSI.Models
             modelBuilder.Entity<Transportador>()
                 .Property(e => e.Email)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Transportador>()
+                .HasMany(e => e.Pedido)
+                .WithOptional(e => e.Transportador)
+                .HasForeignKey(e => e.IdTrasportador);
 
             modelBuilder.Entity<UnidadVolumen>()
                 .Property(e => e.Nombre)

@@ -4,7 +4,9 @@ namespace GestionAgroite_V1_CSI.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("DetalleCompra")]
     public partial class DetalleCompra
@@ -25,5 +27,47 @@ namespace GestionAgroite_V1_CSI.Models
         public virtual Compra Compra { get; set; }
 
         public virtual Producto Producto { get; set; }
+        public List<DetalleCompra> Listar()
+        {
+            var oDetalle = new List<DetalleCompra>();
+            try
+            {
+                using (var db = new agroite())
+                {
+                    oDetalle = db.DetalleCompra.Include("Compra").Include("Producto").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return oDetalle;
+        }
+        public void Guardar()
+        {
+            int idl = 0;
+            try
+            {
+                using (var db = new agroite())
+                {
+                    if (this.IdDetalleCompra > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+                    // idl = this.IdCompra;
+                }
+            }
+            catch (Exception ex)
+            {
+                //return 0;
+                throw;
+            }
+
+        }
     }
 }

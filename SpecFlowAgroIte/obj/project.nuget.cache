@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zpl1QxeualXBH8RTHd54CJUL4dmdCc4/819r2ysDqYxeAUofVplCjurS9KJERSfWUyimybsRpboVyzmjIVo0Dg==",
+  "dgSpecHash": "onXBhKXDlI/EHqj/TciAC7yeErH7uYJfmouh/tbxxx7J2g3HfX4EmuKp2Y8/lY0UWZCMTaG7cNru448eniP0lw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Virginia Aquino\\source\\repos\\SpecFlowAgroIte\\SpecFlowAgroIte.csproj",
+  "projectFilePath": "C:\\Users\\Virginia Aquino\\source\\repos\\Proyecto_Agroite_v1_CSI\\SpecFlowAgroIte\\SpecFlowAgroIte.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Virginia Aquino\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
     "C:\\Users\\Virginia Aquino\\.nuget\\packages\\cucumber.messages\\6.0.1\\cucumber.messages.6.0.1.nupkg.sha512",
