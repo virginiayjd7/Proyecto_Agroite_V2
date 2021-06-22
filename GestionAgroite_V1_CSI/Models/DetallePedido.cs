@@ -22,7 +22,9 @@ namespace GestionAgroite_V1_CSI.Models
         public decimal? Subtotal { get; set; }
 
         public virtual Pedido Pedido { get; set; }
+
         public virtual Producto Producto { get; set; }
+
         public List<DetallePedido> Listar(int? idpedido)
         {
             var detalle = new List<DetallePedido>();

@@ -259,11 +259,6 @@ namespace GestionAgroite_V1_CSI.Models
                 .Property(e => e.Email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Transportador>()
-                .HasMany(e => e.Pedido)
-                .WithOptional(e => e.Transportador)
-                .HasForeignKey(e => e.IdTrasportador);
-
             modelBuilder.Entity<UnidadVolumen>()
                 .Property(e => e.Nombre)
                 .IsUnicode(false);
@@ -342,6 +337,10 @@ namespace GestionAgroite_V1_CSI.Models
 
             modelBuilder.Entity<Venta>()
                 .Property(e => e.Fecha)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Venta>()
+                .Property(e => e.Num_Serie)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Venta>()

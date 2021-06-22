@@ -31,7 +31,7 @@ namespace GestionAgroite_V1_CSI.Models
 
         public decimal? IGV { get; set; }
 
-        public int? IdTrasportador { get; set; }
+        public int? IdTransportador { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallePedido> DetallePedido { get; set; }
@@ -42,6 +42,7 @@ namespace GestionAgroite_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venta> Venta { get; set; }
+
         public List<Pedido> Listar()
         {
             var unidadvolumen = new List<Pedido>();

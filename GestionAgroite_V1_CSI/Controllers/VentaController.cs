@@ -26,7 +26,7 @@ namespace GestionAgroite_V1_CSI.Controllers
             var query = oPedido.Obtener(int.Parse(IdPedido));
             return View(query);
         }
-        public ActionResult Guardar(ViewModel model, string IdTransportador, string Fecha_Entrega)
+        public ActionResult Guardar(ViewModel model, string IdTransportador,string Fecha_Entrega)
         {
 
             Venta obj = new Venta();
@@ -37,10 +37,10 @@ namespace GestionAgroite_V1_CSI.Controllers
             string[] cadena = palabra.Split('-');
             int numero = 0;
             numero = Convert.ToInt32(cadena[2]) + 1;
-
+            
             obj.IdPedido = model.pedido.IdPedido;
             obj.Fecha = DateTime.Now.ToShortDateString();
-            obj.Num_Serie = cadena[0] + "-" + año + "-" + numero.ToString();
+            obj.Num_Serie = cadena[0]+"-"+ año + "-"+numero.ToString();
             //obj.Num_Serie = "AG-2021-0001";
             obj.Total = model.pedido.Total;
             obj.IGV = model.pedido.IGV;
@@ -64,7 +64,7 @@ namespace GestionAgroite_V1_CSI.Controllers
             entre.IdVenta = idsub;
             entre.Fecha_Pedido = model.pedido.Fecha;
             entre.Fechar_Entrega = Fecha_Entrega;
-            entre.Fecha_Envio = DateTime.Now.ToShortDateString();
+            entre.Fecha_Envio=DateTime.Now.ToShortDateString();
             Usuario usu = new Usuario();
             usu = usu.Obtener(model.pedido.IdUsuario);
             entre.Direccion = usu.Direccion;
@@ -75,7 +75,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         }
         public ActionResult DetalleVenta(DetalleVenta oDetalleVenta)
         {
-            int? IdDetalleVenta = oDetalleVenta.IdVenta;
+            int? IdDetalleVenta = oDetalleVenta.IdVenta;            
             var query = oDetalleVenta.Listar(IdDetalleVenta);
             return Json(query, JsonRequestBehavior.AllowGet);
         }

@@ -1,7 +1,24 @@
-﻿
+﻿@model GestionAgroite_V1_CSI.Models.Frecuencia
+
 @{
     ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h2>Visualizar</h2>
+<ol class="breadcrumb">
+    <li><a href="~/Frecuencia/Index">Frecuencia</a></li>
+    <li> / </li>
+    <li class="active">@Model.IdFrecuencia</li>
+</ol>
 
+<div class="card card-body">
+    <div class="card-header">Informacion de la  Frecuencia</div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.IdFrecuencia</dd>
+            <dt>Nombre de la  Frecuenciad</dt>
+            <dd>@Model.Nombre</dd>
+        </dl>
+    </div>
+</div>

@@ -25,6 +25,7 @@ namespace GestionAgroite_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuario { get; set; }
+
         public List<Actividad> Listar()
         {
             var actividad = new List<Actividad>();

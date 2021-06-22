@@ -51,6 +51,7 @@ namespace GestionAgroite_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transportador> Transportador { get; set; }
+
         public List<Vehiculos> Listar()
         {
             var vehiculos = new List<Vehiculos>();

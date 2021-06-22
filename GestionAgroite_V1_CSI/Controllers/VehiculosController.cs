@@ -1,9 +1,9 @@
-﻿using GestionAgroite_V1_CSI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GestionAgroite_V1_CSI.Models;
 
 namespace GestionAgroite_V1_CSI.Controllers
 {
@@ -55,7 +55,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         {
             int id = obj.IdVehiculo;
             var data = objVehiculo.Obtener(id);
-            return Json(data, JsonRequestBehavior.AllowGet);
+            return Json(data,JsonRequestBehavior.AllowGet);
         }
     }
 }

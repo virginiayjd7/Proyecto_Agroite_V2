@@ -29,7 +29,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         public ActionResult Guardar(Transportador model)
         {
             if (ModelState.IsValid)
-            {
+            {                
                 model.Guardar();
                 return Redirect("~/Transportador/Index");
             }

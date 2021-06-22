@@ -1,7 +1,232 @@
-﻿
+﻿@model GestionAgroite_V1_CSI.Models.ModelCompra
+
 @{
     ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Agregar</h2>
+<h2>Compra</h2>
 
+<div class="container">
+
+    @using (Html.BeginForm("Guardar", "Compra", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputState">Transportador</label>
+                <select id="IdTransportador" name="IdTransportador" class="form-control" required>
+                    <option value="">-Seleccione-</option>
+                    @foreach (var item in Model.transportador)
+                    {
+                        <option value="@(item.IdTransportador)- @item.Vehiculos.IdVehiculo"> @(item.Vehiculos.Marca) </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Capacidad de Carga</label>
+                <input type="number" name="txtcantidad" id="txtcantidad" class="form-control" value="" disabled />
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputState">Capacidad Sum</label>
+                <input type="number" name="txtcantidadSumana" id="txtcantidadSumana" value="" />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputState">Asociacion</label>
+                <select id="IdAsociacion" name="IdAsociacion" class="form-control" required>
+                    <option value="">-Seleccione-</option>
+                    @foreach (var item in Model.asociacion)
+                    {
+                        <option value="@(item.IdAsociacion)"> @(item.Razon_Social) </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Producto</label>
+                <select id="idProducto" name="idProducto" class="form-control" required>
+                    <option value="">-Seleccione-</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputEmail4">Cantida Producida</label>
+                <input type="number" name="txtcantidadProducida" id="txtcantidadProducida" class="form-control" value="" />
+            </div>
+        </div>
+    }
+
+    <button type="button" class="btn btn-primary" id="btnAgregar" onclick="Agregar()">Agregar</button>
+    <table class="table" id="listaDetalle">
+        <thead>
+            <tr>
+                <th>idProducto</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>PrecioUnit</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <hr />
+    <div class="form-group col-md-3 float-right">
+        <label for="inputEmail4">Total</label>
+        @Html.TextBoxFor(x => x.compra.Total, new { @class = "form-control", id = "TotalCompra" })
+        <br />
+        <button type="button" class="btn btn-success float-right" id="btnregistrar">Registrar</button>
+    </div><br />
+
+</div>
+
+<script>
+
+    function Agregar() {
+        var idproduc = $('select[name=idProducto]').val();
+        var cantidad = $("#txtcantidadProducida").val();
+        var datospro = $("#idProducto option:selected").text();
+        var separador = "-";
+        var separado = datospro.split(separador);
+        var pre = separado[1].trim();
+        var nombre = separado[0];
+        var data = {
+            Nombre: nombre,
+            IdProducto: idproduc,
+            Cantidad: cantidad,
+            Subtotal: pre,
+            Precio_Unitario: pre
+        }
+        //txtcantidad
+        var capacidacarga = $("#txtcantidad").val();
+        var cantidad_Sumana = $("#txtcantidadSumana").val();
+        if (parseInt(cantidad) > parseInt(capacidacarga)) {
+            alert("Supera la capcidad del camion");
+            return;
+        }
+        if (parseInt(cantidad_Sumana) > parseInt(capacidacarga)) {
+            alert("ya esta lleno al carga");
+        }
+        else {
+            $.ajax({
+                url: '/Compra/AddItems/',
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function (data) {
+                    var rows = '';
+                    if (data.existe == true) {
+                        alert('Producto ya esta seleccionado en la compra')
+                    }
+                    else {
+                        $.each(data.lista, function (i, item) {
+
+                            rows += "<tr>"
+                            rows += "<td>" + item.IdProducto + "</td>"
+                            rows += "<td>" + item.Nombre + "</td>"
+                            rows += "<td>" + item.Cantidad + "</td>"
+                            rows += "<td>" + item.Precio_Unitario + "</td>"
+                            rows += "<td>" + item.Subtotal + "</td>"
+                            rows += "</tr>";
+                            $("#listaDetalle tbody").html(rows);
+                        });
+
+                        $("#TotalCompra").val(data.total);
+                        $("#txtcantidadSumana").val(data.cantidadCarga);
+                    }
+                },
+                error: function (err) {
+                    alert("Error: " + err.responseText);
+                    console.log(err);
+                }
+            })
+        }
+    }
+
+    $("#btnregistrar").click(function () {
+        var valores_vehiculo = $('select[name=IdTransportador]').val();
+        var separador = "-";
+        var separado = valores_vehiculo.split(separador);
+        var idtrasportador = separado[0];
+
+
+        var data = { IdTransportador: idtrasportador}
+        $.ajax({
+            url: '/Compra/Guardar/',
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                alert(data);
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+    });
+
+    $("select[name=IdAsociacion]").change(function () {
+        var selecprodcuct = $("#idProducto");
+        selecprodcuct.find('option').remove();
+        var id = $('select[name=IdAsociacion]').val();
+        var data = { IdAsociacion: id };
+        $.ajax({
+            url: '/Compra/ListProduct/',
+            type: 'POST',
+            data:data,
+            dataType: 'json',
+            success: function (data) {
+                $.each(data.produc, function (i, item) {
+                    selecprodcuct.append('<option value="' + item.IdProducto + '">' + item.Nombre_Producto + '-' + item.Precio_Referencial+ '</option>');
+                 });
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+    });
+
+    $("select[name=idProducto]").change(function () {
+        var datospro = $("#idProducto option:selected").text();
+        var separador = "-";
+        var arraydatos = datospro.split(separador);
+        var nombre = arraydatos[0];
+        var id_producto = $('select[name=idProducto]').val();
+        var data = { IdProducto: id_producto, Nombre_Producto: nombre}
+        $.ajax({
+            url: '/Compra/DetalleProducto/',
+            type: 'POST',
+            data:data,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $("#txtcantidadProducida").val(data.datos.Cantidad_Producida);
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+    });
+
+    $("select[name=IdTransportador]").change(function () {
+        var valores_vehiculo = $('select[name=IdTransportador]').val();
+        var separador = "-";
+        var separado = valores_vehiculo.split(separador);
+        var id_vehiculo = separado[1];
+        var data = { IdVehiculo: id_vehiculo }
+
+        $.ajax({
+            url: '/Vehiculos/ObtenerVehiculo/',
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $("#txtcantidad").val(data.Capacidad);
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+
+    });
+</script>

@@ -1,7 +1,30 @@
 ﻿
+@model GestionAgroite_V1_CSI.Models.UnidadVolumen
 @{
     ViewBag.Title = "Visualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Visualizar</h2>
+<h2>Ver</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/UnidadVolumen/Index">Unidad de Medida </a></li>
+    <li> / </li>
+    <li class="active">@Model.IdUnidadVolumen</li>
+</ol>
+
+<div class="card card-body">
+    <div class="card-header">Informacion de la Unidad Medida</div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.IdUnidadVolumen</dd>
+
+            <dt>Nombre Unidad Medida</dt>
+            <dd>@Model.Nombre</dd>
+
+        </dl>
+    </div>
+
+</div>
 

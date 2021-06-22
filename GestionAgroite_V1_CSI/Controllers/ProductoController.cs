@@ -112,12 +112,12 @@ namespace GestionAgroite_V1_CSI.Controllers
         public ActionResult Visualizar(int id)
         {
             return View(producto.Obtener(id));
-        }
+        }        
         public ActionResult Eliminar(int id)
         {
             producto.IdProducto = id;
             producto.Eliminar();
             return Redirect("~/Producto");
-        }
+        }        
     }
 }

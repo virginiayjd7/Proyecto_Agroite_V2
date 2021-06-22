@@ -1,7 +1,66 @@
 ﻿
+@model GestionAgroite_V1_CSI.Models.Categoria
 @{
     ViewBag.Title = "AgregarEditar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="header bg-white pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
 
-<h2>AgregarEditar</h2>
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark text-success">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="~/Admin/Index">Dashboards</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="~/Categoria/Index">Categoria</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="body-content">
+            <div class="row justify-content-center">
+                <div class="col-sm-6 col-lg-6 mb-3">
+                    <div class="checkout-address">
+                        <div class="title-left">
+                            <h2>Agregar Nueva Categoria</h2>
+                        </div>
+                        <br />
 
+                        @using (Html.BeginForm("Guardar", "Categoria", FormMethod.Post))
+                        {
+                            @Html.HiddenFor(x => x.IdCategoria)
+
+                            <div class="card">
+                                <div class="card-header">Información de la Categoria</div>
+
+                                <div class="card-body">
+
+                                    <div class="form-group">
+                                        @Html.Label("Id")
+                                        @Html.TextBoxFor(x => x.IdCategoria, new { @class = "form-control", disabled = true })
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.Label("Nombre de la Categoria")
+                                        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.Nombre, null, new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <br />
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary"> Registrar Categoria </button>
+                                <a href="~/Categoria" class="btn btn-danger"> Cancelar </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

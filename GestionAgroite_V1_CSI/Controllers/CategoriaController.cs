@@ -9,7 +9,6 @@ namespace GestionAgroite_V1_CSI.Controllers
 {
     public class CategoriaController : Controller
     {
-        // GET: Categoria
         public Categoria categoria = new Categoria();
         public ActionResult Index(String criterio)
         {

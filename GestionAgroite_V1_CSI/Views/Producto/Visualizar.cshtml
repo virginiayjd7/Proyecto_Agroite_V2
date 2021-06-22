@@ -1,7 +1,26 @@
 ﻿
+@model GestionAgroite_V1_CSI.Models.Producto
 @{
-    ViewBag.Title = "Visualizar";
+    ViewBag.Title = "Index";
 }
 
 <h2>Visualizar</h2>
+<ol class="breadcrumb">
+    <li><a href="~/Producto/Index2">Producto</a></li>
+    <li> / </li>
+    <li class="active">@Model.IdProducto</li>
+</ol>
 
+<div class="card card-body">
+    <div class="card-header">Informacion de Producto</div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>Id</dt>
+            <dd>@Model.IdProducto</dd>
+
+            <dt>Nombre de Producto</dt>
+            <dd>@Model.Nombre_Producto</dd>
+
+        </dl>
+    </div>
+</div>

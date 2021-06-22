@@ -1,5 +1,6 @@
 namespace GestionAgroite_V1_CSI.Models
 {
+    using FrontEndAgroIte_V1_CSI.Models;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -65,6 +66,7 @@ namespace GestionAgroite_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
+
         public List<Usuario> Listar()
         {
             var usuarios = new List<Usuario>();
@@ -284,4 +286,3 @@ namespace GestionAgroite_V1_CSI.Models
         }
     }
 }
-

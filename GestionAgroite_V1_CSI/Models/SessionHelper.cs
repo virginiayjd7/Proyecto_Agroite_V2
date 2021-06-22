@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 
-namespace GestionAgroite_V1_CSI.Models
+namespace FrontEndAgroIte_V1_CSI.Models
 {
     public class SessionHelper
     {
@@ -52,4 +52,3 @@ namespace GestionAgroite_V1_CSI.Models
         }
     }
 }
-

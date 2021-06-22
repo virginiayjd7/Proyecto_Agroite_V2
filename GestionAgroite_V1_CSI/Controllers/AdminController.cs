@@ -10,6 +10,7 @@ namespace GestionAgroite_V1_CSI.Controllers
     public class AdminController : Controller
     {
         Venta venta = new Venta();
+
         // GET: Admin
         public ActionResult Index()
         {

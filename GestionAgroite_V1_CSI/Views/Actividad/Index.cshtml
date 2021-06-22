@@ -1,7 +1,38 @@
-﻿
+﻿@model List<GestionAgroite_V1_CSI.Models.Actividad>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Actividad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div style="margin: 35px 50px">
+    <h2 class="page-header">
+        Actividad
+        <a href="~/Actividad/AgregarEditar" class="btn btn-success float-lg-right">Nuevo Actividad</a>
+    </h2>
+    <br />
+    <table id="DataTablesLanguage" class="table align-items-center table-flush">
+        <thead>
+            <tr>
+                <th style="width : 50px;"> ID</th>
+                <th style="width : 150px;">Descrípción</th>
+                <th style="width : 300px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
 
-<h2>Index</h2>
+                    <th>@(m.IdActividad)</th>
+                    <th>@(m.Nombre)</th>
+                    <th>
+                        <a href="~/Actividad/Visualizar/@m.IdActividad" class="btn btn-xs btn-warning">Detalles</a>
+                        <a href="~/Actividad/AgregarEditar/@m.IdActividad" class="btn btn-xs btn-primary">Modificar</a>
+                        <a onclick="return confirm('Esta seguro que desea eliminabr el registro?...');"
+                           href="~/Actividad/Eliminar/@m.IdActividad" class="btn btn-xs btn-danger">Eliminar</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
 
+</div>

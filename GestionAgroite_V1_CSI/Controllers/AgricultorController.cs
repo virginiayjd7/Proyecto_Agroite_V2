@@ -31,7 +31,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         {
             if (update != null)
             {
-                if (update.ContentLength > 0)
+                if (update.ContentLength>0)
                 {
                     if (ModelState.IsValid)
                     {

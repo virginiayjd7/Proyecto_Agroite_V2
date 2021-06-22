@@ -1,9 +1,10 @@
-﻿using GestionAgroite_V1_CSI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FrontEndAgroIte_V1_CSI.Models;
+using GestionAgroite_V1_CSI.Models;
 
 namespace GestionAgroite_V1_CSI.Controllers
 {

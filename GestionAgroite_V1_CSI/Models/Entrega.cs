@@ -34,6 +34,7 @@ namespace GestionAgroite_V1_CSI.Models
         public int? Estado { get; set; }
 
         public virtual Venta Venta { get; set; }
+
         public void Guardar()
         {
             int idl = 0;

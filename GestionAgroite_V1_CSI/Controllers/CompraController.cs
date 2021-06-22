@@ -31,7 +31,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         }
 
         public ActionResult AddItems(DetalleCompra detalle)
-        {
+        { 
             Boolean existe = false;
             foreach (var item in listaCompra)
             {
@@ -42,7 +42,7 @@ namespace GestionAgroite_V1_CSI.Controllers
                 }
             }
             if (existe)
-            {
+            {                
                 var TotCompra = listaCompra.Sum(x => x.Subtotal);
                 var Cant_Carga = listaCompra.Sum(x => x.Cantidad);
                 var list = new
@@ -64,10 +64,10 @@ namespace GestionAgroite_V1_CSI.Controllers
             {
                 lista = listaCompra,
                 total = Total,
-                cantidadCarga = cantidad_carga,
+                cantidadCarga= cantidad_carga,
                 existe = false,
             };
-
+                      
             return Json(data, JsonRequestBehavior.AllowGet);
         }
         public ActionResult ListProduct(Asociacion a)
@@ -88,11 +88,11 @@ namespace GestionAgroite_V1_CSI.Controllers
             model.IdTransportador = model.IdTransportador;
             model.Fecha = DateTime.Now.ToShortDateString();
             if (ModelState.IsValid)
-            {
-                int idreturn = model.Guardar();
-
-                if (idreturn != 0)
-                {
+            {    
+                int idreturn = model.Guardar();              
+              
+                if (idreturn!=0)
+                {                   
                     foreach (var item in listaCompra)
                     {
                         DetalleCompra dt = new DetalleCompra();
@@ -104,20 +104,20 @@ namespace GestionAgroite_V1_CSI.Controllers
                         dt.Guardar();
                     }
                     listaCompra.Clear();
-                    return Json("Registroad", JsonRequestBehavior.AllowGet);
-                }
-            }
-
-            return View("~/Producto/Index");
+                    return Json("Registroad",JsonRequestBehavior.AllowGet);
+                }    
+            }      
+            
+             return View("~/Producto/Index");
         }
         public ActionResult DetalleProducto(Producto obj)
         {
             int idpro = obj.IdProducto;
             var query = oCompra.Obtener(idpro);
-            var data = new { datos = query };
-            return Json(data, JsonRequestBehavior.AllowGet);
+            var data = new { datos=query};
+            return Json(data,JsonRequestBehavior.AllowGet);
         }
 
-
+    
     }
 }

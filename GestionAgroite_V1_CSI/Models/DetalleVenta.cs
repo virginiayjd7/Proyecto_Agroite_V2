@@ -7,6 +7,7 @@ namespace GestionAgroite_V1_CSI.Models
     using System.Data.Entity;
     using System.Data.Entity.Spatial;
     using System.Linq;
+
     [Table("DetalleVenta")]
     public partial class DetalleVenta
     {
@@ -24,6 +25,7 @@ namespace GestionAgroite_V1_CSI.Models
         public virtual Producto Producto { get; set; }
 
         public virtual Venta Venta { get; set; }
+
         public List<DetalleVenta> Listar(int? idVenta)
         {
             var detalle = new List<DetalleVenta>();

@@ -10,7 +10,6 @@ namespace GestionAgroite_V1_CSI.Controllers
     public class ActividadController : Controller
     {
         // GET: Actividad
-        // GET: Actividad
         public Actividad actividad = new Actividad();
         public ActionResult Index(String criterio)
         {

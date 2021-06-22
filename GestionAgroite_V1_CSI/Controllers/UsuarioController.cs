@@ -81,7 +81,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         {
             ViewBag.Tipo3 = actividad.Listar();
             //ViewBag.Tipo4 = asociacion.Listar();
-            if (id != 0)
+            if (id!=0)
             {
                 var imagen = usuario.Obtener(id);
                 ViewBag.imagen = imagen.Foto_Perfil;
@@ -98,11 +98,11 @@ namespace GestionAgroite_V1_CSI.Controllers
                 ModelState.Remove("Foto_Perfil");
                 if (ModelState.IsValid)
                 {
-                    if (model.IdActividad == 1)
+                    if (model.IdActividad==1)
                     {
                         model.Guardar(imgfile1);
                         return Redirect("~/Usuario/Index");
-                    }
+                    }                    
                 }
 
             }

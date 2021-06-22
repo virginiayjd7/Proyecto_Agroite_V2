@@ -42,6 +42,7 @@ namespace GestionAgroite_V1_CSI.Models
         public string Unidad_Medida { get; set; }
 
         public virtual Producto Producto { get; set; }
+
         public List<Almacen> Listar()
         {
             var almacen = new List<Almacen>();

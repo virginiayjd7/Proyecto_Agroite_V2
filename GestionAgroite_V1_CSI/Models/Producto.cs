@@ -66,6 +66,7 @@ namespace GestionAgroite_V1_CSI.Models
         public virtual Frecuencia Frecuencia { get; set; }
 
         public virtual UnidadVolumen UnidadVolumen { get; set; }
+
         public List<Producto> Listar()
         {
             var producto = new List<Producto>();

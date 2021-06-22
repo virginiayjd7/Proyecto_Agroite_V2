@@ -24,7 +24,8 @@ namespace GestionAgroite_V1_CSI.Models
         [StringLength(50)]
         public string Fecha { get; set; }
 
-        public int? Num_Serie { get; set; }
+        [StringLength(12)]
+        public string Num_Serie { get; set; }
 
         public int? IdPedido { get; set; }
 
@@ -43,6 +44,7 @@ namespace GestionAgroite_V1_CSI.Models
         public virtual Pedido Pedido { get; set; }
 
         public virtual Transportador Transportador { get; set; }
+
         public List<Venta> Listar()
         {
             var oVenta = new List<Venta>();

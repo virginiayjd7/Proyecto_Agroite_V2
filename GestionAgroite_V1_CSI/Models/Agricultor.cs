@@ -47,6 +47,7 @@ namespace GestionAgroite_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Asociacion> Asociacion { get; set; }
+
         public List<Agricultor> Listar()
         {
             var oAgricutores = new List<Agricultor>();

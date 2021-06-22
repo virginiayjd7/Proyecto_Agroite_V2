@@ -1,7 +1,45 @@
-﻿
+﻿@model List<GestionAgroite_V1_CSI.Models.Agricultor>
 @{
     ViewBag.Title = "Index";
 }
+<div style="margin: 35px 50px">
+    <h2 class="page-header">
+        <a href="~/Agricultor/AgregarEditar" class="btn btn-success float-lg-right">Nuevo Agricultor</a>
+    </h2>
+    <br />
+    <br />
+    <table id="DataTablesLanguage" class="table align-items-center table-flush">
+        <thead>
+            <tr>
+                <th style="width:150px;">Nombres y Apellidos</th>
+                <th style="width:50px;">Nro Documento</th>
+                <th style="width:50px;">Foto Perfil</th>
+                <th style="width:50px;">Celular</th>
+                <th style="width:150px;">Correo Electronico</th>
+                <th style="width:150px;">Acciones</th>
+            </tr>
+        </thead>
 
-<h2>Index</h2>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre @item.Apellidos</td>
+                    <td>@item.Num_Identificacion</td>
+                    <td>
+                        <img src="http://localhost:57711/Content/AgricultoresFiles/@item.Foto_Perfil" width="100" />
+                    </td>
+                    <td>@item.Celular</td>
+                    <td>@item.Correo</td>
+                    <td style="align-content:center">
+                        <a href="~/Agricultor/Visualizar/@item.IdAgricultor" class="btn btn-xs btn-warning">Detalles</a>
+                        <a href="~/Agricultor/AgregarEditar/@item.IdAgricultor" class="btn btn-xs btn-primary">Modificar</a>
+                        <a onclick="return confirm('¿Esta seguro que desea eliminar el registro...?');"
+                           href="~/Agricultor/Eliminar/@item.IdAgricultor" class="btn btn-xs btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 

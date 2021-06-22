@@ -101,9 +101,27 @@
   <ItemGroup>
     <Content Include="Content\AgricultoresFiles\foto1.jpg" />
     <Content Include="Content\ProductosFiles\2.jpg" />
+    <Content Include="Content\ProductosFiles\ajiamarillo.jpg" />
+    <Content Include="Content\ProductosFiles\ajinegro.jpg" />
     <Content Include="Content\ProductosFiles\ajip.png" />
+    <Content Include="Content\ProductosFiles\ajipaprika.jpg" />
+    <Content Include="Content\ProductosFiles\archivox.png" />
+    <Content Include="Content\ProductosFiles\camote.jpg" />
+    <Content Include="Content\ProductosFiles\Captura1.PNG" />
+    <Content Include="Content\ProductosFiles\cebolla.jpg" />
+    <Content Include="Content\ProductosFiles\Clients.png" />
+    <Content Include="Content\ProductosFiles\contrsuccion.png" />
+    <Content Include="Content\ProductosFiles\GRANADA_51..jpg" />
+    <Content Include="Content\ProductosFiles\granadilla.jpg" />
     <Content Include="Content\ProductosFiles\images.jpg" />
+    <Content Include="Content\ProductosFiles\olivo.jpg" />
+    <Content Include="Content\ProductosFiles\oregano.jpg" />
+    <Content Include="Content\ProductosFiles\palta.jpg" />
+    <Content Include="Content\ProductosFiles\papa.jpg" />
+    <Content Include="Content\ProductosFiles\papanegra.jpg" />
     <Content Include="Content\ProductosFiles\producto1.jpg" />
+    <Content Include="Content\ProductosFiles\quinua.jpg" />
+    <Content Include="Content\ProductosFiles\zandia.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="recursos\css\argon.css" />
@@ -1812,6 +1830,7 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="recursos\vendor\fortawesome\fontawesome-free\webfonts\fa-brands-400.eot" />
     <Content Include="recursos\vendor\fortawesome\fontawesome-free\webfonts\fa-brands-400.ttf" />
@@ -1866,6 +1885,7 @@
     <Content Include="Views\Vehiculos\AgregarEditar.cshtml" />
     <Content Include="Views\Vehiculos\Visualizar.cshtml" />
     <Content Include="Views\Venta\Agregar.cshtml" />
+    <Content Include="Views\Venta\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
