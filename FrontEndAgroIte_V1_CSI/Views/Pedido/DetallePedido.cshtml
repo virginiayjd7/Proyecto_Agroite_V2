@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<FrontEndAgroIte_V1_CSI.Models.Carrito>
 
-@{ ViewBag.Title = "DetallePedido"; }
+@{
+    ViewBag.Title = "DetallePedido"; 
+ }
 
 
 <!-- Start All Title Box -->
@@ -120,7 +122,20 @@
                         </div>
                         <hr>
 
+                        @if (Session["idusuario"] != null)
+                        {
                         <button class="btn btn--e-brand-b-2" type="button" id="buyButton"> PROCESAR PAGO</button>
+                        }
+                                else
+                                {
+                  
+                             <a href="~/Login/Index" class="btn btn--e-brand-b-2"> PROCESAR PAGO</a>
+                                    
+                                    
+                                    }
+
+
+
                     </div>
                 </div>
             </div>

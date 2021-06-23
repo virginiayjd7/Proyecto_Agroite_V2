@@ -26,7 +26,8 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
             if (rm.response)
             {
                 Session["idusuario"] = rm.idusuario;
-                return Redirect("~/Home/Index");
+                Session["correo"] = rm.correo;
+                return Redirect("~/Pedido/DetallePedido");
             }
             return Redirect("~/Login/Index");
         }

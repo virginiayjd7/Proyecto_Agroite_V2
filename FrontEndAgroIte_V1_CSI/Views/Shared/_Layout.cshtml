@@ -1,7 +1,7 @@
-﻿@{
-    Layout = null;
+﻿@{FrontEndAgroIte_V1_CSI.Models.Usuario usuario = new FrontEndAgroIte_V1_CSI.Models.Usuario().Obtener((FrontEndAgroIte_V1_CSI.Models.SessionHelper.GetUser()));}
 
-}
+
+@{ Layout = null; }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,10 +52,26 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="~/Usuario/Registrarse"><i class="fa fa-user s_color"></i> Registrarse</a></li>
-                            <li><a href="~/Login/Index"><i class="fas fa-sign-in s_color"></i> Iniciar sesion</a></li>
-                            <li><a href="~/Login/LogOut"><i class="fas fa-sign-out s_color"></i> Salir</a></li>
+
+
+                            @if (Session["idusuario"]!= null)
+                            {
+
+                                <li><a href="~/Login/LogOut"><i class="fas fa-sign-out s_color"></i> Salir</a></li>
+
+                                <li><a href="#"><i class="fas fa-user-circle u-s-m-r-6"></i><span>Hola  @Session["correo"] </span></a></li>
+
+                            }
+                            else
+                            {
+                                <li><a href="~/Usuario/Registrarse"><i class="fa fa-user s_color"></i> Registrarse</a></li>
+                                <li><a href="~/Login/Index"><i class="fas fa-sign-in s_color"></i> Iniciar sesion</a></li>
+                            }
+
+
                         </ul>
+
+                        <h5> @Session["idusuario"]</h5>
                     </div>
                 </div>
 
@@ -109,29 +125,29 @@
                 <div id="itemscarrito">
                     @{ Html.RenderAction("_carrito", "Home"); }
                 </div>
-           <!--     <li class="cart-box">
-                    <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
-                    </ul>
-                </li>  -->
+                <!--     <li class="cart-box">
+                         <ul class="cart-list">
+                             <li>
+                                 <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                                 <h6><a href="#">Delica omtantur </a></h6>
+                                 <p>1x - <span class="price">$80.00</span></p>
+                             </li>
+                             <li>
+                                 <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                                 <h6><a href="#">Omnes ocurreret</a></h6>
+                                 <p>1x - <span class="price">$60.00</span></p>
+                             </li>
+                             <li>
+                                 <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                                 <h6><a href="#">Agam facilisis</a></h6>
+                                 <p>1x - <span class="price">$40.00</span></p>
+                             </li>
+                             <li class="total">
+                                 <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                                 <span class="float-right"><strong>Total</strong>: $180.00</span>
+                             </li>
+                         </ul>
+                     </li>  -->
 
 
             </div>
@@ -316,6 +332,8 @@
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+
 
     <!-- ALL JS FILES -->
     <script src="~/assets/js/jquery-3.2.1.min.js"></script>
