@@ -1,0 +1,19 @@
+﻿@model IEnumerable<FrontEndAgroIte_V1_CSI.Models.Carrito>
+
+
+
+@{Layout = null; }
+
+<li class="cart-box">
+    <ul class="cart-list">
+        @foreach (var item in Model)
+        {
+        <li>
+        <a href="#" class="photo"><img src="~/assets/images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+        <h6><a href="#">@item.nombre_producto </a></h6>
+        <p>@item.cantidad x  <span class="price">S/. @item.precio</span></p>
+        </li>
+        }
+    </ul>
+</li>
+

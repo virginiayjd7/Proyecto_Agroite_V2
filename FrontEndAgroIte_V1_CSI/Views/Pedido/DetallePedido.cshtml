@@ -1,0 +1,315 @@
+﻿@model IEnumerable<FrontEndAgroIte_V1_CSI.Models.Carrito>
+
+@{
+    ViewBag.Title = "DetallePedido"; 
+ }
+
+
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Cart</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                    <li class="breadcrumb-item active">Cart</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
+<!-- Start Cart  -->
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Images</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="thumbnail-img">
+                                        <a href="#">
+                                            <img class="img-fluid" src="~/assets/images/img-pro-01.jpg" alt="" />
+                                        </a>
+                                    </td>
+                                    <td class="name-pr">
+                                        <a href="#">
+                                           @item.nombre_producto
+                                        </a>
+                                    </td>
+                                    <td class="price-pr">
+                                        <p>S/. @item.precio</p>
+                                    </td>
+                                    <td class="quantity-box"><input type="number" size="4" value="@item.cantidad" onchange="Update(this.value,'@item.id_producto')" min="0" step="1" class="c-input-text qty text"></td>
+                                    <td class="total-pr">
+                                        <p>S/. @item.subtotal</p>
+                                    </td>
+                                    <td class="remove-pr">
+                                        <a onclick="Remove('@item.id_producto')">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <div class="coupon-box">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
+                        <div class="input-group-append">
+                            <button class="btn btn-theme" type="button">Apply Coupon</button>
+                        </div>
+                      
+                        </div>
+
+                    <div id="vehiculos">
+                    <!--    <table class="table" id="vehiculos">
+                            <thead class="text-primary">
+                                <tr>
+                                    <th> id</th>
+                                    <th> nombre </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>-->
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <br /><br />
+                <div class="update-box">
+                    <div class="order-box">
+                        <h3>Order summary</h3>
+                        <div class="d-flex">
+                            <h4>Sub Total</h4>
+                            <label class="ml-auto font-weight-bold" id="subtotal"> 0</label>
+                        </div>
+                        <div class="d-flex">
+                            <h4>Vehiculo</h4>
+                            <label class="ml-auto font-weight-bold" id="subtotalcarga"> 0</label>
+                        </div>
+
+                        <hr>
+                        <div class="d-flex gr-total">
+                            <h5> Total</h5>
+
+                            <label class="ml-auto h5" id="Total"> 0</label>
+                        </div>
+                        <hr>
+
+                        @if (Session["idusuario"] != null)
+                        {
+                        <button class="btn btn--e-brand-b-2" type="button" id="buyButton"> PROCESAR PAGO</button>
+                        }
+                                else
+                                {
+                  
+                             <a href="~/Login/Index" class="btn btn--e-brand-b-2"> PROCESAR PAGO</a>
+                                    
+                                    
+                                    }
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+</div>
+<script src="https://checkout.culqi.com/js/v3"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    listacar();
+    Datos();
+    $(document).ready(function () {      
+       // Datos();      
+    });
+    function Remove(IdProducto) {
+        var data = { id_producto: IdProducto }
+        $.ajax({
+            url: '/Home/Remove/',
+            type: 'post',
+            datatype: 'json',
+            data: data,
+            success: function (response) {
+                actualizar()
+               // cantidad();
+               // document.location.href = '/Pedidos/';
+            },
+            error: function (xhr, status) {
+                alert('Disculpe, existió un problema');
+            },
+        });
+    }
+
+    function actualizar() {
+           $.ajax({
+                url: '@Url.Action("_carrito", "Home")',
+                dataType: 'html',
+                traditional: true,
+                type: 'POST',
+                success: function (content) {
+                    $("#itemscarrito").html(content);
+                    document.location.href = '/Pedido/DetallePedido';
+                }
+            });
+    }
+    function Update(e, id) {
+        var data = { cantidad: e, id_producto: id }
+        $.ajax({
+            url: '/Home/Update/',
+            type: 'POST',
+            data: data,
+            datatype: 'json',
+            success: function (response) {
+                console.log(response)
+             //   $("#CantidItem").text(response.cantidad);            
+                $("#subtotal").text(response.total)
+               // $("#Total").text(response.total)
+            },
+            error: function (xhr, status) {
+                alert('Disculpe, existió un problema');
+            },
+        });
+    }
+
+    function Datos() {
+        //   alert("entra");
+        $.ajax({
+            url: '/Home/Datos/',
+            type: 'GET',
+            datatype: 'json',
+            success: function (response) {
+                console.log(response)
+                $("#subtotal").text(response.total)
+               // $("#Total").text(response.total)
+            },
+            error: function (xhr, status) {
+                alert('existió un problema');
+            },
+        });
+    }
+
+    function listacar() {
+       /// alert("entra carro")
+        $.ajax({
+            url: '/Pedido/ListaTrasnporador/',
+            type: 'GET',
+            datatype: 'json',
+            success: function (data) {
+                console.log(data)
+                var rows = '';
+                // console.log(data);
+                $.each(data, function (i, item) {              
+                   rows += "<div class='card'>  <div class='card-body'>"               
+                   rows += "  <div style='display:flex'>   <img class='img-fluid' src='http://localhost:54574/assets/images/vehiculo.png' width='100' style='margin-right:10px'  />  <p>" + item.Marca + " " + item.Modelo + " <strong>" + item.Precio + "</strong> </p>  <input class='form-check-input' type='radio' style='margin-left:60%' name='checks' value='' onClick='SumarTotal(\"" + item.Precio +"\")'> </div>"             
+                   rows += "  </div>  </div>"                    
+                    $("#vehiculos").html(rows);
+
+                });
+            },
+            error: function (err) {
+                console.log(err)
+               // alert("Error: " + err.responseText);
+            },
+        });
+    }
+
+    function SumarTotal(preciocamcion) {
+        $("#subtotalcarga").text(preciocamcion);
+        $.ajax({
+            url: '/Home/SumarTotal/?preciocamion='+ preciocamcion,
+            type: 'GET',
+            datatype: 'json',
+            success: function (response) {
+                console.log(response)
+                 //  $("#subtotal").text(response.total)
+                $("#Total").text(response.total)
+            },
+            error: function (err) {
+                alert(err);
+                console.log(err)
+            },
+       });
+    }
+    //pk_test_88ec032fea5c8f35
+    Culqi.publicKey = 'pk_test_88ec032fea5c8f35';
+
+    $('#buyButton').on('click', function (e) {   
+        var Total = $("#Total").text();
+        if (Total == "" || Total == '0') {
+            alert("No tiene Prouductos")
+            return;
+        }
+        precio = parseInt($("#Total").text()) * 100;
+        Culqi.settings({
+            title: 'AgroIte',
+            currency: 'PEN',
+            description: 'Agricola',
+            amount: precio
+        });
+        Culqi.open();
+        e.preventDefault();
+    });
+
+
+   function culqi() {
+        if (Culqi.token) {
+            var token = Culqi.token.id;
+            console.log(token);
+            var Total = $("#Total").text();
+            if (Total == "") {
+                alert("total vvacio")
+                return;
+            }
+            var correo = Culqi.token.email;
+            var data = { producto: 'productos', correo: correo, token: token, precio: Total }
+            $.ajax({
+                url: '/Pedido/Pagar/',
+                type: 'POST',
+                data: data,
+                datatype: 'json',
+                success: function (response) {    
+                    console(response);
+                    alert("venta Exitosa")                                   
+                },
+                error: function (err) {
+                  //  alert(err);
+                    console.log(err);
+                }
+            });
+        }
+    }
+
+
+
+</script>
