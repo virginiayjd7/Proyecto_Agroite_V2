@@ -69,15 +69,22 @@
                     <div class="single-product-details">
                         <h2>@Model.Nombre_Producto</h2>
                         <h5> <del>s/.@Model.Precio_Referencial</del> >s/.@Model.Precio_Referencial</h5>
-                        <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span><p>
-                            <h4>Descripcion:</h4>
+                        <p class="available-stock"><span> Más de 20 disponibles / <a href="#">8 vendido </a></span><p>
+                        <h4>Asociacion</h4>
+                       
+                        <p><a href="~/Producto/DetalleProducto/?idAsociacion=@Model.IdAsociacion">@Model.Asociacion.Razon_Social</a></p>
+                        <h4>Categoria:</h4>  
+                        <p>@Model.Categoria.Nombre</p>
+                        <h4>Cantidad Producida:</h4>
+                        <p>@Model.Cantidad_Producida,@Model.UnidadVolumen.Nombre,@Model.Frecuencia.Nombre</p>
+                           <h4>Descripcion:</h4>
                         <p>
                             @Model.Descripcion_Producto
                         </p>
                         <ul>
                             <li>
                                 <div class="form-group quantity-box">
-                                    <label class="control-label">Cantidad</label>
+                                    <label class="control-label">Cantidad a comprar</label>
                                    <!-- <input class="form-control" value="1" min="1" max="20" id="txtcantidad" type="number">-->
 
                                     <select class="form-control"" aria-label="Default select example">

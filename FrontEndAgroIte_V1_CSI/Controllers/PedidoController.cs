@@ -21,7 +21,11 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
             var lissta = obj.lista();
             return View(lissta);
         }
-
+        public ActionResult RealizarPedido()
+        {
+            var lissta = obj.lista();
+            return View(lissta);
+        }
         public ActionResult ListaTrasnporador()
         {
             var lissta = ve.listarVehiculos();

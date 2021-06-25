@@ -29,12 +29,12 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Images</th>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
+                                <th> Imágenes</th>
+                                <th>Nombre del producto</th>
+                                <th>precio</th>
+                                <th>cantidad</th>
                                 <th>Total</th>
-                                <th>Remove</th>
+                                <th>eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,7 +48,7 @@
                                     </td>
                                     <td class="name-pr">
                                         <a href="#">
-                                           @item.nombre_producto
+                                            @item.nombre_producto
                                         </a>
                                     </td>
                                     <td class="price-pr">
@@ -65,46 +65,59 @@
                                     </td>
                                 </tr>
                             }
-                            </tbody>
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
+        <div class="row my-5">
+            <div class="col-lg-6 col-sm-6">
+                <div class="update-box">
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-append">
+                            <input value="Trasportes de envio" type="submit">
 
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="update-box">
+                    <input value="Actualizar Carrito" type="submit">
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-6 col-sm-6">
                 <div class="coupon-box">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
-                        <div class="input-group-append">
-                            <button class="btn btn-theme" type="button">Apply Coupon</button>
-                        </div>
-                      
-                        </div>
+                   
 
                     <div id="vehiculos">
-                    <!--    <table class="table" id="vehiculos">
-                            <thead class="text-primary">
-                                <tr>
-                                    <th> id</th>
-                                    <th> nombre </th>
-                                   
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>-->
+                        <!--    <table class="table" id="vehiculos">
+                        <thead class="text-primary">
+                            <tr>
+                                <th> id</th>
+                                <th> nombre </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>-->
 
                     </div>
-
-
                 </div>
+             
             </div>
+
             <div class="col-lg-6 col-sm-6">
                 <br /><br />
                 <div class="update-box">
                     <div class="order-box">
-                        <h3>Order summary</h3>
+                        <h3>
+                            Resumen del pedido
+                        </h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
                             <label class="ml-auto font-weight-bold" id="subtotal"> 0</label>
@@ -116,7 +129,9 @@
 
                         <hr>
                         <div class="d-flex gr-total">
-                            <h5> Total</h5>
+                            <h5>
+                                Total general
+                            </h5>
 
                             <label class="ml-auto h5" id="Total"> 0</label>
                         </div>
@@ -124,24 +139,24 @@
 
                         @if (Session["idusuario"] != null)
                         {
-                        <button class="btn btn--e-brand-b-2" type="button" id="buyButton"> PROCESAR PAGO</button>
+                            <button class="btn btn--e-brand-b-2" type="button" id="buyButton"> PROCESAR PAGO</button>
                         }
-                                else
-                                {
-                  
-                             <a href="~/Login/Index" class="btn btn--e-brand-b-2"> PROCESAR PAGO</a>
-                                    
-                                    
-                                    }
+                        else
+                        {
 
+                            <a href="~/Login/Index" class="btn btn--e-brand-b-2"> PROCESAR PAGO</a>
+
+
+                        }
 
 
                     </div>
                 </div>
+                <div class="col-12 d-flex shopping-box"><a href="~/Pedido/RealizarPedido" class="ml-auto btn hvr-hover">Realizar Pedidos</a> </div>
             </div>
         </div>
 
-        
+
 
     </div>
 </div>

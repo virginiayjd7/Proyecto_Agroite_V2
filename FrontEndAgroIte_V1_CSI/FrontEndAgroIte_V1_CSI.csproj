@@ -295,6 +295,7 @@
     <Content Include="Views\Productos\ProductosDetalles.cshtml" />
     <Content Include="Views\Pedido\DetallePedido.cshtml" />
     <Content Include="Views\Home\_carrito.cshtml" />
+    <Content Include="Views\Pedido\RealizarPedido.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
