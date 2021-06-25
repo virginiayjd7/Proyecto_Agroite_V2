@@ -105,6 +105,22 @@ namespace FrontEndAgroIte_V1_CSI.Models
             }
             return usuarios;
         }
+        public List<Producto> ObtenerTipoProducto(int id)
+        {
+            var producto = new List<Producto>();
+            try
+            {
+                using (var db = new agroite())
+                {
+                    producto = db.Producto.Include("Asociacion").Include("Frecuencia").Include("UnidadVolumen").Include("Categoria").Where(x => x.IdCategoria == id).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return producto;
+        }
 
         public Producto Obtener(int id)
         {
