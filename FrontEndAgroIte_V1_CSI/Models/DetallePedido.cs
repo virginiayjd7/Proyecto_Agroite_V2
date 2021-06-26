@@ -4,6 +4,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
 
     [Table("DetallePedido")]
@@ -21,5 +22,29 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public decimal? Subtotal { get; set; }
 
         public virtual Pedido Pedido { get; set; }
+
+        public void RegistarDetallePedido()
+        {
+            try
+            {
+                using (var db = new agroite())
+                {
+                    if (this.IdDetallePedido > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+        }
     }
 }

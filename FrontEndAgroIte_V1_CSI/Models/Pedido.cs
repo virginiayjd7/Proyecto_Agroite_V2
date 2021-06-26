@@ -4,6 +4,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
 
     [Table("Pedido")]
@@ -32,6 +33,8 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public int? IdTrasportador { get; set; }
 
+        public string Punto_Entrega { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallePedido> DetallePedido { get; set; }
 
@@ -41,5 +44,33 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venta> Venta { get; set; }
+
+
+        public int RegistarPedido()
+        {
+            int id = 0;
+            try
+            {
+                using (var db = new agroite())
+                {
+                    if (this.IdPedido > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+                    id = this.IdPedido;
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return id;
+        }
+
     }
 }

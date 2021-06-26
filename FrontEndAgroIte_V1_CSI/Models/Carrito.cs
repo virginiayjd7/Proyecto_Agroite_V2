@@ -28,5 +28,10 @@ namespace FrontEndAgroIte_V1_CSI.Models
             var lista = HomeController.carrito.ToList();
             return lista;
         }
+        public void Limpiar()
+        {
+            HomeController.carrito.Clear();
+         
+        }
     }
 }

@@ -21,19 +21,14 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public static int GetUser()
         {
             int user_id = 0;
-
-            if (HttpContext.Current.User != null &&
-                HttpContext.Current.User.Identity is FormsIdentity)
+            if (HttpContext.Current.User != null && HttpContext.Current.User.Identity is FormsIdentity)
             {
-                FormsAuthenticationTicket ticket = ((FormsIdentity)
-                    HttpContext.Current.User.Identity).Ticket;
-
+                FormsAuthenticationTicket ticket = ((FormsIdentity)HttpContext.Current.User.Identity).Ticket;
                 if (ticket != null)
                 {
                     user_id = Convert.ToInt32(ticket.UserData);
                 }
             }
-
             return user_id;
         }
         public static void AddUserToSession(string id)

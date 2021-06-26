@@ -12,21 +12,27 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
         // GET: Productos
         public Asociacion asociacion = new Asociacion();
         public Producto producto = new Producto();
-
-      
        
-        public ActionResult CatalogoProductos(string criterio)
+        public Categoria categoria = new Categoria();
+        public ActionResult CatalogoProductos(int id = 0)
         {
-            if (criterio == null || criterio == "")
+            if (id == 0)
             {
                 ViewBag.asociacion = asociacion.Listar();
+                ViewBag.categoria = categoria.Listar();
                 return View(producto.Listar());
             }
             else
             {
-                return View();
+                ViewBag.productos = producto.Listar();
+                ViewBag.asociacion = asociacion.Listar();
+                ViewBag.categoria = categoria.Listar();
+                return View(producto.ObtenerTipoProducto(id));
             }
         }
+
+
+      
         public ActionResult ProductosDetalles(string idProducto)
         {
             

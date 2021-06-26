@@ -59,6 +59,61 @@ namespace FrontEndAgroIte_V1_CSI.Models
                 {
                     db.Configuration.ProxyCreationEnabled = false;
                     vehiculo = db.Vehiculos.ToList();
+                  //  vehiculo = db.Vehiculos.Include("Transportador").ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return vehiculo;
+        }
+
+
+        public List<Transportador> listarVehiculos2()
+        {
+            
+            var vehiculo = new List<Transportador>();
+            try
+            {
+                using (var db = new agroite())
+                {
+                    db.Configuration.ProxyCreationEnabled = false;
+                    var query = (from de in db.Transportador
+                                 join pro in db.Vehiculos on de.IdVehiculo equals pro.IdVehiculo
+                               
+                                 select new
+                                 {
+                                     de.IdTransportador,
+                                     de.Nombre,
+                                     pro.Marca,
+                                     pro.IdVehiculo,
+                                     pro.Modelo,
+                                     pro.Capacidad,
+                                     pro.Precio,
+                                     pro.Carga_Total
+                                 }).ToList();
+
+                    foreach (var item in query)
+                    {
+                        Vehiculos a = new Vehiculos();
+                        a.Marca = item.Marca;
+                        a.IdVehiculo = item.IdVehiculo;
+                        a.Precio = item.Precio;
+                        a.Carga_Total = item.Carga_Total;
+                        a.Capacidad = item.Capacidad;
+                        a.Modelo = item.Modelo;
+                        vehiculo.Add(new Transportador()
+                        {
+                            Vehiculos = a,
+                            IdTransportador = item.IdTransportador,
+                            Nombre = item.Nombre
+
+                        });
+
+                    }
+                    //   vehiculo = db.Transportador.Include("Vehiculos").Where(x => x.Vehiculos.Tipo_Carga.ToLower().Contains(criterio.ToLower())).ToList();
+
                 }
             }
             catch (Exception ex)

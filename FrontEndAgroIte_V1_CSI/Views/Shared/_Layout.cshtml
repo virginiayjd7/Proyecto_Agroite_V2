@@ -59,7 +59,7 @@
 
                                 <li><a href="~/Login/LogOut"><i class="fas fa-sign-out s_color"></i> Salir</a></li>
 
-                                <li><a href="#"><i class="fas fa-user-circle u-s-m-r-6"></i><span>Hola  @Session["correo"] </span></a></li>
+                                <li><a href="#"><i class="fas fa-user-circle u-s-m-r-6"></i><span>  @Session["nombre"] </span></a></li>
 
                             }
                             else
@@ -98,7 +98,7 @@
                         <li class="nav-item active"><a class="nav-link" href="~/Home/Index">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="~/Home/Nosotros">Nosotros</a></li>
                         <li class="dropdown"><a class="nav-link" href="~/Productos/CatalogoProductos">Tienda Agricola</a> </li>
-                        <li class="nav-item"><a class="nav-link" href="~/Usuario/Index">Productores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Agricultor/Productores">Productores</a></li>
                         <li class="nav-item"><a class="nav-link" href="~/Home/Contactenos"> Contáctenos</a></li>
                     </ul>
                 </div>
@@ -125,29 +125,31 @@
                 <div id="itemscarrito">
                     @{ Html.RenderAction("_carrito", "Home"); }
                 </div>
-                 <li class="cart-box">
-             <ul class="cart-list">
-                <!-- <li>
-                     <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                     <h6><a href="#">Delica omtantur </a></h6>
-                     <p>1x - <span class="price">$80.00</span></p>
-                 </li>
-                 <li>
-                     <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                     <h6><a href="#">Omnes ocurreret</a></h6>
-                     <p>1x - <span class="price">$60.00</span></p>
-                 </li>
-                 <li>
-                     <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                     <h6><a href="#">Agam facilisis</a></h6>
-                     <p>1x - <span class="price">$40.00</span></p>
-                 </li>-->
-                <li class="total">
-                    <a href="~/Pedido/DetallePedido" class="btn btn-default hvr-hover btn-cart">Ver Pedidos</a>
-                    <span class="float-right"><strong>Total</strong>: $180.00</span>
-                </li>
-                </ul>
-        
+                <!--     <li class="cart-box">
+                         <ul class="cart-list">
+                             <li>
+                                 <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                                 <h6><a href="#">Delica omtantur </a></h6>
+                                 <p>1x - <span class="price">$80.00</span></p>
+                             </li>
+                             <li>
+                                 <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                                 <h6><a href="#">Omnes ocurreret</a></h6>
+                                 <p>1x - <span class="price">$60.00</span></p>
+                             </li>
+                             <li>
+                                 <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                                 <h6><a href="#">Agam facilisis</a></h6>
+                                 <p>1x - <span class="price">$40.00</span></p>
+                             </li>
+                             <li class="total">
+                                 <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                                 <span class="float-right"><strong>Total</strong>: $180.00</span>
+                             </li>
+                         </ul>
+                     </li>  -->
+
+
             </div>
             <!-- End Side Menu -->
         </nav>

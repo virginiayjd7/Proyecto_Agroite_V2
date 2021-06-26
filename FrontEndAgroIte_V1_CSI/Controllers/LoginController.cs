@@ -14,23 +14,44 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
         private Usuario objusuario = new Usuario();
         private Actividad actividad = new Actividad();
         // GET: Login
-        [NoLogin]
+      //  [NoLogin]
         public ActionResult Index()
         {
             return View();
         }
         public ActionResult Acceder(string usuario, string password)
         {
-
             var rm = objusuario.Acceder(usuario, password);
             if (rm.response)
             {
                 Session["idusuario"] = rm.idusuario;
                 Session["correo"] = rm.correo;
-                return Redirect("~/Pedido/DetallePedido");
+                Session["nombre"] = rm.nombre;
+
+                return Redirect("~/Home/Index");
             }
             return Redirect("~/Login/Index");
         }
+
+        public ActionResult Ingresar(string user, string password)
+        {
+            return View();
+        }
+
+        public JsonResult Ingreso(string usuario, string password)
+        {
+           // string epass = HashHelper.SHA256(password);
+            var responseModel = objusuario.Acceder(usuario, password);
+            if (responseModel.response)
+            {
+                Session["Email"] = usuario;
+                Session["IdCliente"] = responseModel.idusuario;
+                responseModel.href = Url.Content("~/Home");
+            }
+
+            return Json(responseModel);
+        }
+
 
         public ActionResult LogOut()
         {

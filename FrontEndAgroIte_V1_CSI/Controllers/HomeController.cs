@@ -76,7 +76,8 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
             }
             else
             {
-                o.subtotal = o.precio;
+               
+                o.subtotal = o.precio*o.cantidad;
                // o.precio = 0;
                 ca.AgrrgarCrrito(o);
             }

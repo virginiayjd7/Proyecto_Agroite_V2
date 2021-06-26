@@ -249,10 +249,14 @@ namespace FrontEndAgroIte_V1_CSI.Models
                     {
                         //     Session["idusario"] = query.IdUsuario.ToString();
                         SessionHelper.AddUserToSession(query.IdUsuario.ToString());
-                        //  SessionHelper.AddUserToSession(IdUsuario.ToString());
-                        rm.SetResponse(true);
+                        //  SessionHelper.AddUserToSession(IdUsuario.ToString());                       
                         rm.idusuario = query.IdUsuario.ToString();
                         rm.actividad = query.Actividad.Nombre.ToString();
+                        rm.nombre = query.Nombres;
+                       
+                        rm.correo = Usuario;
+                      //  responseModel.idcliente = query.IdCliente.ToString();
+                        rm.SetResponse(true);
                     }
                     else
                     {
@@ -266,6 +270,28 @@ namespace FrontEndAgroIte_V1_CSI.Models
             { throw; }
             return rm;
         }
+
+
+        public Usuario ObtenerEmail(string email)
+        {
+            var objCliente = new Usuario();
+            try
+            {
+                //origen de datos
+                using (var db = new agroite())
+                {
+                    //Condicion LINQ
+                    objCliente = db.Usuario.Where(x => x.Correo == email).SingleOrDefault();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return objCliente;
+        }
+
         public List<Usuario> ObtenerUsuarioPorProducto()//retorna una lista o coleccion de objetos
         {
             var ObjModelo = new List<Usuario>();

@@ -1,0 +1,209 @@
+﻿@model   FrontEndAgroIte_V1_CSI.Models.ModelCompra
+@{
+    ViewBag.Title = "FinalizarCompra";
+}
+
+
+<style>
+
+    .woocommerce form .form-row label {
+        line-height: 2;
+        font-weight: 700;
+        font-size: 13.5px;
+        font-size: .9rem;
+    }
+
+    .mp-redirect-frame {
+        width: 100%;
+        text-align: center;
+        background-color: #f5f5f5;
+        padding: 25px 20px 20px;
+        display: inline-block;
+    }
+
+    ul.payment_methods li img {
+        vertical-align: middle;
+        margin: -2px 0 0 .5em;
+        padding: 0;
+        position: relative;
+        box-shadow: none;
+</style>
+
+<div class="container">
+    <h2>FinalizarCompra</h2>
+    <br />
+
+    <div style="display:flex">
+        <div class="col-6">
+            <form>
+                <div class="form-row">
+                    
+                  
+                </div>
+               
+                <div class="form-group">
+                    <label for="inputAddress2"> Peru/ Region /Provincia *</label>
+                    <select class="form-control" aria-label="Default select example" id="selecrerion">
+                        <option selected>Seleccione</option>
+                        <option value="Tacna">Tacna</option>
+                        <option value="Moquegua">Moquegua</option>
+                        <option value="Ancash">Ancash</option>
+                        <option value="Apurimac">Apurimac</option>
+                        <option value="Amazonas">Amazonas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Localidad /Distrito *</label>
+                    <input type="text" class="form-control" id="txtdistrito" />
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Direccion de la calle</label>
+                    <input type="text" class="form-control" id="txtdireccion">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress2">Codigo Postal *</label>
+                        <input type="text" class="form-control" id="txtcodigopostar">
+                    </div>                    
+                </div>              
+            </form>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 id="order_review_heading">Tu pedido</h3>
+                    <div id="order_review" class="woocommerce-checkout-review-order">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="product-name">Producto</th>
+                                    <th class="product-total">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                             @foreach (var item in Model.carrito)
+                             {                          
+                                  <tr class="cart_item">
+                                    <td class="product-name">
+                                        @item.nombre_producto
+                                        <strong class="product-quantity">×&nbsp; @item.cantidad</strong>
+                                    </td>
+                                    <td class="product-total">
+                                        <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">S/</span> @item.precio</bdi></span>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+
+                            <tfoot>
+                                <tr class="cart-subtotal">
+                                    <th>Subtotal</th>
+                                    <td><span class="woocommerce-Price-amount amount"><bdi>  <label id="lblsubtoral" class="woocommerce-Price-currencySymbol"> @Model.Subtotal </label></bdi></td>
+                                </tr>
+                                <tr class="woocommerce-shipping-totals shipping">
+                                    <th>Envío</th>
+                                    <td data-title="Envío">
+                                        <ul id="shipping_method" class="woocommerce-shipping-methods">
+                                            <li>
+                                                <input type="hidden" name="shipping_method[0]" data-index="0" id="shipping_method_0_flat_rate1" value="flat_rate:1" class="shipping_method"><label for="shipping_method_0_flat_rate1">Precio fijo: <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">S/</span>@Model.Carro</bdi></span></label>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr class="order-total">
+                                    <th>Total</th>
+                                    <td><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">S/</span>@Model.Total </bdi></span></strong> </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <div id="payment" class="woocommerce-checkout-payment">
+                            <ul class="wc_payment_methods payment_methods methods">
+                                <li class="wc_payment_method payment_method_woo-mercado-pago-basic">
+                                    <input id="payment_method_woo-mercado-pago-basic" type="radio" class="input-radio" name="payment_method" value="woo-mercado-pago-basic" checked="checked" data-order_button_text="" style="display: none;">
+                                    <div class="payment_box payment_method_woo-mercado-pago-basic">
+                                        <div class="mp-panel-checkout">
+                                            <div class="mp-row-checkout">
+                                                <div id="framePayments" class="mp-col-md-12">
+                                                    <div class="frame-tarjetas">
+                                                        <p class="mp-subtitle-basic-checkout">
+                                                            Tarjetas de crédito				<span class="mp-badge-checkout">Hasta 24									cuotas				</span>
+                                                        </p>
+                                                        <img src="https://www.mercadopago.com/org-img/MP3/API/logos/diners.gif" class="mp-img-fluid mp-img-tarjetas" alt="">
+                                                        <img src="https://www.mercadopago.com/org-img/MP3/API/logos/visa.gif" class="mp-img-fluid mp-img-tarjetas" alt="">
+                                                        <img src="https://www.mercadopago.com/org-img/MP3/API/logos/amex.gif" class="mp-img-fluid mp-img-tarjetas" alt="">
+                                                        <img src="https://www.mercadopago.com/org-img/MP3/API/logos/master.gif" class="mp-img-fluid mp-img-tarjetas" alt="">
+                                                    </div>
+                                                </div>
+
+                                                <div id="framePayments" class="mp-col-md-6">
+                                                    <div class="frame-tarjetas">
+                                                        <p class="submp-title-checkout">Pagos en efectivo</p>
+
+                                                        <img src="https://www.mercadopago.com/org-img/MP3/API/logos/pagoefectivo_atm.gif" class="mp-img-fluid mp-img-tarjetas" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="mp-col-md-12 mp-pt-20">
+                                                    <div class="mp-redirect-frame">
+                                                        <img src="https://shoplukxina.com/wp-content/plugins/woocommerce-mercadopago/includes/../assets/images/redirect_checkout.png" class="mp-img-fluid mp-img-redirect" alt="">
+                                                        <p>Te llevamos a nuestro sitio para completar el pago</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="form-row place-order">
+                                <noscript>
+                                    Debido a que tu navegador no es compatible con JavaScript o lo tiene desactivado, por favor, asegúrate de hacer clic en el botón <em>Actualizar totales</em> antes de realizar tu pedido. De no hacerlo, se te podría cobrar más de la cantidad indicada arriba.			<br /><button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="Actualizar totales">Actualizar totales</button>
+                                </noscript>
+                                <div class="woocommerce-terms-and-conditions-wrapper">
+                                    <div class="woocommerce-privacy-policy-text"></div>
+                                </div>
+                                <button type="button"  class="btn btn-dark btn-block" onclick="RealizarPedido()">  REALIZAR PEDIDO </button>
+                                 
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+
+<script>
+
+
+  ///  datos();
+
+
+    function datos() {
+        var TotalCompra = '';
+        $.ajax({
+            url: '/Pedido/Datos/',
+            type: 'GET',
+            datatype: 'json',
+            success: function (response) {
+                console.log(response)
+                $("#lblsubtoral").text(response.total);
+
+            },
+            error: function (err) {
+                console.log(err);
+            },
+        });
+    }
+
+    function RealizarPedido() {
+        var datos = "Peru-" + $("#selecrerion").val() + "-" + $("#txtdistrito").val() + "-" + $("#txtdireccion").val();
+        location.href = '/Pedido/CheckOut/?datos='+ datos;
+    }
+
+</script>

@@ -1,6 +1,4 @@
-﻿@{
-    ViewBag.Title = "Index";
-}
+﻿@{ ViewBag.Title = "Index"; }
 <!-- //login-page -->
 <div class="cart-box-main">
     <div class="container">
@@ -11,21 +9,22 @@
                 </div>
                 @using (Html.BeginForm("Acceder", "Login", FormMethod.Post))
                 {
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="InputUsuario" class="mb-0">Nombre de Usuario</label>
-                            <input type="text" class="form-control" name="Usuario" placeholder="Ingrese usuario">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="InputPassword" class="mb-0">Contraseña</label>
-                            <input type="password" name="Password" class="form-control" placeholder="Ingresar Contraseña">
-                        </div>
-                    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="InputUsuario" class="mb-0">Nombre de Usuario</label>
+            <input type="text" class="form-control" name="Usuario" placeholder="Ingrese usuario">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="InputPassword" class="mb-0">Contraseña</label>
+            <input type="password" name="Password" class="form-control" placeholder="Ingresar Contraseña">
+        </div>
+    </div>
                     <div class="text-left">
-                        <button type="submit" class="btn btn-primary" data-ajax="true" name="usuario">Acceder</button>
+
+                        <button data-ajax="true" type="submit" class="btn btn--e-transparent-brand-b-2">Ingresar</button>
+
                         <a href="~/Home" class="btn btn-danger">Cancelar</a>
-                    </div>
-                }
+                    </div>}
             </div>
         </div>
     </div>
@@ -35,3 +34,11 @@
 
 
 
+
+
+<!--Login-->
+<script src="~/assets/app.js"></script>
+<script src="~/assets/jquery.form.js"></script>
+<script src="~/assets/ini.js"></script>
+<script src="~/assets/jquery.validate.min.js"></script>
+<script src="~/assets/jquery.validate.unobtrusive.min.js"></script>

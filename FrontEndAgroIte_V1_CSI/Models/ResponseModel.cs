@@ -15,6 +15,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public string idusuario { get; set; }
         public string actividad { get; set; }
         public string correo { get; set; }
+        public string nombre { get; set; }
 
         public ResponseModel()
         {
