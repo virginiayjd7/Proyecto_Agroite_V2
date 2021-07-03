@@ -4,6 +4,13 @@
     ViewBag.Title = "Agregar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    #map {
+        height: 300px;
+        width:300px;
+    }
+</style>
+<br />
 
 <h2>Compra</h2>
 
@@ -11,28 +18,28 @@
 
     @using (Html.BeginForm("Guardar", "Compra", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="inputState">Transportador</label>
-                <select id="IdTransportador" name="IdTransportador" class="form-control" required>
-                    <option value="">-Seleccione-</option>
-                    @foreach (var item in Model.transportador)
-                    {
-                        <option value="@(item.IdTransportador)- @item.Vehiculos.IdVehiculo"> @(item.Vehiculos.Marca) </option>
-                    }
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">Capacidad de Carga</label>
-                <input type="number" name="txtcantidad" id="txtcantidad" class="form-control" value="" disabled />
-            </div>
-            <div class="form-group col-md-2">
-                <label for="inputState">Capacidad Sum</label>
-                <input type="number" name="txtcantidadSumana" id="txtcantidadSumana" value="" />
-            </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputState">Transportador</label>
+            <select id="IdTransportador" name="IdTransportador" class="form-control" required>
+                <option value="">-Seleccione-</option>
+                @foreach (var item in Model.transportador)
+                {
+                    <option value="@(item.IdTransportador)- @item.Vehiculos.IdVehiculo"> @(item.Vehiculos.Marca) </option>
+                }
+            </select>
         </div>
+        <div class="form-group col-md-3">
+            <label for="inputState">Capacidad de Carga</label>
+            <input type="number" name="txtcantidad" id="txtcantidad" class="form-control" value="" disabled />
+        </div>
+        <div class="form-group col-md-2" hidden>
+            <label for="inputState" hidden>Capacidad Sum</label>
+            <input type="number" name="txtcantidadSumana" id="txtcantidadSumana" value="" hidden />
+        </div>
+    </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
                 <label for="inputState">Asociacion</label>
                 <select id="IdAsociacion" name="IdAsociacion" class="form-control" required>
                     <option value="">-Seleccione-</option>
@@ -42,7 +49,7 @@
                     }
                 </select>
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
                 <label for="inputState">Producto</label>
                 <select id="idProducto" name="idProducto" class="form-control" required>
                     <option value="">-Seleccione-</option>
@@ -52,6 +59,9 @@
                 <label for="inputEmail4">Cantida Producida</label>
                 <input type="number" name="txtcantidadProducida" id="txtcantidadProducida" class="form-control" value="" />
             </div>
+        </div>
+        <div class="form-row">
+            <div id="map"></div>
         </div>
     }
 
@@ -78,8 +88,25 @@
     </div><br />
 
 </div>
+@*<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 8,
+        });
+    }
+</script>*@
+
 
 <script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 8,
+        });
+    }
 
     function Agregar() {
         var idproduc = $('select[name=idProducto]').val();
@@ -229,4 +256,8 @@
         });
 
     });
+</script>
+
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX4F9nX5NYbAwkTUwG3SXopmNT0oSz0kA&callback=initMap">
 </script>
