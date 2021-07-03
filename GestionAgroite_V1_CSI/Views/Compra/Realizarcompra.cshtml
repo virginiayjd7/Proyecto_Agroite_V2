@@ -1,0 +1,170 @@
+﻿@model GestionAgroite_V1_CSI.Models.ViewModel
+@{
+    ViewBag.Title = "Realizarcompra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    GestionAgroite_V1_CSI.Models.Ubicacion oUbicacion = ViewBag.Ubicacion;
+    GestionAgroite_V1_CSI.Models.Agricultor oAgricultor = ViewBag.Agricultor;
+    GestionAgroite_V1_CSI.Models.Pedido oPedido = ViewBag.Pedido;
+}
+
+<div class="container">
+
+    <h2>Realizarcompra</h2>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Transportista</label>
+                <input type="text" id="txtidpedido" name="name" hidden="" value="@Model.pedido.IdPedido" />
+                <input type="text" class="form-control" id="txttrasportista" value="@Model.pedido.Transportador.Nombre">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Capacidad</label>
+                <input type="text" class="form-control" id="txtcantidad" value="@(Model.pedido.Transportador.Vehiculos.Capacidad % 2==0? Convert.ToInt32(Model.pedido.Transportador.Vehiculos.Capacidad):Model.pedido.Transportador.Vehiculos.Capacidad)">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Unidad medida</label>
+                <input type="text" class="form-control" id="txtunidadmedida" value="@Model.pedido.Transportador.Vehiculos.Unidad_Medida">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">total compra</label>
+                <input type="text" class="form-control" id="txttotalcompra" value="@Model.pedido.Total">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Punto de entrega</label>
+            <input type="text" class="form-control" id="txtpubntoentrega" value="@Model.pedido.Punto_Entrega">
+        </div>
+        @*Aqui Empieza la direccion de Punto de Entrega
+        <button type="button" data-toggle="modal" data-target="#ModalMap" class="btn btn-default">
+            <span class="glyphicon glyphicon-map-marker"><span id="ubicacion">@Model.pedido.Punto_Entrega</span></span>
+        </button>
+        *@
+        <div class="form-group">
+            <label for="inputAddress">Agricultor</label>
+            <input type="text" class="form-control" id="txtpubntoentrega" value="@Model.Agricultor.Nombre  @Model.Agricultor.Apellidos">
+        </div>
+        @*Aqui Empieza la direccion del agricultor*@
+        <button type="button" data-toggle="modal" data-target="#ModalMap" class="btn btn-default">
+            <span class="glyphicon glyphicon-map-marker"><span id="ubicacion">@oAgricultor.Direccion</span></span>
+        </button>
+        <input type="text" id="Latitud" value="@oUbicacion.latitud" hidden />
+        <input type="text" id="Longitud" value="@oUbicacion.longitud" hidden />
+        
+        <div class="modal fade" id="ModalMap" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="model-body">
+                        <div class="form-horizontal">
+                            <div class="form-row">
+                                <div class="form-group col-sm-12">
+                                    <label for="Ubicacion" class="col-sm-2">Ubicacion:</label>&nbsp; &nbsp; &nbsp;
+                                    <input type="text" id="ModalMapaddress" class="col-sm-8" value="" />
+                                    <button type="button" class="close btn col-sm-1" data-dismiss="modal" aria-label="Cerrar">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div id="ModalMapPreview" style="width:500px;height:400px;"></div>
+                            <div class="clearfix"> &nbsp;</div>
+                            <div class="form-group col-sm-12">
+                                <label class=" col-sm-1">lat.:</label>
+                                <input type="text" id="ModalMapLat" class="col-sm-4" readonly />
+                                <label class=" col-sm-1">long.:</label>&nbsp; &nbsp;
+                                <input type="text" id="ModalMapLon" class="col-sm-4" readonly />
+                                <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Aceptar</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br />
+        <button type="button" id="btnregistrar" class="btn btn-primary">Realizar</button>
+
+    </form>
+    <table class="table" id="listaDetalle">
+        <thead class="text-primary">
+            <tr>
+                <th> Producto</th>
+                <th> cantidad </th>
+                <th> precio referencia</th>
+                <th> subtotal </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.detallepedido)
+            {
+                <tr>
+                    <td> @item.Producto.Nombre_Producto</td>
+                    <td> @(item.Cantidad % 2 ==0? Convert.ToInt32(item.Cantidad): item.Cantidad)</td>
+                    <td> @item.Producto.Precio_Referencial</td>
+                    <td> @item.Subtotal</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript" src='https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyCDNzptXSncxejTNu6gfE4IYht5DGmGePA'></script>
+
+<script src="~/Content/js/locationpicker.jquery.js"></script>
+
+<script>
+    var buslat = $("#Latitud").val();
+    var buslon = $("#Longitud").val();
+    console.log(buslat, buslon);
+    $('#ModalMapPreview').locationpicker({
+        zoom: 8,
+        radius: 0,
+        location: {
+            latitude: buslat,
+            longitude: buslon
+        },
+        enableAutocomplete: true,
+        inputBinding: {
+            latitudeInput: $("#ModalMapLat"),
+            longitudeInput: $("#ModalMapLon"),
+            locationNameInput: $("#ModalMapaddress")
+        },
+        //    console.log(inputBinding)
+        onchanged: function (currentLocation, radius, isMarkerDropped) {
+            $("#ubicacion").html($("#ModalMapaddress").val());
+            //     alert(currentLocation)
+            console.log(currentLocation);
+        }
+    });
+
+
+    $('ModalMap').on('show.bs.modal', function () {
+        $('#ModalMapPreview').locationpicker('autosize');
+    });
+       
+
+    $("#btnregistrar").click(function () {
+
+        var idPedido = $("#txtidpedido").val();
+        var Total = $("#txttotalcompra").val();
+
+        var data = { IdPedido: idPedido, Total: Total }
+
+        $.ajax({
+            url: '/Compra/Guardar/',
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                alert(data);
+                document.location.href = '/Compra/Index';
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+    });
+
+</script>
