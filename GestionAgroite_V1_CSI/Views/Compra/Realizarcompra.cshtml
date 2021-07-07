@@ -7,6 +7,9 @@
     GestionAgroite_V1_CSI.Models.Pedido oPedido = ViewBag.Pedido;
 }
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0d6Qz_m5wpj0lnCziyu985dtUNeaDFc0&callback=initMap"
+        type="text/javascript"></script>
+
 <div class="container">
 
     <h2>Realizarcompra</h2>
@@ -33,59 +36,20 @@
         </div>
         <div class="form-group">
             <label for="inputAddress">Punto de entrega</label>
-            <input type="text" class="form-control" id="txtpubntoentrega" value="@Model.pedido.Punto_Entrega">
+            <input type="text" class="form-control" id="txtpubntoentrega" value="@Model.pedido.Punto_Entrega">    
+            <br />
+            <a href="~/Compra/Mapa/?idpedido=@Model.pedido.IdPedido" class="btn btn-default">Ver Ruta</a>
+            
         </div>
-        @*Aqui Empieza la direccion de Punto de Entrega
-        <button type="button" data-toggle="modal" data-target="#ModalMap" class="btn btn-default">
-            <span class="glyphicon glyphicon-map-marker"><span id="ubicacion">@Model.pedido.Punto_Entrega</span></span>
-        </button>
-        *@
+        
         <div class="form-group">
             <label for="inputAddress">Agricultor</label>
             <input type="text" class="form-control" id="txtpubntoentrega" value="@Model.Agricultor.Nombre  @Model.Agricultor.Apellidos">
         </div>
-        @*Aqui Empieza la direccion del agricultor*@
-        <button type="button" data-toggle="modal" data-target="#ModalMap" class="btn btn-default">
-            <span class="glyphicon glyphicon-map-marker"><span id="ubicacion">@oAgricultor.Direccion</span></span>
-        </button>
-        <input type="text" id="Latitud" value="@oUbicacion.latitud" hidden />
-        <input type="text" id="Longitud" value="@oUbicacion.longitud" hidden />
-        
-        <div class="modal fade" id="ModalMap" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="model-body">
-                        <div class="form-horizontal">
-                            <div class="form-row">
-                                <div class="form-group col-sm-12">
-                                    <label for="Ubicacion" class="col-sm-2">Ubicacion:</label>&nbsp; &nbsp; &nbsp;
-                                    <input type="text" id="ModalMapaddress" class="col-sm-8" value="" />
-                                    <button type="button" class="close btn col-sm-1" data-dismiss="modal" aria-label="Cerrar">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-
-                                </div>
-                            </div>
-
-                            <div id="ModalMapPreview" style="width:500px;height:400px;"></div>
-                            <div class="clearfix"> &nbsp;</div>
-                            <div class="form-group col-sm-12">
-                                <label class=" col-sm-1">lat.:</label>
-                                <input type="text" id="ModalMapLat" class="col-sm-4" readonly />
-                                <label class=" col-sm-1">long.:</label>&nbsp; &nbsp;
-                                <input type="text" id="ModalMapLon" class="col-sm-4" readonly />
-                                <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Aceptar</button>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="inputAddress">Punto de Recojo</label>
+            <input type="text" class="form-control" id="txtpuntorecogo" value="@Model.Agricultor.Direccion">
         </div>
-        <div class="clearfix"></div>
-        <br />
-        <button type="button" id="btnregistrar" class="btn btn-primary">Realizar</button>
-
     </form>
     <table class="table" id="listaDetalle">
         <thead class="text-primary">
@@ -108,42 +72,16 @@
             }
         </tbody>
     </table>
+
+    <div>
+        <button type="button" id="btnregistrar" class="btn btn-primary float-md-right">Realizar</button>
+    </div>
+    <br /><br />
+  
 </div>
 
-<script type="text/javascript" src='https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyCDNzptXSncxejTNu6gfE4IYht5DGmGePA'></script>
 
-<script src="~/Content/js/locationpicker.jquery.js"></script>
-
-<script>
-    var buslat = $("#Latitud").val();
-    var buslon = $("#Longitud").val();
-    console.log(buslat, buslon);
-    $('#ModalMapPreview').locationpicker({
-        zoom: 8,
-        radius: 0,
-        location: {
-            latitude: buslat,
-            longitude: buslon
-        },
-        enableAutocomplete: true,
-        inputBinding: {
-            latitudeInput: $("#ModalMapLat"),
-            longitudeInput: $("#ModalMapLon"),
-            locationNameInput: $("#ModalMapaddress")
-        },
-        //    console.log(inputBinding)
-        onchanged: function (currentLocation, radius, isMarkerDropped) {
-            $("#ubicacion").html($("#ModalMapaddress").val());
-            //     alert(currentLocation)
-            console.log(currentLocation);
-        }
-    });
-
-
-    $('ModalMap').on('show.bs.modal', function () {
-        $('#ModalMapPreview').locationpicker('autosize');
-    });
-       
+<script type="text/javascript">    
 
     $("#btnregistrar").click(function () {
 

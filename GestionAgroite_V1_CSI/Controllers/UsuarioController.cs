@@ -14,19 +14,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         private Actividad actividad = new Actividad();
         public Producto producto = new Producto();
         private Asociacion asociacion = new Asociacion();
-        //[Autenticado]
-        // GET: Usuario
-        //public ActionResult Index(string criterio)
-        //{
-        //    if (criterio == null || criterio == "")
-        //    {
-        //        return View(usuario.Listar());
-        //    }
-        //    else
-        //    {
-        //        return View(usuario.Buscar(criterio));
-        //    }
-        //}
+        
         public ActionResult Index(String criterio)
         {
             if (criterio == null || criterio == "")
@@ -40,31 +28,16 @@ namespace GestionAgroite_V1_CSI.Controllers
         }
         public ActionResult Perfil(string idusuario)
         {
-            //if (criterio == null || criterio == "")
-            //{
-            //    return View(usuario.Listar());
-            //}
-            //else
-            //{
             string id = idusuario;
             int idusu = int.Parse(id);
             return View(usuario.Obtener(idusu));
-            //   }
 
         }
         public ActionResult Menu()
         {
-
-            //if (criterio == null || criterio == "")
-            //{
-            //    return View(usuario.Listar());
-            //}
-            //else
-            //{
             string id = Session["idusuario"].ToString();
             int idusuario = Convert.ToInt32(id);
             return View(usuario.Obtener(idusuario));
-            //   }
 
         }
         public ActionResult Ver(int id)
@@ -80,7 +53,6 @@ namespace GestionAgroite_V1_CSI.Controllers
         public ActionResult AgregarEditar(int id = 0)
         {
             ViewBag.Tipo3 = actividad.Listar();
-            //ViewBag.Tipo4 = asociacion.Listar();
             if (id!=0)
             {
                 var imagen = usuario.Obtener(id);

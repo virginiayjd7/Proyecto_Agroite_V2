@@ -137,15 +137,23 @@ namespace GestionAgroite_V1_CSI.Controllers
             
             ViewModel obj = new ViewModel();
             obj = pe.Obtener(int.Parse(idpedido));
-            ViewBag.Agricultor = oAgricultor.Obtener(obj.Agricultor.IdAgricultor);
-            ViewBag.Ubicacion = oUbicacion.Obtener(obj.Agricultor.IdAgricultor);
-            ViewBag.Pedido = oPedido.ObtenerPedidoEntrega(int.Parse(idpedido));
+            //ViewBag.Agricultor = oAgricultor.Obtener(obj.Agricultor.IdAgricultor);
+            //ViewBag.Ubicacion = oUbicacion.Obtener(obj.Agricultor.IdAgricultor);
+            //ViewBag.Pedido = oPedido.ObtenerPedidoEntrega(int.Parse(idpedido));
             return View(obj);
         }
-        public ActionResult Mapa()
+        public ActionResult Mapa(string idpedido)
         {
+            var pedido = oPedido.ObtenerPedidoEntrega(int.Parse(idpedido));
+            ViewBag.Agricultor = oAgricultor.Obtener(pedido.Agricultor.IdAgricultor);
+            ViewBag.Ubicacion = oUbicacion.Obtener(pedido.Agricultor.IdAgricultor);
+            ViewBag.Pedido = pedido;
             return View();
         }
 
+        public ActionResult Ruta()
+        {
+            return View();
+        }
     }
 }

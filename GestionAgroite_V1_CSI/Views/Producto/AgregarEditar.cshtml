@@ -1,6 +1,7 @@
 ﻿@model GestionAgroite_V1_CSI.Models.ViewModel
 @{
     ViewBag.Title = "NuevoProducto";
+    GestionAgroite_V1_CSI.Models.Producto oProducto = ViewBag.Producto;
 }
 <div class="header bg-white pb-6">
     <div class="container-fluid">
@@ -29,6 +30,7 @@
                         @using (Html.BeginForm("Guardar", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
                             @Html.HiddenFor(x => x.producto.IdProducto)
+                            
                             <div class="form-group">
                                 <label>Categoria: </label>
                                 <select name="IdCategoria" class="form-control">
@@ -95,11 +97,20 @@
                                     }
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label>Asociacion: </label>
+                                <select name="IdAsociacion" class="form-control">
+                                    <option @(Model.producto.IdAsociacion.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                                    @foreach (var t in Model.asociacion)
+                                    {
+                                        <option @(Model.producto.IdAsociacion.Equals(t.IdAsociacion) ? "selected" : "") value="@t.IdAsociacion">@t.Razon_Social</option>
+                                    }
+                                </select>
+                            </div>
 
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                                 <a href="~/Producto/Index" class="btn btn-danger">Cancelar</a>
-                                @*<a href="~/Usuario/Menu/?idusuario=@(Model != null ? Model.IdUsuario : Session["idusuario"]  )" class="btn btn-danger">Cancelar</a>*@
                             </div>
                         }
                     </div>

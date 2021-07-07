@@ -29,47 +29,17 @@ namespace GestionAgroite_V1_CSI.Controllers
                 return View(producto.Buscar(criterio));
             }
         }
-        //public ActionResult AgregarEditar(int id = 0)
-        //{
-        //    return View(id == 0 ? new ViewModel() : producto.vmObtener(id));
-        //}
         public ActionResult AgregarEditar(int id = 0)
         {
             if (id == 0)
             {
+                ViewBag.Producto = new Producto();
                 return View(producto.vmInstancia());
             }
             return View(producto.vmObtener(id));
         }
 
-        //public ActionResult Guardar(ViewModel model, HttpPostedFileBase imgfile)
-        //{
-        //    foreach (string key in Request.Form.Keys)
-        //    {
-        //        Debug.WriteLine(key + " " + Request.Form[key]);
-        //    }
-        //    if (imgfile!=null)
-        //    {
-        //        if (imgfile.ContentLength > 0)
-        //        {
-        //            if (ModelState.IsValid)
-        //            {
-        //                string path = Path.Combine(Server.MapPath("~/Content/ProductosFiles/"), imgfile.FileName);
-        //                imgfile.SaveAs(path);
-        //                model.producto.Imagenes_Producto = imgfile.FileName;
-        //                model.producto.Guardar();
-        //                return Redirect("~/Producto/Index");
-        //            }
-        //            else
-        //            {
-        //                return View("Index", producto.Listar());
-        //            }
-        //        }
-        //    }
-
-        //    return View("~/Producto/Index");
-
-        //}
+        
         [HttpPost]
         public ActionResult Guardar(ViewModel model, HttpPostedFileBase imgfile)
         {

@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int numero = 1;
 }
 
 <div style="margin: 35px 50px">
@@ -26,12 +27,12 @@
         @foreach (var m in Model)
         {
             <tr>
-                <th>@(m.IdAsociacion)</th>
+                <th>@(numero++)</th>
                 <th>@(m.Ruc)</th>
-                <th>@(m.Razon_Social.Substring(0,10))...</th>
-                <th>@(m.Descripcion.Substring(0, 10))...</th>
-                <th>@(m.Dapartamento.Substring(0, 4))...</th>
-                <th>@(m.Provincia.Substring(0, 4))...</th>
+                <th>@(m.Razon_Social==null?m.Razon_Social: m.Razon_Social.Substring(0, 10))...</th>
+                <th>@(m.Descripcion==null?m.Razon_Social: m.Descripcion.Substring(0, 10))...</th>
+                <th>@(m.Dapartamento==null?m.Dapartamento: m.Dapartamento.Substring(0, 4))...</th>
+                <th>@(m.Provincia==null?m.Provincia: m.Provincia.Substring(0, 4))...</th>
                 <th>
                     <a href="~/Asociacion/Visualizar/@m.IdAsociacion" class="btn btn-xs btn-warning">Detalles</a>
                     <a href="~/Asociacion/AgregarEditar/@m.IdAsociacion" class="btn btn-xs btn-primary">Modificar</a>

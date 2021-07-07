@@ -24,7 +24,6 @@ namespace GestionAgroite_V1_CSI.Controllers
 
         public ActionResult AgregarEditar(int id = 0)
         {
-            ViewBag.Tipo = asociacion.Listar();
 
             return View(id == 0 ? new Asociacion() : asociacion.Obtener(id));
         }
@@ -46,7 +45,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         {
             asociacion.IdAsociacion = id;
             asociacion.Eliminar();
-            return Redirect("~/Actividad");
+            return Redirect("~/Asociacion");
         }
         public ActionResult Visualizar(int id)
         {

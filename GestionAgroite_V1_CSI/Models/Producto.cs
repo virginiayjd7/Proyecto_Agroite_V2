@@ -153,6 +153,7 @@ namespace GestionAgroite_V1_CSI.Models
         public ViewModel vmInstancia()
         {
             var viewModel = new ViewModel();
+
             var oUnidadVolumen = new UnidadVolumen();
             var oFrecuencia = new Frecuencia();
             var oAsociacion = new Asociacion();

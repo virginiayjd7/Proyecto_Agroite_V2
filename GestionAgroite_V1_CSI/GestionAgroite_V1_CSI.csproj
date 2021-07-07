@@ -96,6 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\locationpicker.jquery.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
@@ -1859,6 +1860,7 @@
     <Content Include="Views\Compra\Realizarcompra.cshtml" />
     <Content Include="Views\Admin\Mapa.cshtml" />
     <Content Include="Views\Compra\Mapa.cshtml" />
+    <Content Include="Views\Compra\Ruta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
