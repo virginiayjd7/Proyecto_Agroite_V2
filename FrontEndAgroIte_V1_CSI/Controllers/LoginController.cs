@@ -28,7 +28,7 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
                 Session["correo"] = rm.correo;
                 Session["nombre"] = rm.nombre;
 
-                return Redirect("~/Home/Index");
+                return Redirect("~/Pedido/DetallePedido");
             }
             return Redirect("~/Login/Index");
         }
@@ -59,7 +59,7 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
             Session.Clear();
             return Redirect("~/Home/Index");
         }
-       
+        
     }
 }
     

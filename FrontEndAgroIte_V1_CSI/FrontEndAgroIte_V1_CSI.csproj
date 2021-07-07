@@ -213,6 +213,20 @@
     <Content Include="assets\webfonts\fa-brands-400.svg" />
     <Content Include="assets\webfonts\fa-regular-400.svg" />
     <Content Include="assets\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\AgricultoresFiles\agr1.jpg" />
+    <Content Include="Content\AgricultoresFiles\ajiamarillo.jpg" />
+    <Content Include="Content\AgricultoresFiles\ajinegro.jpg" />
+    <Content Include="Content\AgricultoresFiles\ajipaprika.jpg" />
+    <Content Include="Content\AgricultoresFiles\cebolla.jpg" />
+    <Content Include="Content\AgricultoresFiles\foto1.jpg" />
+    <Content Include="Content\AgricultoresFiles\GRANADA_51..jpg" />
+    <Content Include="Content\AgricultoresFiles\olivo.jpg" />
+    <Content Include="Content\AgricultoresFiles\oregano.jpg" />
+    <Content Include="Content\AgricultoresFiles\palta.jpg" />
+    <Content Include="Content\AgricultoresFiles\papa.jpg" />
+    <Content Include="Content\AgricultoresFiles\papanegra.jpg" />
+    <Content Include="Content\AgricultoresFiles\quinua.jpg" />
+    <Content Include="Content\AgricultoresFiles\zandia.jpg" />
     <Content Include="Content\ProductosFiles\ajiamarillo.jpg" />
     <Content Include="Content\ProductosFiles\ajinegro.jpg" />
     <Content Include="Content\ProductosFiles\ajipaprika.jpg" />
@@ -322,7 +336,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\AgricultorFiles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

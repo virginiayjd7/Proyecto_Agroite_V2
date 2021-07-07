@@ -81,6 +81,22 @@ namespace FrontEndAgroIte_V1_CSI.Models
             }
             return usuarios;
         }
+        public List<Usuario> Listar2()
+        {
+            var usuarios = new List<Usuario>();
+            try
+            {
+                using (var db = new agroite())
+                {
+                    usuarios = db.Usuario.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return usuarios;
+        }
         public Usuario Obtener(int id)
         {
             var usuario = new Usuario();
@@ -114,8 +130,51 @@ namespace FrontEndAgroIte_V1_CSI.Models
             }
             return usuarios;
         }
+        public Usuario Obtener2(int id)
+        {
+            var actividad = new Usuario();
+            try
+            {
+                using (var db = new agroite())
+                {
 
-        public void Guardar(HttpPostedFileBase imgfile1)
+                    actividad = db.Usuario
+                                    .Where(x => x.IdUsuario == id)
+                                    .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return actividad;
+        }
+       
+        public void Guardar()
+        {
+            try
+            {
+                using (var db = new agroite())
+                {
+                    if (this.IdUsuario > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+       
+        public void Guardarj(HttpPostedFileBase imgfile1)
         {
             try
             {
@@ -242,7 +301,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
                     //e10adc3949ba59abbe56e057f20f883e
                     // Password = HashHelper.MD5(Password);//1234546
 
-                    var query = db.Usuario.Include("Actividad").Where(x => x.Correo == Usuario).Where(x => x.Contraseña == Password)
+                    var query = db.Usuario.Where(x => x.Correo == Usuario).Where(x => x.Contraseña == Password)
                         .SingleOrDefault();
 
                     if (query != null)
@@ -251,7 +310,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
                         SessionHelper.AddUserToSession(query.IdUsuario.ToString());
                         //  SessionHelper.AddUserToSession(IdUsuario.ToString());                       
                         rm.idusuario = query.IdUsuario.ToString();
-                        rm.actividad = query.Actividad.Nombre.ToString();
+                        //rm.actividad = query.Actividad.Nombre.ToString();
                         rm.nombre = query.Nombres;
                        
                         rm.correo = Usuario;

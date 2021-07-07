@@ -6,12 +6,18 @@
     <ul class="cart-list">
         @foreach (var item in Model)
         {
-        <li>
-        <a href="#" class="photo"><img src="http://localhost:54574//Content/ProductosFiles/@item.urlfoto" class="cart-thumb" alt="" /></a>
-        <h6><a href="#">@item.nombre_producto </a></h6>
-        <p>@item.cantidad x  <span class="price">S/. @item.precio</span></p>
-        </li>
+            <li>
+                <a href="#" class="photo"><img src="http://localhost:54574//Content/ProductosFiles/@item.urlfoto" class="cart-thumb" alt="" /></a>
+                <h6><a href="#">@item.nombre_producto </a></h6>
+                <p>@item.cantidad x  <span class="price">S/. @item.precio</span></p>
+            </li>
+            <li class="total">
+                <a href="~/Pedido/DetallePedido/?idProducto" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                <span class="float-right"><strong>Total</strong>: s/.@item.subtotal</span>
+            </li>
         }
+
     </ul>
+
 </li>
 

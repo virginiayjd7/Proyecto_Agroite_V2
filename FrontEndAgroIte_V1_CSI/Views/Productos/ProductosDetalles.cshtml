@@ -22,7 +22,7 @@
             <div class="col-lg-12">
                 <h2>Detalle de la tienda</h2>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Tienda</a></li>
+                    <li class="breadcrumb-item"><a href="~/Productos/CatalogoProductos">Tienda</a></li>
                     <li class="breadcrumb-item active">Detalle de la tienda </li>
                 </ul>
             </div>
@@ -83,7 +83,7 @@
                         <ul>
                             <li>
                                 <div class="form-group quantity-box">
-                                    <label class="control-label">Cantidad a Comprar</label>
+                                    <label class="control-label">Digité la cantidad a comprar:</label>
                                     <!-- <input class="form-control" value="1" min="1" max="20" id="txtcantidad" type="number">
                                      <select class="form-control"" aria-label="Default select example">
                                          <option selected>Seleccione </option>
@@ -92,7 +92,7 @@
                                          <option value="3">3 Toneladas</option>
                                      </select>
                                         -->
-                                    <input type="number" name="txtcantidad" id="txtcantidad" min="3" class="form-control" value="" />
+                                    <input type="number" name="txtcantidad" id="txtcantidad" min="3" class="form-control" value="" /><h4>@Model.UnidadVolumen.Nombre</h4>
                                 </div>
                             </li>
                         </ul>
@@ -100,9 +100,9 @@
                         <div class="price-box-bar">
                             <div class="cart-and-bay-btn">
 
-                                <button class="btn hvr-hover" type="button" onclick="AddCart('@Model.IdProducto',' @Model.Nombre_Producto','@Model.Precio_Referencial','@Model.Imagenes_Producto')">AgregarCarrtito</button>
+                                <button style="color:white" class="btn hvr-hover" type="button" onclick="AddCart('@Model.IdProducto',' @Model.Nombre_Producto','@Model.Precio_Referencial','@Model.Imagenes_Producto')">AgregarCarrtito</button>
                             <!--    <a class="btn hvr-hover" href="~/Pedido/DetallePedido/">Agregar a mis Pedidos</a>  -->
-                                <a class="btn hvr-hover" href="~/Pedido/DetallePedido">Pedidos</a>
+                                <a class="btn hvr-hover" href="~/Pedido/DetallePedido">Ver Pedidos</a>
                             </div>
                         </div>                       
                     </div>

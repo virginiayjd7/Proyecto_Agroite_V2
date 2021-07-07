@@ -137,6 +137,8 @@ C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\EntityFramework.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\EntityFramework.SqlServer.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\RestSharp.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\System.Web.Helpers.dll
@@ -147,6 +149,8 @@ C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\System.Web.Webpages.Razor.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\EntityFramework.xml
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\EntityFramework.SqlServer.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\RestSharp.xml
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\System.Web.Razor.xml
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\System.Web.Webpages.xml
@@ -161,12 +165,8 @@ C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\es\System.Web.Webpages.Razor.resources.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\es\System.Web.Helpers.resources.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.csprojAssemblyReference.cache
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.csproj.CoreCompileInputs.cache
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.csproj.CopyComplete
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.pdb
-C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.csprojAssemblyReference.cache
-C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
-C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
-C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
-C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml

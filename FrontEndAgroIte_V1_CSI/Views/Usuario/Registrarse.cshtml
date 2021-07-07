@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Registrarse";
 
-    List<FrontEndAgroIte_V1_CSI.Models.Actividad> tipo = ViewBag.Tipo3;
+    //List<FrontEndAgroIte_V1_CSI.Models.Actividad> tipo = ViewBag.Tipo3;
 }
 <div class="cart-box-main">
     <div class="container">
@@ -13,7 +13,7 @@
                     <div class="title-left">
                         <h2>Registrarme</h2>
                     </div>
-                    @using (Html.BeginForm("Guardar", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    @using (Html.BeginForm("Guardar", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
                     {
 
                         @Html.HiddenFor(x => x.IdUsuario)
@@ -32,18 +32,18 @@
 
 
                         <div class="row">
-                            <div class="col-md-5 mb-3">
+                            @*<div class="col-md-5 mb-3">
 
-                                @Html.Label("Actividad: ")
-                                <select name="IdActividad" class="form-control">
-                                    <option @(Model.IdActividad.Equals("") ? "selected" : "") value="">-Seleccione-</option>
-                                    @foreach (var t in tipo)
-                                    {
-                                        <option @(Model.IdActividad.Equals(t.IdActividad) ? "selected" : "") value="@t.IdActividad">@t.Nombre</option>
-                                    }
-                                </select>
+                    @Html.Label("Actividad: ")
+                    <select name="IdActividad" class="form-control">
+                        <option @(Model.IdActividad.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                        @foreach (var t in tipo)
+                        {
+                            <option @(Model.IdActividad.Equals(t.IdActividad) ? "selected" : "") value="@t.IdActividad">@t.Nombre</option>
+                        }
+                    </select>
 
-                            </div>
+                </div>*@
                             <div class="col-md-4 mb-3">
                                 @Html.Label("Tipo Documento:  ")
                                 <select name="Tipo_Documento" class="form-control">
@@ -58,51 +58,53 @@
                             </div>
 
                         </div>
-                        <div class="mb-4">
-                            <label for="username">Foto de Perfil *</label>
-                            <div class="input-group">
+                        @*<div class="mb-4">
+                <label for="username">Foto de Perfil *</label>
+                <div class="input-group">
 
-                                <input type="file" id="imgfile1" name="imgfile1" class="btn btn-info" />
-                                @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })
-                            </div>
-                        </div>
+                    <input type="file" id="imgfile1" name="imgfile1" class="btn btn-info" />
+                    @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })
+                </div>
+            </div>*@
                         <div class="mb-3">
-                            <label for="username">Organizacion *</label>
-                            <div class="input-group">
+                <label for="username">Organizacion *</label>
+                <div class="input-group">
 
-                                @Html.TextBoxFor(x => x.Razon_Social, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.Razon_Social, null, new { @class = "label label-danger" })
-                            </div>
-                        </div>
+                    @Html.TextBoxFor(x => x.Razon_Social, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Razon_Social, null, new { @class = "label label-danger" })
+                </div>
+            </div>
 
                         <div class="mb-3">
-                            <label for="address">Direccion *</label>
+                <label for="address">Direccion *</label>
 
-                            @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(x => x.Direccion, null, new { @class = "label label-danger" })
+                @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Direccion, null, new { @class = "label label-danger" })
+            </div>
+                        <div class=" mb-3">
+                            @Html.Label("Celular: ")
+                            @Html.TextBoxFor(x => x.Celular, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger" })
                         </div>
-                        <div class="mb-3">
-                            @Html.Label("Correo: ")
-                            @Html.TextBoxFor(x => x.Correo, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(x => x.Correo, null, new { @class = "label label-danger" })
-                        </div>
+                     
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                @Html.Label("Contraseña: ")
-                                @Html.TextBoxFor(x => x.Contraseña, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.Contraseña, null, new { @class = "label label-danger" })
+                                @Html.Label("Correo: ")
+                                @Html.TextBoxFor(x => x.Correo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Correo, null, new { @class = "label label-danger" })
                             </div>
                             <div class="col-md-6 mb-3">
-                                @Html.Label("Celular: ")
-                                @Html.TextBoxFor(x => x.Celular, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger" })
+                                @Html.Label("Contraseña: ")
+                                @Html.PasswordFor(x => x.Contraseña, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Contraseña, null, new { @class = "label label-danger" })
                             </div>
+
                         </div>
 
-                       
+
                         <div class="text-center">
-                            <button class="btn btn-info">Registrar</button>
-                            <a href="~/Home" class="btn btn-danger">Cancelar</a>
+                            <button class="btn btn-dark">Registrar</button>
+                            <a href="~/Home" class="btn btn-dark">Cancelar</a>
                         </div>
                     }
                 </div>

@@ -15,28 +15,30 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
         private Usuario objusuario = new Usuario();
         private Actividad actividad = new Actividad();
        
-        public ActionResult Registrarse()
+        //public ActionResult Registrarse()
+        //{
+        //    ViewBag.Tipo3 = actividad.Listar();
+        //    return View(new Usuario());
+        //}
+     
+        public ActionResult Registrarse(int id = 0)
         {
-            ViewBag.Tipo3 = actividad.Listar();
-            return View(new Usuario());
+            ViewBag.Tipo = objusuario.Listar2();
+
+            return View(id == 0 ? new Usuario() : objusuario.Obtener2(id));
         }
-        [HttpPost]
-        public ActionResult Guardar(Usuario model, HttpPostedFileBase imgfile1)
+
+        public ActionResult Guardar(Usuario model)
         {
-            if (imgfile1 == null)
+            if (ModelState.IsValid)
             {
-                return Redirect("~/Login/LogOut");
+                model.Guardar();
+                return Redirect("~/Home/Index");
             }
-            if (imgfile1.ContentLength > 0)
+            else
             {
-                ModelState.Remove("Foto_Perfil");
-                if (ModelState.IsValid)
-                {
-                    model.Guardar(imgfile1);
-                    return Redirect("~/Login/Index");
-                }
+                return View("~/Login/Index", model);
             }
-            return Redirect("~/Login/LogOut");
         }
     }
 }
