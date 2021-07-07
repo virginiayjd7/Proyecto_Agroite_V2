@@ -96,7 +96,7 @@
                                     @Html.ValidationMessageFor(x => x.Foto_Perfil, null, new { @class = "label label-danger" })
                                 </div>
                             </div>
-                        
+                            
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     @Html.Label("Contraseña: ")
@@ -109,15 +109,8 @@
                                     @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger" })
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="username">Organizacion *</label>
-                                <div class="input-group">
-
-                                    @Html.TextBoxFor(x => x.Razon_Social, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.Razon_Social, null, new { @class = "label label-danger" })
-                                </div>
-                            </div>
-                          
+                            
+                            
                             <div class="text-center">
                                 <button class="btn btn-info">Registrar</button>
                                 <a href="~/Usuario/Index" class="btn btn-danger">Cancelar</a>
@@ -129,8 +122,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 

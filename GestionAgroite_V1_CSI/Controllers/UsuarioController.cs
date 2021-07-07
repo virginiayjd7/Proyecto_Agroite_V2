@@ -98,7 +98,7 @@ namespace GestionAgroite_V1_CSI.Controllers
                 ModelState.Remove("Foto_Perfil");
                 if (ModelState.IsValid)
                 {
-                    if (model.IdActividad==1)
+                    if (model.IdActividad==3)
                     {
                         model.Guardar(imgfile1);
                         return Redirect("~/Usuario/Index");

@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Ingresar";
+
+}
+
+<div class="section__intro u-s-m-b-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section__text-wrap">
+                    @*<h1 class="section__heading u-c-secondary">YA ESTAS REGISTRADO?</h1>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row--center">
+    <div class="col-lg-6 col-md-8 u-s-m-b-30">
+        <div class="l-f-o">
+
+            <div class="l-f-o__pad-box">
+
+                <div class="card-header">Login de Acceso</div>
+                <div class="card-body">
+                    @using (Html.BeginForm("Ingreso", "Login", FormMethod.Post))
+                    {
+                        <div class="u-s-m-b-30">
+
+                            <label class="gl-label" for="login-email">E-MAIL </label>
+
+                            <input class="input-text input-text--primary-style" type="text" name="usuario" id="login-email" placeholder="Ingresa tu  E-mail">
+                        </div>
+                        <div class="u-s-m-b-30">
+
+                            <label class="gl-label" for="login-password">PASSWORD </label>
+
+                            <input class="input-text input-text--primary-style" type="password" name="password" id="login-password" placeholder="Ingresa tu  Password">
+                        </div>
+                        <div class="gl-inline">
+                            <div class="u-s-m-b-30">
+                                <button data-ajax="true" type="submit" class="btn btn--e-transparent-brand-b-2">Ingresar</button>
+
+                            </div>
+                            <div class="u-s-m-b-30">
+                                @*<a class="gl-link" href="lost-password.html">Recuperar Password</a>*@
+                                @Html.ActionLink("Perdiste tu Password?", "startRecovery");
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--Login-->
+<script src="~/Scripts/app.js"></script>
+<script src="~/Scripts/jquery.form.js"></script>
+<script src="~/Scripts/ini.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+

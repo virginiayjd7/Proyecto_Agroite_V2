@@ -252,9 +252,14 @@ namespace GestionAgroite_V1_CSI.Models
                         //     Session["idusario"] = query.IdUsuario.ToString();
                         SessionHelper.AddUserToSession(query.IdUsuario.ToString());
                         //  SessionHelper.AddUserToSession(IdUsuario.ToString());
-                        rm.SetResponse(true);
+                        
                         rm.idusuario = query.IdUsuario.ToString();
                         rm.actividad = query.Actividad.Nombre.ToString();
+                        rm.nombre = query.Nombres;
+                        rm.correo = query.Correo;
+
+
+                        rm.SetResponse(true);
                     }
                     else
                     {

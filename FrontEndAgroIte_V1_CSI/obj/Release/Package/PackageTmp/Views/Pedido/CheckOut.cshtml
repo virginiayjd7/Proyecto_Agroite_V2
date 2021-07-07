@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "CheckOut";
+}
+
+
+<div class="container">
+    <br /><br /><br />
+
+    <div style="display:flex">
+
+        <div class="col-6">
+            <div class="list-group">
+                <button type="button" id="buyButton" class="btn btn-primary ">
+                    Pago Culqi
+                </button>
+                <br />
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Deposito a Cuentas
+                </button>
+
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Banco</th>
+                                    <th scope="col">Nro Cta</th>
+                                    <th scope="col">CCI</th>
+                                    <th scope="col">Titular</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BBVA:</td>
+                                    <td>0011 0256 0100021970 57</td>
+                                    <td>011 256 000100021970 57</td>
+                                    <td>AgroIte SAC</td>
+                                </tr>
+                                <tr>
+                                    <td>BCP:</td>
+                                    <td>194 38117756082</td>
+                                    <td>002 194 138117756082 91</td>
+                                    <td>AgroIte SAC</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Recuerda enviar tu voucher al correo: agroite@gmail.com o al Whatsapp +51975957007 para confirmar tu pedido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card border-success mb-3" style="max-width: 30rem;">
+                <div class="card-body text-success">
+                    <center>
+                        <h2 class="card-title">Detalle de Compra</h2>
+                        <h1>  Total  @ViewBag.TotalComra </h1>
+                        <input type="text" hidden="" id="TotalCompra" name="name" value="@ViewBag.TotalComra" />
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+
+<script src="https://checkout.culqi.com/js/v3"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+
+<script>
+
+
+    Culqi.publicKey = 'pk_test_88ec032fea5c8f35';
+
+    $('#buyButton').on('click', function (e) {
+        var Total = $("#TotalCompra").val();
+        if (Total == "" || Total == '0') {
+            alert("No tiene Prouductos")
+            return;
+        }
+        var  precio = parseInt($("#TotalCompra").val()) * 100;
+        Culqi.settings({
+            title: 'AgroIte',
+            currency: 'PEN',
+            description: 'Agricola',
+            amount: precio
+        });
+        Culqi.open();
+        e.preventDefault();
+    });
+
+    function culqi() {
+        if (Culqi.token) {
+            var token = Culqi.token.id;
+            console.log(token);
+            var Total = $("#TotalCompra").val();
+            if (Total == "") {
+                alert("total vvacio")
+                return;
+            }
+            var correo = Culqi.token.email;
+            var data = { producto: 'productos', correo: correo, token: token, precio: Total }
+            $.ajax({
+                url: '/Pedido/Pagar/',
+                type: 'POST',
+                data: data,
+                datatype: 'json',
+                success: function (response) {
+                    console.log(response);
+                    alert("venta Exitosa")
+                },
+                error: function (err) { 
+                    console.log(err);
+                }
+            });
+        } else {
+            console.log(Culqi.error);
+            // alert(Culqi.error.user_message);
+        }
+    }
+
+
+</script>

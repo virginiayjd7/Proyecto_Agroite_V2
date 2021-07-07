@@ -15,11 +15,20 @@ namespace GestionAgroite_V1_CSI.Controllers
         Transportador oTransporte = new Transportador();
         Vehiculos oVehiculo = new Vehiculos();
         ModelCompra vmCompra = new ModelCompra();
+        Ubicacion oUbicacion = new Ubicacion();
+        Agricultor oAgricultor = new Agricultor();
+        Pedido oPedido = new Pedido();
+
+        Pedido pe = new Pedido();
         // GET: Compra
         public ActionResult Index()
         {
-            return View(oCompra.vmComprasRealizadas());
+
+            var lista = pe.Listar2();
+            return View(lista);
         }
+
+
         public ActionResult Agregar()
         {
             vmCompra.asociacion = oAsocicacion.Listar();
@@ -70,6 +79,7 @@ namespace GestionAgroite_V1_CSI.Controllers
                       
             return Json(data, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult ListProduct(Asociacion a)
         {
             int idd = a.IdAsociacion;
@@ -81,34 +91,39 @@ namespace GestionAgroite_V1_CSI.Controllers
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Guardar(Compra model, string IdTransportador, string Fecha_Entrega)
+        public ActionResult Guardar(Compra model)
         {
-            model.IdUsuario = 1;
-            model.Total = listaCompra.Sum(x => x.Subtotal);
-            model.IdTransportador = model.IdTransportador;
-            model.Fecha = DateTime.Now.ToShortDateString();
+            oCompra.Total = model.Total;
+            oCompra.IdPedido = model.IdPedido;
+            oCompra.IdUsuario = 1;   
+            oCompra.Fecha= DateTime.Now.ToShortDateString();         
+           // ChangeStatus  
             if (ModelState.IsValid)
-            {    
-                int idreturn = model.Guardar();              
-              
-                if (idreturn!=0)
-                {                   
-                    foreach (var item in listaCompra)
+            {
+                int idreturn = oCompra.Guardar();
+                pe.ChangeStatus((int)model.IdPedido, 1);
+                if (idreturn != 0)
+                {
+                    DetallePedido pedid = new DetallePedido();
+                    var Detallepeido = pedid.ListaDetallePedido((int)model.IdPedido);
+                    foreach (var item in Detallepeido)
                     {
                         DetalleCompra dt = new DetalleCompra();
                         dt.IdCompra = idreturn;
-                        dt.Precio_Unitario = item.Precio_Unitario;
+                        dt.Precio_Unitario = item.Producto.Precio_Referencial;
                         dt.IdProducto = item.IdProducto;
                         dt.Cantidad = item.Cantidad;
                         dt.Subtotal = item.Subtotal;
                         dt.Guardar();
                     }
-                    listaCompra.Clear();
-                    return Json("Registroad",JsonRequestBehavior.AllowGet);
-                }    
+                    // listaCompra.Clear();
+                    return Json("Registrado", JsonRequestBehavior.AllowGet);
+                }
+               //Compra.Guardar2();
+              
             }      
             
-             return View("~/Producto/Index");
+             return Json("Registrado", JsonRequestBehavior.AllowGet);
         }
         public ActionResult DetalleProducto(Producto obj)
         {
@@ -117,7 +132,20 @@ namespace GestionAgroite_V1_CSI.Controllers
             var data = new { datos=query};
             return Json(data,JsonRequestBehavior.AllowGet);
         }
+        public ActionResult Realizarcompra(string idpedido)
+        {
+            
+            ViewModel obj = new ViewModel();
+            obj = pe.Obtener(int.Parse(idpedido));
+            ViewBag.Agricultor = oAgricultor.Obtener(obj.Agricultor.IdAgricultor);
+            ViewBag.Ubicacion = oUbicacion.Obtener(obj.Agricultor.IdAgricultor);
+            ViewBag.Pedido = oPedido.ObtenerPedidoEntrega(int.Parse(idpedido));
+            return View(obj);
+        }
+        public ActionResult Mapa()
+        {
+            return View();
+        }
 
-    
     }
 }

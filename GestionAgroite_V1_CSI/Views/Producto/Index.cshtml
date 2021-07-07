@@ -14,7 +14,7 @@
             <tr>
                 <th style="width:80px;">Nombre Producto</th>
                 <th style="width:50px;">Asociacion</th>
-                <th style="width:50px;">Precio Referencial</th>
+                <th style="width:50px;">Precio</th>
                 <th style="width:50px;">Imagen Producto</th>
                 <th style="width:40px;">Cantidad Producida</th>
                 <th style="width:150px;">Acciones</th>
@@ -29,7 +29,7 @@
                     <td>@(item.Asociacion.Razon_Social.Substring(0,10))...</td>
                     <td>@(item.Precio_Referencial)</td>
                     <td>
-                        <img src="http://localhost:44359/Content/ProductosFiles/@item.Imagenes_Producto" width="100" />
+                        <img src="http://localhost:57711/Content/ProductosFiles/@item.Imagenes_Producto" width="100" />
                     </td>
                     <td>@(item.Cantidad_Producida) @(item.UnidadVolumen.Nombre)</td>
                     <th style="align-content:center">

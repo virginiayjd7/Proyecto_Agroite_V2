@@ -27,15 +27,19 @@ namespace GestionAgroite_V1_CSI.Models
 
         public int? IdUsuario { get; set; }
 
-        public int? IdTransportador { get; set; }
+     //   public int? IdTransportador { get; set; }
 
-        public virtual Transportador Transportador { get; set; }
+      //  public virtual Transportador Transportador { get; set; }
 
         public virtual Usuario Usuario { get; set; }
 
+        public int? IdPedido { get; set; }
+
+        public virtual Pedido Pedido { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleCompra> DetalleCompra { get; set; }
-
+        
         public ModelCompra vmComprasRealizadas()
         {
             var vmCompra = new ModelCompra();
@@ -77,6 +81,7 @@ namespace GestionAgroite_V1_CSI.Models
                     {
                         db.Entry(this).State = EntityState.Added;
                     }
+
                     db.SaveChanges();
                     idl = this.IdCompra;
                 }
@@ -89,6 +94,58 @@ namespace GestionAgroite_V1_CSI.Models
             return idl;
         }
 
+
+        public void Guardar2()
+        {
+            //int idl = 0;
+            try
+            {
+                using (var db = new agroite())
+                {
+                    if (this.IdCompra > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+
+                    db.SaveChanges();
+                 //   idl = this.IdCompra;
+                }
+            }
+            catch (Exception ex)
+            {
+                //return 0;
+                throw;
+            }
+           // return idl;
+        }
+
+        public string Guardar3(Compra data)
+        {
+            using (var db = new agroite())
+            {
+                try
+                {
+                    var sss = db.Compra.Add(data);
+                    var result = db.SaveChanges();
+                    if (result > 0)
+                    {
+                        return "OK";
+                    }
+                    else
+                    {
+                        return "Error";
+                    }
+                }
+                catch (Exception e)
+                {
+                    return e.InnerException.Message.ToString();
+                }
+            }
+        }
         public Producto Obtener(int id)
         {
             var producto = new Producto();

@@ -1,5 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -8,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D502D301-1E60-4310-AAAD-B59A3B2291C9}</ProjectGuid>
+    <ProjectGuid>{D98F8070-4ABF-4027-9F39-E7168742C8FB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -17,15 +16,13 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44359</IISExpressSSLPort>
+    <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -99,31 +96,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\AgricultoresFiles\foto1.jpg" />
-    <Content Include="Content\ProductosFiles\2.jpg" />
-    <Content Include="Content\ProductosFiles\ajiamarillo.jpg" />
-    <Content Include="Content\ProductosFiles\ajinegro.jpg" />
-    <Content Include="Content\ProductosFiles\ajip.png" />
-    <Content Include="Content\ProductosFiles\ajipaprika.jpg" />
-    <Content Include="Content\ProductosFiles\archivox.png" />
-    <Content Include="Content\ProductosFiles\camote.jpg" />
-    <Content Include="Content\ProductosFiles\Captura1.PNG" />
-    <Content Include="Content\ProductosFiles\cebolla.jpg" />
-    <Content Include="Content\ProductosFiles\Clients.png" />
-    <Content Include="Content\ProductosFiles\contrsuccion.png" />
-    <Content Include="Content\ProductosFiles\GRANADA_51..jpg" />
-    <Content Include="Content\ProductosFiles\granadilla.jpg" />
-    <Content Include="Content\ProductosFiles\images.jpg" />
-    <Content Include="Content\ProductosFiles\olivo.jpg" />
-    <Content Include="Content\ProductosFiles\oregano.jpg" />
-    <Content Include="Content\ProductosFiles\palta.jpg" />
-    <Content Include="Content\ProductosFiles\papa.jpg" />
-    <Content Include="Content\ProductosFiles\papanegra.jpg" />
-    <Content Include="Content\ProductosFiles\producto1.jpg" />
-    <Content Include="Content\ProductosFiles\quinua.jpg" />
-    <Content Include="Content\ProductosFiles\zandia.jpg" />
+    <Content Include="Content\js\locationpicker.jquery.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="recursos\imagen\agricultor.png" />
     <Content Include="recursos\css\argon.css" />
     <Content Include="recursos\css\argon.min.css" />
     <Content Include="recursos\css\bootstrap\bootstrap-grid.css" />
@@ -132,7 +108,6 @@
     <Content Include="recursos\css\bootstrap\bootstrap-reboot.min.css" />
     <Content Include="recursos\css\bootstrap\bootstrap.css" />
     <Content Include="recursos\css\bootstrap\bootstrap.min.css" />
-    <Content Include="recursos\css\login.css" />
     <Content Include="recursos\DataTables\css\dataTables.foundation.min.css" />
     <Content Include="recursos\DataTables\css\dataTables.semanticui.min.css" />
     <Content Include="recursos\DataTables\datatables.css" />
@@ -146,7 +121,6 @@
     <Content Include="recursos\imagen\3.png" />
     <Content Include="recursos\imagen\5c6bd267283353.5b340123565dd.jpg" />
     <Content Include="recursos\imagen\85080724_435064617210623_7723333246775197696_o.jpg" />
-    <Content Include="recursos\imagen\agricultor.png" />
     <Content Include="recursos\imagen\ajip.png" />
     <Content Include="recursos\imagen\descarga.jpg" />
     <Content Include="recursos\imagen\granadilla.jpg" />
@@ -183,7 +157,6 @@
     <Content Include="recursos\js\bootstrap.bundle.min.js" />
     <Content Include="recursos\js\bootstrap.js" />
     <Content Include="recursos\js\bootstrap.min.js" />
-    <Content Include="recursos\js\index.js" />
     <Content Include="recursos\js\jquery-3.5.1.min.js" />
     <Content Include="recursos\vendor\bootstrap\dist\css\bootstrap-grid.min.css" />
     <Content Include="recursos\vendor\bootstrap\dist\css\bootstrap-reboot.min.css" />
@@ -1809,6 +1782,7 @@
     <Compile Include="Models\Frecuencia.cs" />
     <Compile Include="Models\HashHelper.cs" />
     <Compile Include="Models\ModelCompra.cs" />
+    <Compile Include="Models\ModelDatos.cs" />
     <Compile Include="Models\Pago.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
@@ -1816,6 +1790,7 @@
     <Compile Include="Models\SessionHelper.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Transportador.cs" />
+    <Compile Include="Models\Ubicacion.cs" />
     <Compile Include="Models\UnidadVolumen.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Vehiculos.cs" />
@@ -1826,10 +1801,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <None Include="Dockerfile" />
-    <None Include=".dockerignore">
-      <DependentUpon>Dockerfile</DependentUpon>
-    </None>
     <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="recursos\vendor\fortawesome\fontawesome-free\webfonts\fa-brands-400.eot" />
@@ -1851,41 +1822,46 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Actividad\Index.cshtml" />
-    <Content Include="Views\Actividad\AgregarEditar.cshtml" />
-    <Content Include="Views\Actividad\Visualizar.cshtml" />
-    <Content Include="Views\Agricultor\Index.cshtml" />
-    <Content Include="Views\Agricultor\AgregarEditar.cshtml" />
-    <Content Include="Views\Agricultor\Visualizar.cshtml" />
-    <Content Include="Views\Asociacion\Index.cshtml" />
-    <Content Include="Views\Asociacion\AgregarEditar.cshtml" />
-    <Content Include="Views\Asociacion\Visualizar.cshtml" />
-    <Content Include="Views\Categoria\Index.cshtml" />
-    <Content Include="Views\Categoria\AgregarEditar.cshtml" />
-    <Content Include="Views\Categoria\Visualizar.cshtml" />
-    <Content Include="Views\Compra\Index.cshtml" />
-    <Content Include="Views\Compra\Agregar.cshtml" />
-    <Content Include="Views\Entrega\Index.cshtml" />
     <Content Include="Views\Frecuencia\Index.cshtml" />
     <Content Include="Views\Frecuencia\AgregarEditar.cshtml" />
     <Content Include="Views\Frecuencia\Visualizar.cshtml" />
-    <Content Include="Views\Pedido\Index.cshtml" />
-    <Content Include="Views\Producto\Index.cshtml" />
-    <Content Include="Views\Producto\AgregarEditar.cshtml" />
-    <Content Include="Views\Producto\Visualizar.cshtml" />
-    <Content Include="Views\Transportador\AgregarEditar.cshtml" />
-    <Content Include="Views\Transportador\Index.cshtml" />
     <Content Include="Views\UnidadVolumen\Index.cshtml" />
     <Content Include="Views\UnidadVolumen\AgregarEditar.cshtml" />
     <Content Include="Views\UnidadVolumen\Visualizar.cshtml" />
+    <Content Include="Views\Actividad\Index.cshtml" />
+    <Content Include="Views\Actividad\AgregarEditar.cshtml" />
+    <Content Include="Views\Actividad\Visualizar.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Categoria\AgregarEditar.cshtml" />
+    <Content Include="Views\Categoria\Visualizar.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\AgregarEditar.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\AgregarEditar.cshtml" />
-    <Content Include="Views\Vehiculos\Index.cshtml" />
     <Content Include="Views\Vehiculos\AgregarEditar.cshtml" />
+    <Content Include="Views\Vehiculos\Index.cshtml" />
     <Content Include="Views\Vehiculos\Visualizar.cshtml" />
-    <Content Include="Views\Venta\Agregar.cshtml" />
+    <Content Include="Views\Pedido\Index.cshtml" />
     <Content Include="Views\Venta\Index.cshtml" />
+    <Content Include="Views\Agricultor\AgregarEditar.cshtml" />
+    <Content Include="Views\Agricultor\Index.cshtml" />
+    <Content Include="Views\Agricultor\Visualizar.cshtml" />
+    <Content Include="Views\Compra\Index.cshtml" />
+    <Content Include="Views\Asociacion\AgregarEditar.cshtml" />
+    <Content Include="Views\Asociacion\Index.cshtml" />
+    <Content Include="Views\Asociacion\Visualizar.cshtml" />
+    <Content Include="Views\Entrega\Index.cshtml" />
+    <Content Include="Views\Transportador\Index.cshtml" />
+    <Content Include="Views\Transportador\AgregarEditar.cshtml" />
+    <Content Include="Views\Venta\Agregar.cshtml" />
+    <Content Include="Views\Compra\Agregar.cshtml" />
+    <Content Include="Views\Compra\Realizarcompra.cshtml" />
+    <Content Include="Views\Admin\Mapa.cshtml" />
+    <Content Include="Views\Compra\Mapa.cshtml" />
+    <Content Include="Views\Almacen\AgregarEditar.cshtml" />
+    <Content Include="Views\Almacen\Index.cshtml" />
+    <Content Include="Views\Almacen\Visualizar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1895,7 +1871,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Almacen\" />
+    <Folder Include="Content\AgricultoresFiles\" />
     <Folder Include="Views\Pago\" />
   </ItemGroup>
   <PropertyGroup>
@@ -1911,9 +1887,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53550</DevelopmentServerPort>
+          <DevelopmentServerPort>57711</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44359/</IISUrl>
+          <IISUrl>http://localhost:57711/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -1928,10 +1904,7 @@
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
-    <Error Condition="!Exists('packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
   </Target>
-  <Import Project="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

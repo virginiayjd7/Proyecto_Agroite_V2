@@ -11,11 +11,7 @@ namespace GestionAgroite_V1_CSI.Models
     [Table("Agricultor")]
     public partial class Agricultor
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Agricultor()
-        {
-            Asociacion = new HashSet<Asociacion>();
-        }
+        
 
         [Key]
         public int IdAgricultor { get; set; }
@@ -45,8 +41,17 @@ namespace GestionAgroite_V1_CSI.Models
 
         public int? Estado { get; set; }
 
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+      //  public virtual ICollection<Asociacion> Asociacion { get; set; }
+     
+        public int? IdAsociacion { get; set; }
+
+        public virtual Asociacion Asociacion { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Asociacion> Asociacion { get; set; }
+        public virtual ICollection<Pedido> Pedido { get; set; }
+
 
         public List<Agricultor> Listar()
         {

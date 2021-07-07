@@ -41,13 +41,15 @@ namespace GestionAgroite_V1_CSI.Models
                                      de.IdProducto,
                                      pro.Nombre_Producto,
                                      de.Cantidad,
-                                     de.Subtotal
+                                     de.Subtotal,
+                                     pro.Precio_Referencial
                                  }).ToList();
 
                     foreach (var item in query)
                     {
                         Producto a = new Producto();
                         a.Nombre_Producto = item.Nombre_Producto;
+                        a.Precio_Referencial = item.Precio_Referencial;
                         detalle.Add(new DetallePedido()
                         {
                             Producto = a,
@@ -74,6 +76,22 @@ namespace GestionAgroite_V1_CSI.Models
                 using (var db = new agroite())
                 {
                     oDetalle = db.DetallePedido.Include("Pedido").Include("Producto").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return oDetalle;
+        }
+        public List<DetallePedido> ListaDetallePedido(int idpedido)
+        {
+            var oDetalle = new List<DetallePedido>();
+            try
+            {
+                using (var db = new agroite())
+                {
+                    oDetalle = db.DetallePedido.Include("Producto").Where(x=>x.IdPedido==idpedido).ToList();
                 }
             }
             catch (Exception)

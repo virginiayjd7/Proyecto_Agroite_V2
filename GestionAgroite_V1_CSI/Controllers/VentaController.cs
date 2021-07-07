@@ -58,7 +58,7 @@ namespace GestionAgroite_V1_CSI.Controllers
             }
             oPedido.IdPedido = model.pedido.IdPedido;
             oPedido.Estado = 0;
-            oPedido.ChangeStatus(oPedido);
+            oPedido.ChangeStatus(oPedido.IdPedido,1);
 
             Entrega entre = new Entrega();
             entre.IdVenta = idsub;

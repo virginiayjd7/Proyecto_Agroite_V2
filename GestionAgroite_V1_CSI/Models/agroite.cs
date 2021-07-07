@@ -8,7 +8,7 @@ namespace GestionAgroite_V1_CSI.Models
     public partial class agroite : DbContext
     {
         public agroite()
-            : base("name=agroite")
+            : base("name=agroite2")
         {
         }
 
@@ -28,6 +28,7 @@ namespace GestionAgroite_V1_CSI.Models
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Transportador> Transportador { get; set; }
+        public virtual DbSet<Ubicacion> Ubicacion { get; set; }
         public virtual DbSet<UnidadVolumen> UnidadVolumen { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Vehiculos> Vehiculos { get; set; }
@@ -219,6 +220,14 @@ namespace GestionAgroite_V1_CSI.Models
                 .Property(e => e.IGV)
                 .HasPrecision(16, 2);
 
+            modelBuilder.Entity<Pedido>()
+                .Property(e => e.Latitud)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Pedido>()
+                .Property(e => e.Longitud)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Producto>()
                 .Property(e => e.Nombre_Producto)
                 .IsUnicode(false);
@@ -257,6 +266,13 @@ namespace GestionAgroite_V1_CSI.Models
 
             modelBuilder.Entity<Transportador>()
                 .Property(e => e.Email)
+                .IsUnicode(false);
+            modelBuilder.Entity<Ubicacion>()
+                .Property(e => e.latitud)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Ubicacion>()
+                .Property(e => e.longitud)
                 .IsUnicode(false);
 
             modelBuilder.Entity<UnidadVolumen>()

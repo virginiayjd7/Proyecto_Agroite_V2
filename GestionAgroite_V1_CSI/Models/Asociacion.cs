@@ -14,6 +14,7 @@ namespace GestionAgroite_V1_CSI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Asociacion()
         {
+            Agricultor = new HashSet<Agricultor>();
             Producto = new HashSet<Producto>();
         }
 
@@ -38,7 +39,7 @@ namespace GestionAgroite_V1_CSI.Models
         [StringLength(100)]
         public string Direccion { get; set; }
 
-        public int? IdAgricultor { get; set; }
+      //  public int? IdAgricultor { get; set; }
 
         [StringLength(9)]
         public string Telefono { get; set; }
@@ -48,10 +49,15 @@ namespace GestionAgroite_V1_CSI.Models
 
         public int? Integrantes { get; set; }
 
-        public virtual Agricultor Agricultor { get; set; }
+        //public virtual Agricultor Agricultor { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto> Producto { get; set; }
+
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Agricultor> Agricultor { get; set; }
+
 
         public List<Asociacion> Listar()
         {
@@ -167,5 +173,34 @@ namespace GestionAgroite_V1_CSI.Models
             }
             return prod;
         }
+
+        public ModelDatos Datos()
+        {
+            var prod = new ModelDatos();
+            try
+            {
+                using (var db = new agroite())
+                {
+                    db.Configuration.ProxyCreationEnabled = false;
+                    int canVentas = db.Pedido.ToList().Count();
+                    int CantClientes = db.Usuario.Where(x=>x.IdActividad==8).ToList().Count();
+                    int Cantproductos = db.Producto.ToList().Count();
+                    int CantVehiculos = db.Vehiculos.ToList().Count();
+
+                    prod.CantClientes = CantClientes;
+                    prod.Cantproductos = Cantproductos;
+                    prod.CantVentas = canVentas;
+                    prod.CantVehiculos = CantVehiculos;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return prod;
+
+        }
+
+
     }
 }

@@ -166,3 +166,7 @@ C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.dll
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.pdb
 C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\obj\Debug\FrontEndAgroIte_V1_CSI.csprojAssemblyReference.cache
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Users\Virginia Aquino\source\repos\Proyecto_Agroite_v1_CSI\FrontEndAgroIte_V1_CSI\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml

@@ -4,6 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
+
+
 <div class="header bg-white pb-6">
     <div class="container-fluid">
         <div class="header-body">
@@ -18,11 +22,248 @@
                         </ol>
                     </nav>
                 </div>
-
             </div>
 
-            
+            <div style="display:flex;">
+                <div class="card text-white bg-primary mb-3" style="width:25%;margin-right:5px">
+
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:aliceblue;"> Clientes</h5>
+                        <p class="card-text">
+                          
+
+                            <div style="display:flex">
+                               
+                                    <div>
+                                        <h1 id="totalveclientes" style="color:aliceblue;margin-left:5px;margin-right:120px"> </h1>
+                                    </div>
+                                    <div style="float:right">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                            <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                                        </svg>
+                                    </div>
+
+                           
+                               
+                            </div>
+
+                          
+
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-white bg-primary mb-3" style="width: 25%">
+
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:aliceblue;">Total Vehiculos</h5>
+
+
+
+
+                        <div style="display:flex">
+                            <div>
+                                <h1 id="totalvehiulos" style="color:aliceblue;margin-left:5px;margin-right:120px"> </h1>
+                            </div>
+
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg"  width="50" height="50"  fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
+                                    <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z" />
+                                    <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z" />
+                                </svg>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="card text-white bg-primary mb-3" style="width: 25%; margin-right: 5px; margin-left: 5px">
+
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:aliceblue;">Total Productos</h5>
+
+                        <div style="display:flex">
+                            <div>
+                                <h1 id="totalproductos" style="color:aliceblue;margin-left:5px;margin-right:120px"> </h1>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg"  width="50" height="50"   fill="currentColor" class="bi bi-droplet-half" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10c0 0 2.5 1.5 5 .5s5-.5 5-.5c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z" />
+                                    <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z" />
+                                </svg>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="card text-white bg-primary mb-3" style="width: 25%; margin-right: 5px">
+
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:aliceblue;">Total Pedido</h5>
+
+
+                        <div style="display:flex">
+                            <div>
+                                <h1 id="totalpedido" style="color:aliceblue;margin-left:5px;margin-right:120px"> </h1>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg"width="50" height="50"  fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+                                    <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+
+
+
+
+            <div id="chart-container" >Los Pedidos mas  Recientes!</div>
+
+            <div id="chart-container1">Productos mas vendidos</div>
+
         </div>
     </div>
 </div>
 
+
+<!-- Step 1 - Include the fusioncharts core library -->
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<!-- Step 2 - Include the fusion theme -->
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<!-- Include fusion theme -->
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+<script type="text/javascript">
+    //STEP 2 - Chart Data
+
+
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Admin/Grafico/',
+            type: 'GET',
+            dataType: 'json',         
+            success: function (data) {
+                var rows = '';
+                const chartData = [];
+              ///  console.log(data);
+
+
+                $.each(data, function (i, item) {
+                    chartData.push({ label: item.Fecha, value: item.total });
+                  });
+               
+                const chartConfig = {
+                    type: 'column2d',
+                    renderAt: 'chart-container',
+                    width: '100%',
+                    height: '400',
+                    dataFormat: 'json',
+                    dataSource: {
+                        // Chart Configuration
+                        "chart": {
+                            "caption": "Los Pedidos mas  Recientes",
+                            "subCaption": "In MMbbl = One Million barrels",
+                            "xAxisName": "Country",
+                            "yAxisName": "Reserves (MMbbl)",
+                            "numberSuffix": "",
+                            "theme": "fusion",
+                        },
+                        // Chart Data
+                        "data": chartData
+                    }
+                };
+                FusionCharts.ready(function () {
+                    var fusioncharts = new FusionCharts(chartConfig);
+                    fusioncharts.render();
+                });
+
+            },
+            error: function (err) {
+                alert("Error: " + err.responseText);
+                console.log(err);
+            }
+        })
+        Grafico2();
+        Datos();
+    })
+
+    function Grafico2() {
+        $.ajax({
+            url: '/Admin/Grafico2/',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {  
+                const chartData = [];   
+                $.each(data, function (i, item) {
+                    chartData.push({ label: item.Producto, value: item.total });
+                });
+                const chartConfig = {
+                    type: 'doughnut2d',
+                    renderAt: 'chart-container1',
+                    width: '550',
+                    height: '450',
+                    dataFormat: 'json',
+                    dataSource: {
+                        // Chart Configuration
+                        "chart": {
+                            "caption": "Productos mas vendidos",
+                            "subCaption": "Last year",
+                            "numberPrefix": "$",
+                            "bgColor": "#ffffff",
+                            "startingAngle": "310",
+                            "showLegend": "1",
+                            "defaultCenterLabel": "Total revenue: $64.08K",
+                            "centerLabel": "Revenue from $label: $value",
+                            "centerLabelBold": "1",
+                            "showTooltip": "0",
+                            "decimals": "0",
+                            "theme": "fusion"
+                        },
+                        // Chart Data
+                        "data": chartData
+                    }
+                };
+                FusionCharts.ready(function () {
+                    var fusioncharts = new FusionCharts(chartConfig);
+                    fusioncharts.render();
+                });     
+            },
+            error: function (err) {
+                alert("Error: " + err.responseText);
+                console.log(err);
+            }
+        })
+    }
+
+
+    function Datos() {
+        $.ajax({
+            url: '/Admin/Datos/',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                
+                console.log(data);
+
+                $("#totalvehiulos").text(data.CantVehiculos);
+                $("#totalproductos").text(data.Cantproductos);
+
+                $("#totalpedido").text(data.CantVentas);
+                $("#totalveclientes").text(data.CantClientes);
+
+                //totalpedido
+            },
+            error: function (err) {
+                alert("Error: " + err.responseText);
+                console.log(err);
+            }
+        })
+    }
+
+</script>

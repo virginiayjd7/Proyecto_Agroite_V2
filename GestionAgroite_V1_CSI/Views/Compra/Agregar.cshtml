@@ -1,81 +1,12 @@
-﻿@model GestionAgroite_V1_CSI.Models.ModelCompra
-
+﻿
 @{
-    ViewBag.Title = "Agregar";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
-<h2>Compra</h2>
+
 
 <div class="container">
 
-    @using (Html.BeginForm("Guardar", "Compra", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="inputState">Transportador</label>
-                <select id="IdTransportador" name="IdTransportador" class="form-control" required>
-                    <option value="">-Seleccione-</option>
-                    @foreach (var item in Model.transportador)
-                    {
-                        <option value="@(item.IdTransportador)- @item.Vehiculos.IdVehiculo"> @(item.Vehiculos.Marca) </option>
-                    }
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">Capacidad de Carga</label>
-                <input type="number" name="txtcantidad" id="txtcantidad" class="form-control" value="" disabled />
-            </div>
-            <div class="form-group col-md-2">
-                <label for="inputState">Capacidad Sum</label>
-                <input type="number" name="txtcantidadSumana" id="txtcantidadSumana" value="" />
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="inputState">Asociacion</label>
-                <select id="IdAsociacion" name="IdAsociacion" class="form-control" required>
-                    <option value="">-Seleccione-</option>
-                    @foreach (var item in Model.asociacion)
-                    {
-                        <option value="@(item.IdAsociacion)"> @(item.Razon_Social) </option>
-                    }
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">Producto</label>
-                <select id="idProducto" name="idProducto" class="form-control" required>
-                    <option value="">-Seleccione-</option>
-                </select>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="inputEmail4">Cantida Producida</label>
-                <input type="number" name="txtcantidadProducida" id="txtcantidadProducida" class="form-control" value="" />
-            </div>
-        </div>
-    }
-
-    <button type="button" class="btn btn-primary" id="btnAgregar" onclick="Agregar()">Agregar</button>
-    <table class="table" id="listaDetalle">
-        <thead>
-            <tr>
-                <th>idProducto</th>
-                <th>Nombre</th>
-                <th>Cantidad</th>
-                <th>PrecioUnit</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <hr />
-    <div class="form-group col-md-3 float-right">
-        <label for="inputEmail4">Total</label>
-        @Html.TextBoxFor(x => x.compra.Total, new { @class = "form-control", id = "TotalCompra" })
-        <br />
-        <button type="button" class="btn btn-success float-right" id="btnregistrar">Registrar</button>
-    </div><br />
 
 </div>
 

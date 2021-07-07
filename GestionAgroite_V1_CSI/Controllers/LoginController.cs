@@ -18,11 +18,13 @@ namespace GestionAgroite_V1_CSI.Controllers
         }
         public ActionResult Acceder(string usuario, string password)
         {
-
             var rm = objusuario.Acceder(usuario, password);
             if (rm.response)
             {
                 Session["idusuario"] = rm.idusuario;
+                Session["nombre"] = rm.nombre;
+                Session["correo"] = rm.correo;
+
                 return Redirect("~/Admin/Index");
             }
             return Redirect("~/Login/Index");

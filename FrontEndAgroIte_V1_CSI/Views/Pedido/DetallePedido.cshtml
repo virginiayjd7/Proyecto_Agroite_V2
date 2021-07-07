@@ -227,8 +227,8 @@
                 var rows = '';
                 console.log(data);
                 $.each(data, function (i, item) {              
-                   rows += "<div class='card'>  <div class='card-body'>"               
-                    rows += "  <div style='display:flex'>   <img class='img-fluid' src='http://localhost:54574/assets/images/vehiculo.png' width='100' style='margin-right:10px'  />  <p>" + item.Vehiculos.Marca + " " + item.Vehiculos.Modelo + " <strong>" + item.Vehiculos.Precio + "</strong> </p>  <input class='form-check-input' type='radio' style='margin-left:60%' name='checks' value='' onClick='SumarTotal(\"" + item.Vehiculos.Precio + '-' + item.IdTransportador+"\")'> </div>"             
+                    rows += "<div class='card'>  <div class='card-body'>"
+                    rows += "  <div style='display:flex'>   <img class='img-fluid' src='http://localhost:54574/assets/images/vehiculo.png' width='100' style='margin-right:10px'  />  <p>" + item.Vehiculos.Marca + " " + item.Vehiculos.Modelo + " <strong>" + item.Vehiculos.Precio + " <strong>" + " <br>Capacidad: " + item.Vehiculos.Capacidad + " <br>"+"</strong> </p>  <input class='form-check-input' type='radio' style='margin-left:40%' name='checks' value='' onClick='SumarTotal(\"" + item.Vehiculos.Precio + '-' + item.IdTransportador + "\")'> </div>"             
                    rows += "  </div>  </div>"                    
                     $("#vehiculos").html(rows);
                 });
