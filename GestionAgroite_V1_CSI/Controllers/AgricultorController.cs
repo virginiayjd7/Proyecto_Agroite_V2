@@ -12,6 +12,7 @@ namespace GestionAgroite_V1_CSI.Controllers
     {
         Agricultor oAgricultor = new Agricultor();
         Asociacion oAsociacion = new Asociacion();
+        Ubicacion oUbicacion = new Ubicacion();
         // GET: Agricultor
         public ActionResult Index(string criterio)
         {
@@ -67,6 +68,12 @@ namespace GestionAgroite_V1_CSI.Controllers
         public ActionResult Visualizar(int id = 0)
         {
             return View(oAgricultor.Obtener(id));
+        }
+        public ActionResult UbicacionAgricultor(int id = 0)
+        {
+            //return View(oAgricultor.Obtener(id));
+            ViewBag.Agricultor = oAgricultor.Obtener(id);
+            return View(new Ubicacion());
         }
     }
 }

@@ -114,7 +114,7 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    producto = db.Producto.Include("Usuario").Include("UnidadVolumen").Include("Frecuencia").Include("Categoria").Where(x => x.IdProducto == id)
+                    producto = db.Producto.Include("Asociacion").Include("UnidadVolumen").Include("Frecuencia").Include("Categoria").Where(x => x.IdProducto == id)
                                       .SingleOrDefault();
                 }
 
@@ -137,7 +137,7 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    viewModel.producto = db.Producto.Include("Categoria").Include("UnidadVolumen").Include("Frecuencia").Include("Asociacion").Where(x => x.IdProducto == id).FirstOrDefault();
+                    viewModel.oProducto = db.Producto.Include("Categoria").Include("UnidadVolumen").Include("Frecuencia").Include("Asociacion").Where(x => x.IdProducto == id).FirstOrDefault();
                     viewModel.unidadVolumen = oUnidadVolumen.Listar();
                     viewModel.frecuencia = oFrecuencia.Listar();
                     viewModel.asociacion = oAsociacion.Listar();
@@ -160,7 +160,7 @@ namespace GestionAgroite_V1_CSI.Models
             var oCategoria = new Categoria();
             try
             {
-                viewModel.producto = new Producto();
+                viewModel.oProducto = new Producto();
                 viewModel.unidadVolumen = oUnidadVolumen.Listar();
                 viewModel.frecuencia = oFrecuencia.Listar();
                 viewModel.asociacion = oAsociacion.Listar();

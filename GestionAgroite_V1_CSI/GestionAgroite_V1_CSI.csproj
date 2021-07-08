@@ -98,6 +98,14 @@
   <ItemGroup>
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\locationpicker.jquery.js" />
+    <Content Include="Content\ProductosFiles\16174736_1352989321398263_4072792827353253039_n.jpg" />
+    <Content Include="Content\ProductosFiles\2.jpg" />
+    <Content Include="Content\ProductosFiles\archivox.png" />
+    <Content Include="Content\ProductosFiles\camote.jpg" />
+    <Content Include="Content\ProductosFiles\Captura1.PNG" />
+    <Content Include="Content\ProductosFiles\Clients.png" />
+    <Content Include="Content\ProductosFiles\contrsuccion.png" />
+    <Content Include="Content\ProductosFiles\granadilla.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="recursos\imagen\agricultor.png" />
@@ -1762,6 +1770,7 @@
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\TransportadorController.cs" />
+    <Compile Include="Controllers\UbicacionController.cs" />
     <Compile Include="Controllers\UnidadVolumenController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VehiculosController.cs" />
@@ -1861,6 +1870,9 @@
     <Content Include="Views\Admin\Mapa.cshtml" />
     <Content Include="Views\Compra\Mapa.cshtml" />
     <Content Include="Views\Compra\Ruta.cshtml" />
+    <Content Include="Views\Agricultor\UbicacionAgricultor.cshtml" />
+    <Content Include="Views\Ubicacion\Index.cshtml" />
+    <Content Include="Views\Ubicacion\UbicacionAgricultor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
