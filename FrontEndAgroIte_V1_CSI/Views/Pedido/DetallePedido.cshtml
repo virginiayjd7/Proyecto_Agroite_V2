@@ -224,7 +224,7 @@
                 console.log(data);
                 $.each(data, function (i, item) {              
                     rows += "<div class='card'>  <div class='card-body'>"
-                    rows += "  <div style='display:flex'>   <img class='img-fluid' src='http://localhost:54574/assets/images/vehiculo.png' width='200' style='margin-right:50px'  />  <p><br>Marca:"+ item.Vehiculos.Marca + "<br>Modelo: " + item.Vehiculos.Modelo + " <strong>" + "<br>Costo Trasporte:" + item.Vehiculos.Precio + " <strong>" + " <br>Capacidad: " + item.Vehiculos.Capacidad + " Toneladas:" + "</strong> </p>  <input class='form-check-input' type='radio' style='margin-left:40%' name='checks' value='' onClick='SumarTotal(\"" + item.Vehiculos.Precio + '-' + item.IdTransportador + "\")'> </div>"             
+                    rows += "  <div style='display:flex'>   <img class='img-fluid' src='http://localhost:54574/assets/images/vehiculo.png' width='100' style='margin-right:10px'  />  <p><br>Marca:"+ item.Vehiculos.Marca + "<br>Modelo: " + item.Vehiculos.Modelo + " <strong>" + "<br>Costo Trasporte:" + item.Vehiculos.Precio + " <strong>" + " <br>Capacidad: " + item.Vehiculos.Capacidad + " Toneladas:" + "</strong> </p>  <input class='form-check-input' type='radio' style='margin-left:40%' name='checks' value='' onClick='SumarTotal(\"" + item.Vehiculos.Precio + '-' + item.IdTransportador + "\")'> </div>"             
                    rows += "  </div>  </div>"                    
                     $("#vehiculos").html(rows);
                 });
