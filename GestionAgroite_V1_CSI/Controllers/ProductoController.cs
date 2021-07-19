@@ -12,66 +12,42 @@ namespace GestionAgroite_V1_CSI.Controllers
     public class ProductoController : Controller
     {
         // GET: Producto
-        public Producto producto = new Producto();
-        public Categoria categoria = new Categoria();
-        public UnidadVolumen unidad = new UnidadVolumen();
-        public Frecuencia frecuencia = new Frecuencia();
-        public Usuario usuario = new Usuario();
+        public Producto objProducto = new Producto();
+        public Categoria objCategoria = new Categoria();
+        public UnidadVolumen objUnidad = new UnidadVolumen();
+        public Frecuencia objFrecuencia = new Frecuencia();
+        public Usuario objUsuario = new Usuario();
+        public Asociacion objAsociacion = new Asociacion();
         public ViewModel oviewModel = new ViewModel();
         public ActionResult Index(String criterio)
         {
             if (criterio == null || criterio == "")
             {
-                return View(producto.Listar());
+                return View(objProducto.Listar());
             }
             else
             {
-                return View(producto.Buscar(criterio));
+                return View(objProducto.Buscar(criterio));
             }
         }
-        //public ActionResult AgregarEditar(int id = 0)
-        //{
-        //    return View(id == 0 ? new ViewModel() : producto.vmObtener(id));
-        //}
         public ActionResult AgregarEditar(int id = 0)
         {
-            if (id == 0)
-            {
-                return View(producto.vmInstancia());
-            }
-            return View(producto.vmObtener(id));
+            //if (id == 0)
+            //{
+            //    ViewBag.Producto = new Producto();
+            //    return View(producto.vmInstancia());
+            //}
+            //return View(producto.vmObtener(id));
+            ViewBag.Asociacion = objAsociacion.Listar();
+            ViewBag.Categoria = objCategoria.Listar();
+            ViewBag.Frecuencia = objFrecuencia.Listar();
+            ViewBag.Unidad = objUnidad.Listar();
+            return View(id == 0 ? new Producto(): objProducto.Obtener(id));
         }
 
-        //public ActionResult Guardar(ViewModel model, HttpPostedFileBase imgfile)
-        //{
-        //    foreach (string key in Request.Form.Keys)
-        //    {
-        //        Debug.WriteLine(key + " " + Request.Form[key]);
-        //    }
-        //    if (imgfile!=null)
-        //    {
-        //        if (imgfile.ContentLength > 0)
-        //        {
-        //            if (ModelState.IsValid)
-        //            {
-        //                string path = Path.Combine(Server.MapPath("~/Content/ProductosFiles/"), imgfile.FileName);
-        //                imgfile.SaveAs(path);
-        //                model.producto.Imagenes_Producto = imgfile.FileName;
-        //                model.producto.Guardar();
-        //                return Redirect("~/Producto/Index");
-        //            }
-        //            else
-        //            {
-        //                return View("Index", producto.Listar());
-        //            }
-        //        }
-        //    }
-
-        //    return View("~/Producto/Index");
-
-        //}
+        
         [HttpPost]
-        public ActionResult Guardar(ViewModel model, HttpPostedFileBase imgfile)
+        public ActionResult Guardar(Producto model, HttpPostedFileBase imgfile)
         {
             foreach (string key in Request.Form.Keys)
             {
@@ -85,12 +61,8 @@ namespace GestionAgroite_V1_CSI.Controllers
                     {
                         string path = Path.Combine(Server.MapPath("~/Content/ProductosFiles/"), imgfile.FileName);
                         imgfile.SaveAs(path);
-                        model.producto.IdAsociacion = Convert.ToInt32(Request.Form["IdAsociacion"]);
-                        model.producto.IdCategoria = Convert.ToInt32(Request.Form["IdCategoria"]);
-                        model.producto.IdFrecuencia = Convert.ToInt32(Request.Form["IdFrecuencia"]);
-                        model.producto.IdUnidadVolumen = Convert.ToInt32(Request.Form["IdUnidadVolumen"]);
-                        model.producto.Imagenes_Producto = imgfile.FileName;
-                        model.producto.Guardar();
+                        model.Imagenes_Producto = imgfile.FileName;
+                        model.Guardar();
                         return Redirect("~/Producto/Index");
                     }
                     else
@@ -107,16 +79,16 @@ namespace GestionAgroite_V1_CSI.Controllers
         {
             string id = idProducto;
             int idpro = Convert.ToInt32(id);
-            return View(producto.Obtener(idpro));
+            return View(objProducto.Obtener(idpro));
         }
         public ActionResult Visualizar(int id)
         {
-            return View(producto.Obtener(id));
+            return View(objProducto.Obtener(id));
         }        
         public ActionResult Eliminar(int id)
         {
-            producto.IdProducto = id;
-            producto.Eliminar();
+            objProducto.IdProducto = id;
+            objProducto.Eliminar();
             return Redirect("~/Producto");
         }        
     }

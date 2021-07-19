@@ -8,7 +8,7 @@ namespace GestionAgroite_V1_CSI.Models
     public class ViewModel
     {      
             public Pedido pedido { get; set; }
-            public Producto producto { get; set; }
+            public Producto oProducto { get; set; }
             public List<DetallePedido> detallepedido { get; set; }
 
             public List<Transportador> transportador { get; set; }

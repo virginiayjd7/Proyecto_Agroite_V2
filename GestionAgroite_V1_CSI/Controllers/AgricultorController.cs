@@ -11,6 +11,8 @@ namespace GestionAgroite_V1_CSI.Controllers
     public class AgricultorController : Controller
     {
         Agricultor oAgricultor = new Agricultor();
+        Asociacion oAsociacion = new Asociacion();
+        Ubicacion oUbicacion = new Ubicacion();
         // GET: Agricultor
         public ActionResult Index(string criterio)
         {
@@ -25,6 +27,7 @@ namespace GestionAgroite_V1_CSI.Controllers
         }
         public ActionResult AgregarEditar(int id = 0)
         {
+            ViewBag.Asociacion = oAsociacion.Listar();
             return View(id == 0 ? new Agricultor() : oAgricultor.Obtener(id));
         }
         public ActionResult Guardar(Agricultor model, HttpPostedFileBase update)
@@ -65,6 +68,12 @@ namespace GestionAgroite_V1_CSI.Controllers
         public ActionResult Visualizar(int id = 0)
         {
             return View(oAgricultor.Obtener(id));
+        }
+        public ActionResult UbicacionAgricultor(int id = 0)
+        {
+            //return View(oAgricultor.Obtener(id));
+            ViewBag.Agricultor = oAgricultor.Obtener(id);
+            return View(new Ubicacion());
         }
     }
 }

@@ -1,6 +1,10 @@
-﻿@model GestionAgroite_V1_CSI.Models.ViewModel
+﻿@model GestionAgroite_V1_CSI.Models.Producto
 @{
     ViewBag.Title = "NuevoProducto";
+    List < GestionAgroite_V1_CSI.Models.Asociacion> objAsociacion = ViewBag.Asociacion;
+    List < GestionAgroite_V1_CSI.Models.Categoria> objCategoria = ViewBag.Categoria;
+    List < GestionAgroite_V1_CSI.Models.Frecuencia> objFrecuencia = ViewBag.Frecuencia;
+    List < GestionAgroite_V1_CSI.Models.UnidadVolumen> objUnidad = ViewBag.Unidad;
 }
 <div class="header bg-white pb-6">
     <div class="container-fluid">
@@ -28,70 +32,81 @@
                         <br />
                         @using (Html.BeginForm("Guardar", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
-                            @Html.HiddenFor(x => x.producto.IdProducto)
+                            @Html.HiddenFor(x => x.IdProducto)
+                            
                             <div class="form-group">
                                 <label>Categoria: </label>
                                 <select name="IdCategoria" class="form-control">
-                                    <option @(Model.producto.IdCategoria.Equals("") ? "selected" : "") value="">-Seleccione-</option>
-                                    @foreach (var t in Model.categoria)
+                                    <option @(Model.IdCategoria.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                                    @foreach (var t in objCategoria)
                                     {
-                                        <option @(Model.producto.IdCategoria.Equals(t.IdCategoria) ? "selected" : "") value="@t.IdCategoria">@t.Nombre</option>
+                                        <option @(Model.IdCategoria.Equals(t.IdCategoria) ? "selected" : "") value="@t.IdCategoria">@t.Nombre</option>
                                     }
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Nombre Producto: </label>
-                                @Html.TextBoxFor(x => x.producto.Nombre_Producto, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.producto.Nombre_Producto, null, new { @class = "label label-danger" })
+                                @Html.TextBoxFor(x => x.Nombre_Producto, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Nombre_Producto, null, new { @class = "label label-danger" })
                             </div>
 
                             <div class="form-group">
                                 <label>Precio Referencial: </label>
-                                @Html.TextBoxFor(x => x.producto.Precio_Referencial, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.producto.Precio_Referencial, null, new { @class = "label label-danger" })
+                                @Html.TextBoxFor(x => x.Precio_Referencial, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Precio_Referencial, null, new { @class = "label label-danger" })
                             </div>
                             <div class="form-group">
                                 <label>Imagen Producto: </label>
                                 <input type="file" id="imgfile" name="imgfile" class="btn btn-info" />
-                                @Html.ValidationMessageFor(x => x.producto.Imagenes_Producto, null, new { @class = "label label-danger" })
+                                @Html.ValidationMessageFor(x => x.Imagenes_Producto, null, new { @class = "label label-danger" })
                             </div>
                             <div class="form-group">
                                 <label>Descripcion Producto: </label>
-                                @Html.TextBoxFor(x => x.producto.Descripcion_Producto, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.producto.Descripcion_Producto, null, new { @class = "label label-danger" })
+                                @Html.TextBoxFor(x => x.Descripcion_Producto, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Descripcion_Producto, null, new { @class = "label label-danger" })
                             </div>
                             <div class="form-group">
                                 <label>Fecha Inicio: </label>
-                                @Html.TextBoxFor(x => x.producto.Fecha_Inicio, new { @class = "form-control datepicker", @type = "datetime-local", @value = DateTime.Now.ToShortDateString() })
-                                @Html.ValidationMessageFor(x => x.producto.Fecha_Inicio, null, new { @class = "label label-danger" })
+                                @Html.TextBoxFor(x => x.Fecha_Inicio, new { @class = "form-control datepicker", @type = "datetime-local", @value = DateTime.Now.ToShortDateString() })
+                                @Html.ValidationMessageFor(x => x.Fecha_Inicio, null, new { @class = "label label-danger" })
                             </div>
                             <div class="form-group">
                                 <label>Fecha Fin: </label>
-                                @Html.TextBoxFor(x => x.producto.Fecha_Fin, new { @class = "form-control datepicker", @type = "datetime-local", @value = DateTime.Now.ToShortDateString() })
-                                @Html.ValidationMessageFor(x => x.producto.Fecha_Fin, null, new { @class = "label label-danger" })
+                                @Html.TextBoxFor(x => x.Fecha_Fin, new { @class = "form-control datepicker", @type = "datetime-local", @value = DateTime.Now.ToShortDateString() })
+                                @Html.ValidationMessageFor(x => x.Fecha_Fin, null, new { @class = "label label-danger" })
                             </div>
                             <div class="form-group">
                                 <label>Cantidad Producida: </label>
-                                @Html.TextBoxFor(x => x.producto.Cantidad_Producida, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(x => x.producto.Cantidad_Producida, null, new { @class = "label label-danger" })
+                                @Html.TextBoxFor(x => x.Cantidad_Producida, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Cantidad_Producida, null, new { @class = "label label-danger" })
                             </div>
                             <div class="form-group">
                                 <label>Unidad Medida: </label>
                                 <select name="IdUnidadVolumen" class="form-control">
-                                    <option @(Model.producto.IdUnidadVolumen.Equals("") ? "selected" : "") value="">-Seleccione-</option>
-                                    @foreach (var t in Model.unidadVolumen)
+                                    <option @(Model.IdUnidadVolumen.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                                    @foreach (var t in objUnidad)
                                     {
-                                        <option @(Model.producto.IdUnidadVolumen.Equals(t.IdUnidadVolumen) ? "selected" : "") value="@t.IdUnidadVolumen">@t.Nombre</option>
+                                        <option @(Model.IdUnidadVolumen.Equals(t.IdUnidadVolumen) ? "selected" : "") value="@t.IdUnidadVolumen">@t.Nombre</option>
                                     }
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Frecuencia Produccion: </label>
                                 <select name="IdFrecuencia" class="form-control">
-                                    <option @(Model.producto.IdFrecuencia.Equals("") ? "selected" : "") value="">-Seleccione-</option>
-                                    @foreach (var t in Model.frecuencia)
+                                    <option @(Model.IdFrecuencia.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                                    @foreach (var t in objFrecuencia)
                                     {
-                                        <option @(Model.producto.IdFrecuencia.Equals(t.IdFrecuencia) ? "selected" : "") value="@t.IdFrecuencia">@t.Nombre</option>
+                                        <option @(Model.IdFrecuencia.Equals(t.IdFrecuencia) ? "selected" : "") value="@t.IdFrecuencia">@t.Nombre</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Asociacion: </label>
+                                <select name="IdAsociacion" class="form-control">
+                                    <option @(Model.IdAsociacion.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                                    @foreach (var t in objAsociacion)
+                                    {
+                                        <option @(Model.IdAsociacion.Equals(t.IdAsociacion) ? "selected" : "") value="@t.IdAsociacion">@t.Razon_Social</option>
                                     }
                                 </select>
                             </div>
@@ -99,7 +114,6 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                                 <a href="~/Producto/Index" class="btn btn-danger">Cancelar</a>
-                                @*<a href="~/Usuario/Menu/?idusuario=@(Model != null ? Model.IdUsuario : Session["idusuario"]  )" class="btn btn-danger">Cancelar</a>*@
                             </div>
                         }
                     </div>

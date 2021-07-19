@@ -49,8 +49,6 @@ namespace GestionAgroite_V1_CSI.Models
 
         public int? Integrantes { get; set; }
 
-        //public virtual Agricultor Agricultor { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto> Producto { get; set; }
 
@@ -68,7 +66,7 @@ namespace GestionAgroite_V1_CSI.Models
                 using (var db = new agroite())
                 {
 
-                    asociacion = db.Asociacion.Include("Agricultor").ToList();
+                    asociacion = db.Asociacion.ToList();
 
                 }
             }

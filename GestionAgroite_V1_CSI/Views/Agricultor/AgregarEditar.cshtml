@@ -1,6 +1,7 @@
 ﻿@model GestionAgroite_V1_CSI.Models.Agricultor
 @{
     ViewBag.Title = "AgregarEditar";
+    List<GestionAgroite_V1_CSI.Models.Asociacion> oAsociacion = ViewBag.Asociacion;
 }
 
 <div class="header bg-white pb-6">
@@ -79,11 +80,23 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-3 mb-3">
                                     @Html.Label("Celular: ")
                                     @Html.TextBoxFor(x => x.Celular, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger" })
-                                </div>
+                                </div>                                
+                            </div>
+                            <div class="col-md-9 mb-3">
+
+                                @Html.Label("Asociacion: ")
+                                <select name="IdAsociacion" class="form-control">
+                                    <option @(Model.IdAsociacion.Equals("") ? "selected" : "") value="">-Seleccione-</option>
+                                    @foreach (var t in oAsociacion)
+                                    {
+                                        <option @(Model.IdAsociacion.Equals(t.IdAsociacion) ? "selected" : "") value="@t.IdAsociacion">@t.Razon_Social</option>
+                                    }
+                                </select>
+
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">

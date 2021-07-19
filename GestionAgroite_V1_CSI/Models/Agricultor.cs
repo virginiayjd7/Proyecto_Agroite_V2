@@ -60,7 +60,7 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    oAgricutores = db.Agricultor.ToList();
+                    oAgricutores = db.Agricultor.Include("Asociacion").ToList();
                 }
             }
             catch (Exception)
@@ -74,7 +74,7 @@ namespace GestionAgroite_V1_CSI.Models
             var oAgricultor = new Agricultor();
             using (var db = new agroite())
             {
-                oAgricultor = db.Agricultor.Where(x => x.IdAgricultor == id).SingleOrDefault();
+                oAgricultor = db.Agricultor.Include("Asociacion").Where(x => x.IdAgricultor == id).SingleOrDefault();
             }
             return oAgricultor;
         }
@@ -85,7 +85,7 @@ namespace GestionAgroite_V1_CSI.Models
             {
                 using (var db = new agroite())
                 {
-                    oAgricultores = db.Agricultor.Where(x => x.Nombre.Contains(criterio) || x.Apellidos.Contains(criterio) || x.Num_Identificacion.Contains(criterio) || x.Direccion.Contains(criterio)).ToList();
+                    oAgricultores = db.Agricultor.Include("Asociacion").Where(x => x.Nombre.Contains(criterio) || x.Apellidos.Contains(criterio) || x.Num_Identificacion.Contains(criterio) || x.Direccion.Contains(criterio)).ToList();
                 }
             }
             catch (Exception)
