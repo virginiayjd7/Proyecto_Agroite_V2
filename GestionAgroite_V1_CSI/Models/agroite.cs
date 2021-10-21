@@ -8,7 +8,7 @@ namespace GestionAgroite_V1_CSI.Models
     public partial class agroite : DbContext
     {
         public agroite()
-            : base("name=agroite2")
+            : base("name=agroite")
         {
         }
 

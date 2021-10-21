@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="agroite-Web.config Connection String" description="agroite Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="data source=agroite.database.windows.net;initial catalog=db_agroite;user id=aquino;password=yjd7yaneth_;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+  <parameter name="agroite-Web.config Connection String" description="agroite Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="data source=dbagroite.database.windows.net;initial catalog=db_agroite;user id=Aquino;password=Yjd7yaneth;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\Virginia\ Aquino\\source\\repos\\Proyecto_Agroite_v1_CSI\\FrontEndAgroIte_V1_CSI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='agroite']/@connectionString" />
   </parameter>
 </parameters>

@@ -22,7 +22,7 @@
             <div class="col-lg-12">
                 <h2>Detalle de la tienda</h2>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Tienda</a></li>
+                    <li class="breadcrumb-item"><a href="~/Productos/CatalogoProductos">Tienda</a></li>
                     <li class="breadcrumb-item active">Detalle de la tienda </li>
                 </ul>
             </div>
@@ -39,9 +39,9 @@
                     <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
            
-                            <div class="carousel-item active"> <img class="d-block w-100"  src="http://localhost:54574//Content/ProductosFiles/@Model.Imagenes_Producto" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="http://localhost:54574//Content/ProductosFiles/@Model.Imagenes_Producto" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="http://localhost:54574//Content/ProductosFiles/@Model.Imagenes_Producto" alt="Third slide"> </div>
+                            <div class="carousel-item active"> <img class="d-block w-100"  src="http://agroite.azurewebsites.net//Content/ProductosFiles/@Model.Imagenes_Producto" alt="First slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="http://agroite.azurewebsites.net//Content/ProductosFiles/@Model.Imagenes_Producto" alt="Second slide"> </div>
+                            <div class="carousel-item"> <img class="d-block w-100" src="http://agroite.azurewebsites.net//Content/ProductosFiles/@Model.Imagenes_Producto" alt="Third slide"> </div>
                         </div>
                         <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
                             <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -53,13 +53,13 @@
                         </a>
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-1" data-slide-to="0" class="active">
-                                <img class="d-block w-100 img-fluid" src="http://localhost:54574//Content/ProductosFiles/@Model.Imagenes_Producto" alt="" />
+                                <img class="d-block w-100 img-fluid" src="http://agroite.azurewebsites.net//Content/ProductosFiles/@Model.Imagenes_Producto" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="1">
-                                <img class="d-block w-100 img-fluid" src="http://localhost:54574//Content/ProductosFiles/@Model.Imagenes_Producto" alt="" />
+                                <img class="d-block w-100 img-fluid" src="http://agroite.azurewebsites.net//Content/ProductosFiles/@Model.Imagenes_Producto" alt="" />
                             </li>
                             <li data-target="#carousel-example-1" data-slide-to="2">
-                                <img class="d-block w-100 img-fluid" src="http://localhost:54574//Content/ProductosFiles/@Model.Imagenes_Producto" alt="" />
+                                <img class="d-block w-100 img-fluid" src="http://agroite.azurewebsites.net//Content/ProductosFiles/@Model.Imagenes_Producto" alt="" />
                             </li>
                         </ol>
                     </div>
@@ -83,7 +83,7 @@
                         <ul>
                             <li>
                                 <div class="form-group quantity-box">
-                                    <label class="control-label">Cantidad a Comprar</label>
+                                    <label class="control-label">Digité la cantidad a comprar:</label>
                                     <!-- <input class="form-control" value="1" min="1" max="20" id="txtcantidad" type="number">
                                      <select class="form-control"" aria-label="Default select example">
                                          <option selected>Seleccione </option>
@@ -92,7 +92,7 @@
                                          <option value="3">3 Toneladas</option>
                                      </select>
                                         -->
-                                    <input type="number" name="txtcantidad" id="txtcantidad" min="3" class="form-control" value="" />
+                                    <input type="number" name="txtcantidad" id="txtcantidad" min="3" class="form-control" value="" /><h4>@Model.UnidadVolumen.Nombre</h4>
                                 </div>
                             </li>
                         </ul>
@@ -100,9 +100,9 @@
                         <div class="price-box-bar">
                             <div class="cart-and-bay-btn">
 
-                                <button class="btn hvr-hover" type="button" onclick="AddCart('@Model.IdProducto',' @Model.Nombre_Producto','@Model.Precio_Referencial','@Model.Imagenes_Producto')">AgregarCarrtito</button>
+                                <button style="color:white" class="btn hvr-hover" type="button" onclick="AddCart('@Model.IdProducto',' @Model.Nombre_Producto','@Model.Precio_Referencial','@Model.Imagenes_Producto')">AgregarCarrtito</button>
                             <!--    <a class="btn hvr-hover" href="~/Pedido/DetallePedido/">Agregar a mis Pedidos</a>  -->
-                                <a class="btn hvr-hover" href="~/Pedido/DetallePedido">Pedidos</a>
+                                <a class="btn hvr-hover" href="~/Pedido/DetallePedido">Ver Pedidos</a>
                             </div>
                         </div>                       
                     </div>

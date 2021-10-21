@@ -326,7 +326,7 @@
     <Content Include="Views\Login\Ingresar.cshtml" />
     <Content Include="Views\Pedido\CheckOut.cshtml" />
     <Content Include="Views\Pedido\FinalizarCompra.cshtml" />
-    <None Include="Properties\PublishProfiles\registry.hub.docker.com_yjd7.pubxml" />
+    <None Include="Properties\PublishProfiles\agroite - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
