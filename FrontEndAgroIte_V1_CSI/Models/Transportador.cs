@@ -4,7 +4,9 @@ namespace FrontEndAgroIte_V1_CSI.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("Transportador")]
     public partial class Transportador
@@ -12,7 +14,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Transportador()
         {
-            Compra = new HashSet<Compra>();
             Pedido = new HashSet<Pedido>();
             Venta = new HashSet<Venta>();
         }
@@ -32,9 +33,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public string Email { get; set; }
 
         public int? Disponibilidad { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Compra> Compra { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }

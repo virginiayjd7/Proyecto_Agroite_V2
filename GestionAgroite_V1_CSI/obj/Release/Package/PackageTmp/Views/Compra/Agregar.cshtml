@@ -1,0 +1,163 @@
+﻿
+@{
+    
+}
+
+
+
+<div class="container">
+
+
+</div>
+
+<script>
+
+    function Agregar() {
+        var idproduc = $('select[name=idProducto]').val();
+        var cantidad = $("#txtcantidadProducida").val();
+        var datospro = $("#idProducto option:selected").text();
+        var separador = "-";
+        var separado = datospro.split(separador);
+        var pre = separado[1].trim();
+        var nombre = separado[0];
+        var data = {
+            Nombre: nombre,
+            IdProducto: idproduc,
+            Cantidad: cantidad,
+            Subtotal: pre,
+            Precio_Unitario: pre
+        }
+        //txtcantidad
+        var capacidacarga = $("#txtcantidad").val();
+        var cantidad_Sumana = $("#txtcantidadSumana").val();
+        if (parseInt(cantidad) > parseInt(capacidacarga)) {
+            alert("Supera la capcidad del camion");
+            return;
+        }
+        if (parseInt(cantidad_Sumana) > parseInt(capacidacarga)) {
+            alert("ya esta lleno al carga");
+        }
+        else {
+            $.ajax({
+                url: '/Compra/AddItems/',
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function (data) {
+                    var rows = '';
+                    if (data.existe == true) {
+                        alert('Producto ya esta seleccionado en la compra')
+                    }
+                    else {
+                        $.each(data.lista, function (i, item) {
+
+                            rows += "<tr>"
+                            rows += "<td>" + item.IdProducto + "</td>"
+                            rows += "<td>" + item.Nombre + "</td>"
+                            rows += "<td>" + item.Cantidad + "</td>"
+                            rows += "<td>" + item.Precio_Unitario + "</td>"
+                            rows += "<td>" + item.Subtotal + "</td>"
+                            rows += "</tr>";
+                            $("#listaDetalle tbody").html(rows);
+                        });
+
+                        $("#TotalCompra").val(data.total);
+                        $("#txtcantidadSumana").val(data.cantidadCarga);
+                    }
+                },
+                error: function (err) {
+                    alert("Error: " + err.responseText);
+                    console.log(err);
+                }
+            })
+        }
+    }
+
+    $("#btnregistrar").click(function () {
+        var valores_vehiculo = $('select[name=IdTransportador]').val();
+        var separador = "-";
+        var separado = valores_vehiculo.split(separador);
+        var idtrasportador = separado[0];
+
+
+        var data = { IdTransportador: idtrasportador}
+        $.ajax({
+            url: '/Compra/Guardar/',
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                alert(data);
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+    });
+
+    $("select[name=IdAsociacion]").change(function () {
+        var selecprodcuct = $("#idProducto");
+        selecprodcuct.find('option').remove();
+        var id = $('select[name=IdAsociacion]').val();
+        var data = { IdAsociacion: id };
+        $.ajax({
+            url: '/Compra/ListProduct/',
+            type: 'POST',
+            data:data,
+            dataType: 'json',
+            success: function (data) {
+                $.each(data.produc, function (i, item) {
+                    selecprodcuct.append('<option value="' + item.IdProducto + '">' + item.Nombre_Producto + '-' + item.Precio_Referencial+ '</option>');
+                 });
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+    });
+
+    $("select[name=idProducto]").change(function () {
+        var datospro = $("#idProducto option:selected").text();
+        var separador = "-";
+        var arraydatos = datospro.split(separador);
+        var nombre = arraydatos[0];
+        var id_producto = $('select[name=idProducto]').val();
+        var data = { IdProducto: id_producto, Nombre_Producto: nombre}
+        $.ajax({
+            url: '/Compra/DetalleProducto/',
+            type: 'POST',
+            data:data,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $("#txtcantidadProducida").val(data.datos.Cantidad_Producida);
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+    });
+
+    $("select[name=IdTransportador]").change(function () {
+        var valores_vehiculo = $('select[name=IdTransportador]').val();
+        var separador = "-";
+        var separado = valores_vehiculo.split(separador);
+        var id_vehiculo = separado[1];
+        var data = { IdVehiculo: id_vehiculo }
+
+        $.ajax({
+            url: '/Vehiculos/ObtenerVehiculo/',
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $("#txtcantidad").val(data.Capacidad);
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+
+    });
+</script>

@@ -270,7 +270,9 @@ namespace GestionAgroite_V1_CSI.Models
             }
 
             catch (Exception ex)
-            { throw; }
+            { 
+                throw;
+            }
             return rm;
         }
         public List<Usuario> ObtenerUsuarioPorProducto()//retorna una lista o coleccion de objetos

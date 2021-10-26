@@ -25,9 +25,9 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public int? IdUsuario { get; set; }
 
-        public int? IdTransportador { get; set; }
+        public int? IdPedido { get; set; }
 
-        public virtual Transportador Transportador { get; set; }
+        public virtual Pedido Pedido { get; set; }
 
         public virtual Usuario Usuario { get; set; }
 

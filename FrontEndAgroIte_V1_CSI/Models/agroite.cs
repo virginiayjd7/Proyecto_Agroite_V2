@@ -14,7 +14,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public virtual DbSet<Actividad> Actividad { get; set; }
         public virtual DbSet<Agricultor> Agricultor { get; set; }
-        public virtual DbSet<Almacen> Almacen { get; set; }
         public virtual DbSet<Asociacion> Asociacion { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Compra> Compra { get; set; }
@@ -26,8 +25,9 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public virtual DbSet<Pago> Pago { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+       
         public virtual DbSet<Transportador> Transportador { get; set; }
+        public virtual DbSet<Ubicacion> Ubicacion { get; set; }
         public virtual DbSet<UnidadVolumen> UnidadVolumen { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Vehiculos> Vehiculos { get; set; }
@@ -65,38 +65,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
             modelBuilder.Entity<Agricultor>()
                 .Property(e => e.Correo)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Nombre)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Direccion)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Localidad)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Provincia)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Capacidad)
-                .HasPrecision(16, 2);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Precio)
-                .HasPrecision(16, 2);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Cantida_Dejada)
-                .HasPrecision(16, 2);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Unidad_Medida)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Asociacion>()
@@ -219,6 +187,18 @@ namespace FrontEndAgroIte_V1_CSI.Models
                 .Property(e => e.IGV)
                 .HasPrecision(16, 2);
 
+            modelBuilder.Entity<Pedido>()
+                .Property(e => e.Punto_Entrega)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Pedido>()
+                .Property(e => e.Latitud)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Pedido>()
+                .Property(e => e.Longitud)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Producto>()
                 .Property(e => e.Nombre_Producto)
                 .IsUnicode(false);
@@ -247,6 +227,14 @@ namespace FrontEndAgroIte_V1_CSI.Models
                 .Property(e => e.Cantidad_Producida)
                 .HasPrecision(16, 2);
 
+            modelBuilder.Entity<Producto>()
+                .Property(e => e.Cantidad_Minima)
+                .HasPrecision(16, 2);
+
+            modelBuilder.Entity<Producto>()
+                .Property(e => e.Cantidad_Maxima)
+                .HasPrecision(16, 2);
+
             modelBuilder.Entity<Transportador>()
                 .Property(e => e.Nombre)
                 .IsUnicode(false);
@@ -259,10 +247,13 @@ namespace FrontEndAgroIte_V1_CSI.Models
                 .Property(e => e.Email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Transportador>()
-                .HasMany(e => e.Pedido)
-                .WithOptional(e => e.Transportador)
-                .HasForeignKey(e => e.IdTrasportador);
+            modelBuilder.Entity<Ubicacion>()
+                .Property(e => e.latitud)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Ubicacion>()
+                .Property(e => e.longitud)
+                .IsUnicode(false);
 
             modelBuilder.Entity<UnidadVolumen>()
                 .Property(e => e.Nombre)
@@ -342,6 +333,10 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
             modelBuilder.Entity<Venta>()
                 .Property(e => e.Fecha)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Venta>()
+                .Property(e => e.Num_Serie)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Venta>()

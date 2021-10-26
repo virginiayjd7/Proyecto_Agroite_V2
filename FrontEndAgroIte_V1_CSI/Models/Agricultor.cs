@@ -4,7 +4,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity;
     using System.Data.Entity.Spatial;
     using System.Linq;
 
@@ -14,7 +13,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Agricultor()
         {
-            Asociacion = new HashSet<Asociacion>();
+            Pedido = new HashSet<Pedido>();
         }
 
         [Key]
@@ -45,8 +44,12 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public int? Estado { get; set; }
 
+        public int? IdAsociacion { get; set; }
+
+        public virtual Asociacion Asociacion { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Asociacion> Asociacion { get; set; }
+        public virtual ICollection<Pedido> Pedido { get; set; }
         public List<Agricultor> Listar()
         {
             var oAgricutores = new List<Agricultor>();
@@ -88,42 +91,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
             }
             return oAgricultores;
         }
-        public void Guardar()
-        {
-            try
-            {
-                using (var db = new agroite())
-                {
-                    if (this.IdAgricultor > 0)
-                    {
-                        db.Entry(this).State = EntityState.Modified;
-                    }
-                    else
-                    {
-                        db.Entry(this).State = EntityState.Added;
-                    }
-                    db.SaveChanges();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        public void Eliminar()
-        {
-            try
-            {
-                using (var db = new agroite())
-                {
-                    db.Entry(this).State = EntityState.Deleted;
-                    db.SaveChanges();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        
     }
 }

@@ -13,6 +13,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pedido()
         {
+            Compra = new HashSet<Compra>();
             DetallePedido = new HashSet<DetallePedido>();
             Venta = new HashSet<Venta>();
         }
@@ -31,9 +32,23 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public decimal? IGV { get; set; }
 
-        public int? IdTrasportador { get; set; }
+        public int? IdTransportador { get; set; }
 
+        [StringLength(300)]
         public string Punto_Entrega { get; set; }
+
+        public int? IdAgricultor { get; set; }
+
+        [StringLength(20)]
+        public string Latitud { get; set; }
+
+        [StringLength(20)]
+        public string Longitud { get; set; }
+
+        public virtual Agricultor Agricultor { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Compra> Compra { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetallePedido> DetallePedido { get; set; }
@@ -44,8 +59,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venta> Venta { get; set; }
-
-
         public int RegistarPedido()
         {
             int id = 0;

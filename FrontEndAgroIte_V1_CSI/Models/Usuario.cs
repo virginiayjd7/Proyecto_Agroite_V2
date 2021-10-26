@@ -149,7 +149,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
             }
             return actividad;
         }
-       
+
         public void Guardar()
         {
             try
@@ -173,7 +173,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
                 throw;
             }
         }
-       
+
         public void Guardarj(HttpPostedFileBase imgfile1)
         {
             try
@@ -312,9 +312,9 @@ namespace FrontEndAgroIte_V1_CSI.Models
                         rm.idusuario = query.IdUsuario.ToString();
                         //rm.actividad = query.Actividad.Nombre.ToString();
                         rm.nombre = query.Nombres;
-                       
+
                         rm.correo = Usuario;
-                      //  responseModel.idcliente = query.IdCliente.ToString();
+                        //  responseModel.idcliente = query.IdCliente.ToString();
                         rm.SetResponse(true);
                     }
                     else

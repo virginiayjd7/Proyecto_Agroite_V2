@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+    GestionAgroite_V1_CSI.Models.Ubicacion oUbicacion = ViewBag.Ubicacion;
+    GestionAgroite_V1_CSI.Models.Agricultor oAgricultor = ViewBag.Agricultor;
+    GestionAgroite_V1_CSI.Models.Pedido oPedido = ViewBag.Pedido;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps - Rutas</title>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AQuI_VA_LA_CLAVE&callback=initMap"
+            type="text/javascript"></script>
+    @*<script type="text/javascript" src="~/Content/js/jquery.js"></script>*@
+
+</head>
+<body>
+    <div class="container">
+        <div id="map" style="width: 700px;height: 400px;"></div>
+    </div>
+    <script type="text/javascript">
+        var map;
+        var america_lat = -18.026149;
+        var america_lng = -70.2533308;
+
+        var directionsDisplay;
+        var directionsService;
+
+        function initMap() {
+            directionsDisplay = new google.maps.DirectionsRenderer({ polylineOptions: { strokeColor: '#2E9AFE' } });
+            directionsService = new google.maps.DirectionsService();
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: america_lat, lng: america_lng },
+                zoom: 14,
+            });
+            var pos = {
+                lat: -18.026149,
+                lng: -70.2533308
+            };
+            var marker = new google.maps.Marker({
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+                position: pos
+            });
+            draw_rute_map();
+        }
+
+        function draw_rute_map() {
+            var start = new google.maps.LatLng(-18.026149, -70.2533308);
+            var end = new google.maps.LatLng(-12.013836, -76.9922622);
+            var request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    directionsDisplay.setMap(map);
+                    directionsDisplay.setOptions({ suppressMarkers: false });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

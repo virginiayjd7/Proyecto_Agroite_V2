@@ -259,7 +259,6 @@
     <Compile Include="Models\Actividad.cs" />
     <Compile Include="Models\Agricultor.cs" />
     <Compile Include="Models\agroite.cs" />
-    <Compile Include="Models\Almacen.cs" />
     <Compile Include="Models\Asociacion.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -280,8 +279,8 @@
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="Models\SessionHelper.cs" />
-    <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Transportador.cs" />
+    <Compile Include="Models\Ubicacion.cs" />
     <Compile Include="Models\UnidadVolumen.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Util.cs" />
@@ -352,7 +351,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54574</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54574/</IISUrl>
+          <IISUrl>http://localhost:54545/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

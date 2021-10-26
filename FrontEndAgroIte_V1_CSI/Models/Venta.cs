@@ -22,7 +22,8 @@ namespace FrontEndAgroIte_V1_CSI.Models
         [StringLength(50)]
         public string Fecha { get; set; }
 
-        public int? Num_Serie { get; set; }
+        [StringLength(12)]
+        public string Num_Serie { get; set; }
 
         public int? IdPedido { get; set; }
 

@@ -14,7 +14,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Producto()
         {
-            Almacen = new HashSet<Almacen>();
             DetalleCompra = new HashSet<DetalleCompra>();
             DetalleVenta = new HashSet<DetalleVenta>();
         }
@@ -50,8 +49,9 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public int? IdAsociacion { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Almacen> Almacen { get; set; }
+        public decimal? Cantidad_Minima { get; set; }
+
+        public decimal? Cantidad_Maxima { get; set; }
 
         public virtual Asociacion Asociacion { get; set; }
 

@@ -22,7 +22,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
         public decimal? Subtotal { get; set; }
 
         public virtual Pedido Pedido { get; set; }
-
         public void RegistarDetallePedido()
         {
             try

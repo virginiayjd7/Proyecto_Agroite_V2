@@ -59,7 +59,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
                 {
                     db.Configuration.ProxyCreationEnabled = false;
                     vehiculo = db.Vehiculos.ToList();
-                  //  vehiculo = db.Vehiculos.Include("Transportador").ToList();
+                    //  vehiculo = db.Vehiculos.Include("Transportador").ToList();
                 }
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public List<Transportador> listarVehiculos2()
         {
-            
+
             var vehiculo = new List<Transportador>();
             try
             {
@@ -81,7 +81,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
                     db.Configuration.ProxyCreationEnabled = false;
                     var query = (from de in db.Transportador
                                  join pro in db.Vehiculos on de.IdVehiculo equals pro.IdVehiculo
-                               
+
                                  select new
                                  {
                                      de.IdTransportador,

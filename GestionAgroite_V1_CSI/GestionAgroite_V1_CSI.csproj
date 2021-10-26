@@ -1873,6 +1873,7 @@
     <Content Include="Views\Agricultor\UbicacionAgricultor.cshtml" />
     <Content Include="Views\Ubicacion\Index.cshtml" />
     <Content Include="Views\Ubicacion\UbicacionAgricultor.cshtml" />
+    <None Include="Properties\PublishProfiles\GestionAgroite - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

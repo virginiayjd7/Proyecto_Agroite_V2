@@ -1,0 +1,43 @@
+﻿@model List<GestionAgroite_V1_CSI.Models.Agricultor>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="margin: 35px 50px">
+    
+    <br />
+    <br />
+    <table id="DataTablesLanguage" class="table align-items-center table-flush">
+        <thead>
+            <tr>
+                <th style="width:150px;">Nombres y Apellidos</th>
+                <th style="width:50px;">Nro Documento</th>
+                <th style="width:50px;">Foto Perfil</th>
+                <th style="width:50px;">Celular</th>
+                <th style="width:150px;">Correo Electronico</th>
+                <th style="width:150px;">Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre @item.Apellidos</td>
+                    <td>@item.Num_Identificacion</td>
+                    <td>
+                        <img src="http://localhost:57711/Content/AgricultoresFiles/@item.Foto_Perfil" width="100" />
+                    </td>
+                    <td>@item.Celular</td>
+                    <td>@item.Correo</td>
+                    <td style="align-content:center">
+                        <a href="~/Ubicacion/UbicacionAgricultor/@item.IdAgricultor" class="btn btn-xs btn-warning">Agregar</a>                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

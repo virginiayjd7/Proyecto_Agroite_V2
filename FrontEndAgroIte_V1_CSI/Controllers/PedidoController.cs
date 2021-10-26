@@ -69,7 +69,7 @@ namespace FrontEndAgroIte_V1_CSI.Controllers
             obj.Total = TotaCompra;
             obj.IGV = 10;
             obj.Punto_Entrega = DatosLocation;
-            obj.IdTrasportador = int.Parse(idtrasportador1);            // observacion
+            obj.IdTransportador = int.Parse(idtrasportador1);            // observacion
 
             int idpedido = obj.RegistarPedido();
             Carrito car = new Carrito();

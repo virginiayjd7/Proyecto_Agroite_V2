@@ -81,44 +81,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
             return frecuencia;
         }
-        public void Guardar()
-        {
-            try
-            {
-                using (var db = new agroite())
-                {
-                    if (this.IdFrecuencia > 0)
-                    {
-                        db.Entry(this).State = EntityState.Modified;
-                    }
-                    else
-                    {
-                        db.Entry(this).State = EntityState.Added;
-                    }
 
-                    db.SaveChanges();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public void Eliminar()
-        {
-            try
-            {
-                using (var db = new agroite())
-                {
-                    db.Entry(this).State = EntityState.Deleted;
-                    db.SaveChanges();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

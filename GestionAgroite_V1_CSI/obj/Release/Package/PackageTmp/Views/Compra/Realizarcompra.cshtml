@@ -1,0 +1,108 @@
+﻿@model GestionAgroite_V1_CSI.Models.ViewModel
+@{
+    ViewBag.Title = "Realizarcompra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    GestionAgroite_V1_CSI.Models.Ubicacion oUbicacion = ViewBag.Ubicacion;
+    GestionAgroite_V1_CSI.Models.Agricultor oAgricultor = ViewBag.Agricultor;
+    GestionAgroite_V1_CSI.Models.Pedido oPedido = ViewBag.Pedido;
+}
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0d6Qz_m5wpj0lnCziyu985dtUNeaDFc0&callback=initMap"
+        type="text/javascript"></script>
+
+<div class="container">
+
+    <h2>Realizarcompra</h2>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Transportista</label>
+                <input type="text" id="txtidpedido" name="name" hidden="" value="@Model.pedido.IdPedido" />
+                <input type="text" class="form-control" id="txttrasportista" value="@Model.pedido.Transportador.Nombre">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Capacidad</label>
+                <input type="text" class="form-control" id="txtcantidad" value="@(Model.pedido.Transportador.Vehiculos.Capacidad % 2==0? Convert.ToInt32(Model.pedido.Transportador.Vehiculos.Capacidad):Model.pedido.Transportador.Vehiculos.Capacidad)">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">Unidad medida</label>
+                <input type="text" class="form-control" id="txtunidadmedida" value="@Model.pedido.Transportador.Vehiculos.Unidad_Medida">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputPassword4">total compra</label>
+                <input type="text" class="form-control" id="txttotalcompra" value="@Model.pedido.Total">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Punto de entrega</label>
+            <input type="text" class="form-control" id="txtpubntoentrega" value="@Model.pedido.Punto_Entrega">    
+            <br />
+            <a href="~/Compra/Mapa/?idpedido=@Model.pedido.IdPedido" class="btn btn-default">Ver Ruta</a>
+            
+        </div>
+        
+        <div class="form-group">
+            <label for="inputAddress">Agricultor</label>
+            <input type="text" class="form-control" id="txtpubntoentrega" value="@Model.Agricultor.Nombre  @Model.Agricultor.Apellidos">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Punto de Recojo</label>
+            <input type="text" class="form-control" id="txtpuntorecogo" value="@Model.Agricultor.Direccion">
+        </div>
+    </form>
+    <table class="table" id="listaDetalle">
+        <thead class="text-primary">
+            <tr>
+                <th> Producto</th>
+                <th> cantidad </th>
+                <th> precio referencia</th>
+                <th> subtotal </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.detallepedido)
+            {
+                <tr>
+                    <td> @item.Producto.Nombre_Producto</td>
+                    <td> @(item.Cantidad % 2 ==0? Convert.ToInt32(item.Cantidad): item.Cantidad)</td>
+                    <td> @item.Producto.Precio_Referencial</td>
+                    <td> @item.Subtotal</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <button type="button" id="btnregistrar" class="btn btn-primary float-md-right">Realizar</button>
+    </div>
+    <br /><br />
+  
+</div>
+
+
+<script type="text/javascript">    
+
+    $("#btnregistrar").click(function () {
+
+        var idPedido = $("#txtidpedido").val();
+        var Total = $("#txttotalcompra").val();
+
+        var data = { IdPedido: idPedido, Total: Total }
+
+        $.ajax({
+            url: '/Compra/Guardar/',
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                alert(data);
+                document.location.href = '/Compra/Index';
+            },
+            error: function (err) {
+                console.log(err.responseText);
+            }
+        });
+    });
+
+</script>

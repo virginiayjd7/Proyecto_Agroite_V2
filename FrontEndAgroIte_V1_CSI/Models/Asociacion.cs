@@ -13,6 +13,7 @@ namespace FrontEndAgroIte_V1_CSI.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Asociacion()
         {
+            Agricultor = new HashSet<Agricultor>();
             Producto = new HashSet<Producto>();
         }
 
@@ -37,8 +38,6 @@ namespace FrontEndAgroIte_V1_CSI.Models
         [StringLength(100)]
         public string Direccion { get; set; }
 
-        public int? IdAgricultor { get; set; }
-
         [StringLength(9)]
         public string Telefono { get; set; }
 
@@ -47,7 +46,8 @@ namespace FrontEndAgroIte_V1_CSI.Models
 
         public int? Integrantes { get; set; }
 
-        public virtual Agricultor Agricultor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Agricultor> Agricultor { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto> Producto { get; set; }
