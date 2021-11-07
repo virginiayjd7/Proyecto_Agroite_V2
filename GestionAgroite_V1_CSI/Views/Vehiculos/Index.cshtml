@@ -2,55 +2,52 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2 class="page-header">
-    Vehiculos
-    <a href="~/Vehiculos/AgregarEditar" class="btn btn-success float-lg-right">Nuevo Vehiculo</a>
-</h2>
-<br />
-<table id="DataTablesLanguage" class="table align-items-center table-flush">
-    <thead>
-        <tr>
-            <th style="width : 50px;"> ID</th>
-            <th style="width : 50px;">Modelo</th>
-            <th style="width : 50px;">Tipo</th>
-            <th style="width : 10px;">Capacidad</th>
-            <th style="width : 50px;">Precio de Carga</th>
-            <th style="width : 50px;">Estado</th>
-            <th style="width : 300px">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var m in Model)
-        {
-        <tr>
-
-            <th>@(m.IdVehiculo)</th>
-            <th>@(m.Marca)</th>
-            <th>@(m.Tipo)</th>
-            <th>@(m.Capacidad==Convert.ToInt32(m.Capacidad)? Convert.ToInt32(m.Capacidad) : m.Capacidad )</th>
-            <th>@(m.Precio)</th>
-            @if (m.Estado == 0)
+<div style="margin: 35px 50px">
+    <h2 class="page-header">
+        Vehiculos
+        <a href="~/Vehiculos/AgregarEditar" class="btn btn-success float-lg-right">Nuevo Vehiculo</a>
+    </h2>
+    <br />
+    <table id="DataTablesLanguage" class="table align-items-center table-flush">
+        <thead>
+            <tr>
+                <th style="width : 50px;"> ID</th>
+                <th style="width : 50px;">Modelo</th>
+                <th style="width : 50px;">Tipo</th>
+                <th style="width : 10px;">Capacidad</th>
+                <th style="width : 50px;">Precio de Carga</th>
+                <th style="width : 50px;">Estado</th>
+                <th style="width : 300px">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
             {
-                <th>Disponible</th>
-            }
-            else if (m.Estado == 1)
-            {
-                <th>Ocupado</th>
-            }
-            else
-            {
-                <th>Eliminado</th>
-            }
+<tr>
 
-            <th>
-                <a href="~/Vehiculos/Visualizar/@m.IdVehiculo" class="btn btn-xs btn-warning">Detalles</a>
-                <a href="~/Vehiculos/AgregarEditar/@m.IdVehiculo" class="btn btn-xs btn-primary">Modificar</a>
-                <a onclick="return confirm('Esta seguro que desea eliminabr el registro?...');"
-                   href="~/Actividad/Eliminar/@m.IdVehiculo" class="btn btn-xs btn-danger">Eliminar</a>
-            </th>
-        </tr>
-        }
-    </tbody>
-</table>
+    <th>@(m.IdVehiculo)</th>
+    <th>@(m.Marca)</th>
+    <th>@(m.Tipo)</th>
+    <th>@(m.Capacidad==Convert.ToInt32(m.Capacidad)? Convert.ToInt32(m.Capacidad) : m.Capacidad )</th>
+    <th>@(m.Precio)</th>
+    @if (m.Estado == 0)
+    {
+<th>Disponible</th> }
+                else if (m.Estado == 1)
+                {
+<th>Ocupado</th> }
+                else
+                {
+<th>Eliminado</th>}
 
+    <th>
+        <a href="~/Vehiculos/Visualizar/@m.IdVehiculo" class="btn btn-xs btn-warning">Detalles</a>
+        <a href="~/Vehiculos/AgregarEditar/@m.IdVehiculo" class="btn btn-xs btn-primary">Modificar</a>
+        @*<a onclick="return confirm('Esta seguro que desea eliminabr el registro?...');"
+           href="~/Actividad/Eliminar/@m.IdVehiculo" class="btn btn-xs btn-danger">Eliminar</a>*@
+    </th>
+</tr>}
+        </tbody>
+    </table>
 
+    </div>

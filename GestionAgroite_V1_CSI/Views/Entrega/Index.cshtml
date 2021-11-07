@@ -5,39 +5,39 @@
     int contador = 1;
 }
 
+<div style="margin: 35px 50px">
+    <h2 class="page-header">Entrega</h2>
 
-<h2>Entrega</h2>
-
-<div class="container">
-    <div>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Direccion</th>
-                    <th scope="col">Fecha Pedido</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+    <div class="container">
+        <div>
+            <table id="DataTablesLanguage" class="table align-items-center table-flush">
+                <thead>
                     <tr>
-                        <th scope="row">@(contador++)</th>
-                        <td>@item.Fecha_Envio</td>
-                        <td>@item.Fechar_Entrega</td>
-                        <td>@item.Direccion</td>
-                        <td>@item.Fecha_Pedido</td>
-                        <td>@item.Estado</td>
-                        <td>
-                            <button type="button"  class="btn btn-primary">Detalle</button>                            
-                        </td>
+                        <th scope="col">#</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Fecha Pedido</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+        <tr>
+            <th scope="row">@(contador++)</th>
+            <td>@item.Fecha_Envio</td>
+            <td>@item.Fechar_Entrega</td>
+            <td>@item.Direccion</td>
+            <td>@item.Fecha_Pedido</td>
+            <td>@item.Estado</td>
+            <td>
+                <button type="button" class="btn btn-primary">Detalle</button>
+            </td>
+        </tr>}
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+ </div>

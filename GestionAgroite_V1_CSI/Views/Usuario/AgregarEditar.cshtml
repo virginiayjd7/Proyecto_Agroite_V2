@@ -20,7 +20,7 @@
                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark text-success">
                             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="~/Admin/Index">Dashboards</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="~/Usuario/Index">Agricultores</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="~/Usuario/Index">Usuarios</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -31,7 +31,7 @@
                 <div class="col-sm-6 col-lg-6 mb-3">
                     <div class="checkout-address">
                         <div class="title-left">
-                            <h2>Agregar Nuevo Agricultor</h2>
+                            <h2>Nuevo Usuario</h2>
                         </div>
                         <br />
                         @using (Html.BeginForm("Guardar", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -98,15 +98,16 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-3 input-container.password">
                                     @Html.Label("Contraseña: ")
-                                    @Html.TextBoxFor(x => x.Contraseña, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.Contraseña, null, new { @class = "label label-danger" })
+                                    @Html.TextBoxFor(x => x.Contraseña, new { @class = "form-control", placeholder = "Password" })
+                                    @Html.ValidationMessageFor(x => x.Contraseña, null, new { @class = "label label-danger", type = "password", value = "ssssssssssss" })
                                 </div>
+                               
                                 <div class="col-md-6 mb-3">
                                     @Html.Label("Celular: ")
                                     @Html.TextBoxFor(x => x.Celular, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger" })
+                                    @Html.ValidationMessageFor(x => x.Celular, null, new { @class = "label label-danger"})
                                 </div>
                             </div>
                             

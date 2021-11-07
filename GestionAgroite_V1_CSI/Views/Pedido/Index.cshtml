@@ -4,128 +4,127 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     int contador = 1;
 }
-<h2>Pedido</h2>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Estado</th>
-            <th scope="col">IdUsuario</th>
-            <th scope="col">Total</th>
-            <th scope="col">Igv</th>
-            <th scope="col">Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div style="margin: 35px 50px">
+    <h2 class="page-header">Pedido</h2>
+    <table id="DataTablesLanguage" class="table align-items-center table-flush">
+        <thead>
             <tr>
-                <th scope="row">@(contador++)</th>
-                <td>@item.Fecha</td>
-                <td>@item.Estado</td>
-                <td>@item.IdUsuario</td>
-                <td>@item.Total</td>
-                <td>@item.IGV</td>
-                <td>
-                    <button type="button" onclick="Detalle('@item.IdPedido')" class="btn btn-primary">Detalle</button>
-                    <a href="~/Venta/Agregar/?IdPedido=@item.IdPedido" class="btn btn-primary">Venta</a>
-                </td>
+                <th scope="col">NRO</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Estado</th>
+                <th scope="col">IdUsuario</th>
+                <th scope="col">Total</th>
+                <th scope="col">Igv</th>
+                <th scope="col">Acciones</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+<tr>
+    <th scope="row">@(contador++)</th>
+    <td>@item.Fecha</td>
+    <td>@item.Estado</td>
+    <td>@item.IdUsuario</td>
+    <td>@item.Total</td>
+    <td>@item.IGV</td>
+    <td>
+        <button type="button" onclick="Detalle('@item.IdPedido')" class="btn btn-primary">Detalle</button>
+        <a href="~/Venta/Agregar/?IdPedido=@item.IdPedido" class="btn btn-primary">Venta</a>
+    </td>
+</tr>}
+        </tbody>
+    </table>
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Detalle</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <table class="table" id="listaDetalle">
-                    <thead class="text-primary">
-                        <tr>
-                            <th> IdPedido</th>
-                            <th> IdProducto </th>
-                            <th> nombre </th>
-                            <th> Cantidad</th>
-                            <th> Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Detalle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table" id="listaDetalle">
+                        <thead class="text-primary">
+                            <tr>
+                                <th> IdPedido</th>
+                                <th> IdProducto </th>
+                                <th> nombre </th>
+                                <th> Cantidad</th>
+                                <th> Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+    <script>
+        function Detalle(id) {
+            $("#exampleModalCenter").modal("show");
+            var data = {
+                IdPedido: id
+            }
 
-
-<script>
-    function Detalle(id) {
-        $("#exampleModalCenter").modal("show");
-        var data = {
-            IdPedido: id
+            $.ajax({
+                url: '/Pedido/DetallePedido/',
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function (data) {
+                    var rows = '';
+                    // console.log(data);
+                    $.each(data, function (i, item) {
+                        rows += "<tr>"
+                        rows += "<td>" + item.IdPedido + "</td>"
+                        rows += "<td>" + item.IdProducto + "</td>"
+                        rows += "<td>" + item.Producto.Nombre_Producto + "</td>"
+                        rows += "<td>" + item.Cantidad + "</td>"
+                        rows += "<td>" + item.Subtotal + "</td>"
+                        rows += "</tr>";
+                        $("#listaDetalle tbody").html(rows);
+                    });
+                    asdfasd();
+                },
+                error: function (err) {
+                    alert("Error: " + err.responseText);
+                    console.log(err);
+                }
+            })
         }
-
-        $.ajax({
-            url: '/Pedido/DetallePedido/',
-            type: 'POST',
-            dataType: 'json',
-            data: data,
-            success: function (data) {
-                var rows = '';
-               // console.log(data);
-                $.each(data, function (i, item) {
-                    rows += "<tr>"
-                    rows += "<td>" + item.IdPedido + "</td>"
-                    rows += "<td>" + item.IdProducto + "</td>"
-                    rows += "<td>" + item.Producto.Nombre_Producto + "</td>"
-                    rows += "<td>" + item.Cantidad + "</td>"
-                    rows += "<td>" + item.Subtotal + "</td>"
-                    rows += "</tr>";
-                    $("#listaDetalle tbody").html(rows);
-                });
-                asdfasd();
-            },
-            error: function (err) {
-                alert("Error: " + err.responseText);
-                console.log(err);
-            }
-        })
-    }
-    function asdfasd() {
-        $.ajax({
-            url: '/dsd/DetallePedido/',
-            type: 'POST',
-            dataType: 'json',
-            data: data,
-            success: function (data) {
-                var rows = '';
-                // console.log(data);
-                $.each(data, function (i, item) {
-                    rows += "<tr>"
-                    rows += "<td>" + item.IdPedido + "</td>"
-                    rows += "<td>" + item.IdProducto + "</td>"
-                    rows += "<td>" + item.Producto.Nombre_Producto + "</td>"
-                    rows += "<td>" + item.Cantidad + "</td>"
-                    rows += "<td>" + item.Subtotal + "</td>"
-                    rows += "</tr>";
-                    $("#listaDetalle tbody").html(rows);
-                });
-            },
-            error: function (err) {
-                alert("Error: " + err.responseText);
-                console.log(err);
-            }
-        })
-    }
-</script>
+        function asdfasd() {
+            $.ajax({
+                url: '/dsd/DetallePedido/',
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function (data) {
+                    var rows = '';
+                    // console.log(data);
+                    $.each(data, function (i, item) {
+                        rows += "<tr>"
+                        rows += "<td>" + item.IdPedido + "</td>"
+                        rows += "<td>" + item.IdProducto + "</td>"
+                        rows += "<td>" + item.Producto.Nombre_Producto + "</td>"
+                        rows += "<td>" + item.Cantidad + "</td>"
+                        rows += "<td>" + item.Subtotal + "</td>"
+                        rows += "</tr>";
+                        $("#listaDetalle tbody").html(rows);
+                    });
+                },
+                error: function (err) {
+                    alert("Error: " + err.responseText);
+                    console.log(err);
+                }
+            })
+        }
+    </script>

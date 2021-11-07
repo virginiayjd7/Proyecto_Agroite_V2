@@ -14,7 +14,7 @@ namespace GestionAgroite_V1_CSI.Models
 
         public virtual DbSet<Actividad> Actividad { get; set; }
         public virtual DbSet<Agricultor> Agricultor { get; set; }
-        public virtual DbSet<Almacen> Almacen { get; set; }
+      
         public virtual DbSet<Asociacion> Asociacion { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Compra> Compra { get; set; }
@@ -68,38 +68,7 @@ namespace GestionAgroite_V1_CSI.Models
                 .Property(e => e.Correo)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Nombre)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Direccion)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Localidad)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Provincia)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Capacidad)
-                .HasPrecision(16, 2);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Precio)
-                .HasPrecision(16, 2);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Cantida_Dejada)
-                .HasPrecision(16, 2);
-
-            modelBuilder.Entity<Almacen>()
-                .Property(e => e.Unidad_Medida)
-                .IsUnicode(false);
-
+           
             modelBuilder.Entity<Asociacion>()
                 .Property(e => e.Ruc)
                 .IsUnicode(false);
